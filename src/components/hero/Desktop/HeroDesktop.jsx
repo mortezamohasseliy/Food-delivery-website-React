@@ -1,6 +1,6 @@
 function Landing() {
   return (
-    <section className="relative w-[95%] h-152.5 top-20 left-25  rounded-xl border border-gray-200 flex items-center">
+    <section className="relative w-[95%] h-152.5 top-20 left-25  rounded-xl border border-gray-200 flex items-center mb-10">
       {/* images */}
       <div className="top-70.75 left-105.75 flex items-center">
         <img
