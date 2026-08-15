@@ -1,9 +1,9 @@
+import Logo from "../../logo/Logo";
+
 function DesktopNavbar() {
   return (
     <div className="w-[95%] h-15.25 top-27 left-25 mt-10 flex items-center mx-auto justify-around">
-      <div className="w-53.75 h-13.25 top-28 left-25">
-        <img src="../src/assets/images/logo.png" alt="" />
-      </div>
+      <Logo />
       <div className="w-206 h-6.75 top-31.25 left-129.25 items-center hidden lg:block">
         <ul className="flex items-center justify-around font-medium text-[18px]">
           <li className="w-31.75 h-11.25 top-29 left-120.75 rounded-[120px] text-white bg-[#FC8A06] items-center justify-center flex">
