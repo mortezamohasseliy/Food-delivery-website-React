@@ -1,14 +1,15 @@
 import Brands from "./components/brands/Brands";
 import DiscountOffer from "./components/discount-offers/DiscountOffer";
+import Download from "./components/download/Download";
 import Header from "./components/header/Header";
 import Hero from "./components/hero/Hero";
-import Logo from "./components/logo/Logo";
 import Navbar from "./components/navbar/Navbar";
 import Order from "./components/order/Desktop/OrderDesktop";
+import SignUp from "./components/Sign-Up/Signup";
 
 function App() {
   return (
-    <div className="max-w-360 flex flex-col">
+    <div className="w-full flex flex-col">
       {/* Header */}
       <div className="order-2 lg:order-1">
         <Header />
@@ -37,43 +38,113 @@ function App() {
       </div>
 
       <div className="order-7">
-        <section className="relative w-full h-152.75 mt-10 rounded-lg bg-linear-to-r from-[#E0E1DC] to-[#EEEEEE] p-5">
-          <img
-            className="w-208 h-162.75 absolute bottom-0 z-10"
-            src="../src/assets/images/use-mobile.png"
-            alt=""
-          />
-          <div className="absolute right-10 top-35 flex items-center">
-            <Logo />
-            <span className="w-26 h-25.5 font-bold text-[68px] tracking-[-6%]">
-              ing
-            </span>
-            <span className="w-57.75 h-25.5 font-bold text-[68px] tracking-[-6%]">
-              is more{" "}
-            </span>
+        <Download />
+      </div>
+
+      <div className="order-8">
+        <SignUp />
+      </div>
+
+      <div className="order-9">
+        <section className="w-full h-220.5 bg-[#D9D9D9] mt-10 p-10">
+          <div className="flex items-center justify-between">
+            <h1 className="w-87.75 h-12 font-bold text-[32px]">
+              Know more about us!
+            </h1>
+            <ul className="flex items-center space-x-20 text-[16px] font-normal">
+              <li className="font-bold border border-[#FC8A06] p-5 rounded-[120px]">
+                Frequent Questions{" "}
+              </li>
+              <li> Who we are? </li>
+              <li>Partner Program</li>
+              <li>Help & Support</li>
+            </ul>
           </div>
+
           <div
-            className="absolute z-0 w-219.5 h-22.5 bg-[#03081F] rounded-[120px] right-0
-            top-58 m-5 flex items-center justify-center"
+            className="w-322.5 h-131.5 rounded-xl bg-[#FFFFFF] mx-auto mt-10 flex
+           justify-between items-center p-5"
           >
-            <h2 className="absolute w-135 h-20.25 right-0 text-[#FFFFFF]  font-medium text-[54px] tracking-[-6%]">
-              <span className="text-[#FC8A06] underline">Personalised</span> &
-              Instant
-            </h2>
-          </div>
-          <h2 className="absolute right-10 bottom-50 w-122 h-9 font-normal text-[24px] tracking-[-6%]">
-            Download the Order.uk app for faster ordering
-          </h2>
-          {/* app stores */}
-          <div className="absolute right-25 bottom-30 w-103 h-15.25 flex items-center justify-evenly">
-            <div className="w-[203.15px] h-[58.25px] bg-cover">
-              <img
-                className="bg-cover"
-                src="../src/assets/images/store.png"
-                alt=""
-              />
+            {/* questions */}
+            <div className="flex flex-col space-y-10">
+              <button
+                className="w-86.5 h-15.5 rounded-[120px] bg-[#FC8A06]
+              font-bold text-[18px] tracking-[-2%]"
+              >
+                How does Order.UK work?
+              </button>
+              <button className="w-88 h-6.75 font-bold text-[18px] tracking-[-2%]">
+                What payment methods are accepted?
+              </button>
+              <button className="w-88 h-6.75 font-bold text-[18px] tracking-[-2%]">
+                Can I track my order in real-time?
+              </button>
+              <button className="w-88 h-6.75 font-bold text-[18px] tracking-[-2%]">
+                Are there any special discounts or promotions available?
+              </button>
+              <button className="w-88 h-6.75 mt-3 font-bold text-[18px] tracking-[-2%]">
+                Is Order.UK available in my area?
+              </button>
+            </div>
+            {/* answers */}
+            <div className="flex items-center gap-5">
+              <div
+                className="w-59.5 h-71.25 rounded-xl bg-[#D9D9D9] flex flex-col items-center
+              justify-center text-center space-y-3"
+              >
+                <h3 className="font-bold text-[18px] tracking-[-2%] leading-[100%]">
+                  Place an Order!
+                </h3>
+                <img
+                  className="w-32 h-32 "
+                  src="../src/assets/images/order-food.png"
+                  alt=""
+                />
+                <p className="font-medium text-[16px] leading-6.25 tracking-[-2%]">
+                  Place order through our website or Mobile app
+                </p>
+              </div>
+
+              <div
+                className="w-59.5 h-71.25 rounded-xl bg-[#D9D9D9] flex flex-col items-center
+              justify-center text-center space-y-3"
+              >
+                <h3 className="font-bold text-[18px] tracking-[-2%] leading-[100%]">
+                  Track Progress
+                </h3>
+                <img
+                  className="w-32 h-32 "
+                  src="../src/assets/images/drink.png"
+                  alt=""
+                />
+                <p className="font-medium text-[16px] leading-6.25 tracking-[-2%]">
+                  Your can track your order status with delivery time
+                </p>
+              </div>
+
+              <div
+                className="w-59.5 h-71.25 rounded-xl bg-[#D9D9D9] flex flex-col items-center
+              justify-center text-center space-y-3"
+              >
+                <h3 className="font-bold text-[18px] tracking-[-2%] leading-[100%]">
+                  Get your Order!
+                </h3>
+                <img
+                  className="w-32 h-32 "
+                  src="../src/assets/images/order.png"
+                  alt=""
+                />
+                <p className="font-medium text-[16px] leading-6.25 tracking-[-2%]">
+                  Receive your order at a lighting fast speed!
+                </p>
+              </div>
             </div>
           </div>
+          {/* <div className="">
+            Order.UK simplifies the food ordering process. Browse through our
+            diverse menu, select your favorite dishes, and proceed to checkout.
+            Your delicious meal will be on its way to your doorstep in no time!
+          </div> */}
         </section>
       </div>
     </div>
