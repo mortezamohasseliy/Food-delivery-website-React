@@ -1,3 +1,4 @@
+import About from "./components/about/About";
 import Brands from "./components/brands/Brands";
 import DiscountOffer from "./components/discount-offers/DiscountOffer";
 import Download from "./components/download/Download";
@@ -6,10 +7,11 @@ import Hero from "./components/hero/Hero";
 import Navbar from "./components/navbar/Navbar";
 import Order from "./components/order/Desktop/OrderDesktop";
 import SignUp from "./components/Sign-Up/Signup";
+import Stats from "./components/stats/Stats";
 
 function App() {
   return (
-    <div className="w-full flex flex-col">
+    <div className="max-w-360 flex flex-col mx-auto">
       {/* Header */}
       <div className="order-2 lg:order-1">
         <Header />
@@ -46,105 +48,48 @@ function App() {
       </div>
 
       <div className="order-9">
-        <section className="w-full h-220.5 bg-[#D9D9D9] mt-10 p-10">
-          <div className="flex items-center justify-between">
-            <h1 className="w-87.75 h-12 font-bold text-[32px]">
-              Know more about us!
-            </h1>
-            <ul className="flex items-center space-x-20 text-[16px] font-normal">
-              <li className="font-bold border border-[#FC8A06] p-5 rounded-[120px]">
-                Frequent Questions{" "}
-              </li>
-              <li> Who we are? </li>
-              <li>Partner Program</li>
-              <li>Help & Support</li>
-            </ul>
+        <About />
+      </div>
+
+      <div className="order-10">
+        <Stats />
+      </div>
+
+      <div className="order-11">
+        <section className="w-full h-92.75 bg-[#D9D9D9]/60 mt-10 flex justify-between p-3">
+          <div>
+            <img
+              className="w-67 h-16.5 "
+              src="../src/assets/images/logo-2.png"
+              alt=""
+            />
+            <img
+              className="w-90.25 h-30 bg-cover"
+              src="../src/assets/images/store-logoes.png"
+              alt=""
+            />
+            <p
+              className="w-77.75 h-11.5 font-normal text-[15px]
+            leading-[100%] tracking-normal"
+            >
+              Company # 490039-445, Registered withHouse of companies.
+            </p>
           </div>
-
-          <div
-            className="w-322.5 h-131.5 rounded-xl bg-[#FFFFFF] mx-auto mt-10 flex
-           justify-between items-center p-5"
-          >
-            {/* questions */}
-            <div className="flex flex-col space-y-10">
-              <button
-                className="w-86.5 h-15.5 rounded-[120px] bg-[#FC8A06]
-              font-bold text-[18px] tracking-[-2%]"
-              >
-                How does Order.UK work?
-              </button>
-              <button className="w-88 h-6.75 font-bold text-[18px] tracking-[-2%]">
-                What payment methods are accepted?
-              </button>
-              <button className="w-88 h-6.75 font-bold text-[18px] tracking-[-2%]">
-                Can I track my order in real-time?
-              </button>
-              <button className="w-88 h-6.75 font-bold text-[18px] tracking-[-2%]">
-                Are there any special discounts or promotions available?
-              </button>
-              <button className="w-88 h-6.75 mt-3 font-bold text-[18px] tracking-[-2%]">
-                Is Order.UK available in my area?
-              </button>
-            </div>
-            {/* answers */}
-            <div className="flex items-center gap-5">
-              <div
-                className="w-59.5 h-71.25 rounded-xl bg-[#D9D9D9] flex flex-col items-center
-              justify-center text-center space-y-3"
-              >
-                <h3 className="font-bold text-[18px] tracking-[-2%] leading-[100%]">
-                  Place an Order!
-                </h3>
-                <img
-                  className="w-32 h-32 "
-                  src="../src/assets/images/order-food.png"
-                  alt=""
-                />
-                <p className="font-medium text-[16px] leading-6.25 tracking-[-2%]">
-                  Place order through our website or Mobile app
-                </p>
-              </div>
-
-              <div
-                className="w-59.5 h-71.25 rounded-xl bg-[#D9D9D9] flex flex-col items-center
-              justify-center text-center space-y-3"
-              >
-                <h3 className="font-bold text-[18px] tracking-[-2%] leading-[100%]">
-                  Track Progress
-                </h3>
-                <img
-                  className="w-32 h-32 "
-                  src="../src/assets/images/drink.png"
-                  alt=""
-                />
-                <p className="font-medium text-[16px] leading-6.25 tracking-[-2%]">
-                  Your can track your order status with delivery time
-                </p>
-              </div>
-
-              <div
-                className="w-59.5 h-71.25 rounded-xl bg-[#D9D9D9] flex flex-col items-center
-              justify-center text-center space-y-3"
-              >
-                <h3 className="font-bold text-[18px] tracking-[-2%] leading-[100%]">
-                  Get your Order!
-                </h3>
-                <img
-                  className="w-32 h-32 "
-                  src="../src/assets/images/order.png"
-                  alt=""
-                />
-                <p className="font-medium text-[16px] leading-6.25 tracking-[-2%]">
-                  Receive your order at a lighting fast speed!
-                </p>
-              </div>
-            </div>
+          <div>
+            <h2
+              className="w-75.5 h-10.75 font-bold text-[18px] leading-10.75 tracking-normal
+            text-[#03081F]"
+            >
+              Get Exclusive Deals in your Inbox
+            </h2>
+            <input
+              className="w-[381px] h-[59px] bg-[#D9D9D9] rounded-[120px] outline-none pl-5"
+              type="email"
+              placeholder="youremail@gmail.com"
+            />
           </div>
-          {/* <div className="">
-            Order.UK simplifies the food ordering process. Browse through our
-            diverse menu, select your favorite dishes, and proceed to checkout.
-            Your delicious meal will be on its way to your doorstep in no time!
-          </div> */}
+          <div>legal pages</div>
+          <div>important links</div>
         </section>
       </div>
     </div>
