@@ -2,6 +2,7 @@ import About from "./components/about/About";
 import Brands from "./components/brands/Brands";
 import DiscountOffer from "./components/discount-offers/DiscountOffer";
 import Download from "./components/download/Download";
+import Footer from "./components/footer/Footer";
 import Header from "./components/header/Header";
 import Hero from "./components/hero/Hero";
 import Navbar from "./components/navbar/Navbar";
@@ -56,41 +57,7 @@ function App() {
       </div>
 
       <div className="order-11">
-        <section className="w-full h-92.75 bg-[#D9D9D9]/60 mt-10 flex justify-between p-3">
-          <div>
-            <img
-              className="w-67 h-16.5 "
-              src="../src/assets/images/logo-2.png"
-              alt=""
-            />
-            <img
-              className="w-90.25 h-30 bg-cover"
-              src="../src/assets/images/store-logoes.png"
-              alt=""
-            />
-            <p
-              className="w-77.75 h-11.5 font-normal text-[15px]
-            leading-[100%] tracking-normal"
-            >
-              Company # 490039-445, Registered withHouse of companies.
-            </p>
-          </div>
-          <div>
-            <h2
-              className="w-75.5 h-10.75 font-bold text-[18px] leading-10.75 tracking-normal
-            text-[#03081F]"
-            >
-              Get Exclusive Deals in your Inbox
-            </h2>
-            <input
-              className="w-[381px] h-[59px] bg-[#D9D9D9] rounded-[120px] outline-none pl-5"
-              type="email"
-              placeholder="youremail@gmail.com"
-            />
-          </div>
-          <div>legal pages</div>
-          <div>important links</div>
-        </section>
+        <Footer />
       </div>
     </div>
   );
