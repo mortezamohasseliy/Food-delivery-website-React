@@ -1,30 +1,31 @@
 function HeroMobile() {
   return (
-    <div className="w-full">
-      <div className="w-[90%] h-72.5 top-53.75 left-2.75 rounded-[11px] pb-5  flex flex-col items-center justify-center mx-auto bg-[#E2E2E2] text-center">
-        <p className="w-71.75 h-16.5 top-56.25 left-18 font-normal text-[12px] leading-16.5 tracking-normal text-[#03081F]">
+    <div className="w-full px-4">
+      <div className="mx-auto flex min-h-72.5 w-full max-w-125 flex-col items-center justify-center rounded-[11px] bg-[#E2E2E2] px-4 py-8 text-center">
+        <p className="text-[12px] font-normal leading-4 text-[#03081F]">
           Order Restaurant food, takeaway and groceries.
         </p>
-        <div className=" top-69.75 left-13.75 mb-10 text-center">
-          <h2 className="w-80.25 h-18 font-semibold text-[34px]">
-            Feast Your Senses,
-            <br />
-            <span className="font-semibold text-[34px] leading-9 text-[#FC8A06]">
-              Fast and Fresh
-            </span>
-          </h2>
-        </div>
-        <p className="w-74.5 h-10.75 top-84.75 left-17.75 font-normal text-[13px] text-[#03081F]">
+
+        <h2 className="mt-6 text-[34px] font-semibold leading-9">
+          Feast Your Senses,
+          <br />
+          <span className="text-[#FC8A06]">Fast and Fresh</span>
+        </h2>
+
+        <p className="mt-5 text-[13px] font-normal text-[#03081F]">
           Enter a postcode to see what we deliver
         </p>
-        <div className="top-149 left-39.25 flex items-center justify-center">
+
+        <div className="relative mt-6 w-full max-w-73.25">
           <input
             type="text"
-            className="w-73.25 h-14.25 top-99.5 left-15.25 bg-[#FFFFFF] border rounded-[120px] placeholder:e.g. EC4R 3TE"
+            placeholder="e.g. EC4R 3TE"
+            className="h-14.25 w-full rounded-[120px] border bg-white px-5 pr-16 outline-none"
           />
-          <button className="absolute flex items-center justify-center w-14.25 h-14.25 right-41 rounded-[120px] bg-[#FC8A06] text-white">
+
+          <button className="absolute right-0 top-0 flex h-14.25 w-14.25 items-center justify-center rounded-[120px] bg-[#FC8A06]">
             <img
-              className="w-8.5 h-8.5 top-102.25 left-79"
+              className="h-8.5 w-8.5"
               src="../src/assets/images/arrow-right.png"
               alt=""
             />
@@ -34,4 +35,5 @@ function HeroMobile() {
     </div>
   );
 }
+
 export default HeroMobile;

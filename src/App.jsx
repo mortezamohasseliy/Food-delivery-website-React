@@ -6,7 +6,7 @@ import Footer from "./components/footer/Footer";
 import Header from "./components/header/Header";
 import Hero from "./components/hero/Hero";
 import Navbar from "./components/navbar/Navbar";
-import Order from "./components/order/Desktop/OrderDesktop";
+import Order from "./components/order/Order";
 import SignUp from "./components/Sign-Up/Signup";
 import Stats from "./components/stats/Stats";
 

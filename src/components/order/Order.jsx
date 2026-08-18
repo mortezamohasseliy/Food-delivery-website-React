@@ -1,19 +1,17 @@
-import OrderMobile from "./Mobile/OrderMobile";
-import OrderDesktop from "./Desktop/OrderDesktop";
+import OrderCardDesktop from "./OrderCard";
 
-function Order() {
+function OrderDesktop() {
   return (
-    <>
-      {/* Desktop */}
-      <div className="hidden lg:block">
-        <OrderDesktop />
-      </div>
+    <section className="mt-10 w-full">
+      <div className="mx-auto w-full max-w-360 px-6 lg:px-8">
+        <h1 className="text-[28px] font-bold leading-[100%] xl:text-[32px]">
+          Order.uk Popular Categories 🤩
+        </h1>
 
-      {/* Mobile */}
-      <div className="lg:hidden">
-        <OrderMobile />
+        <OrderCardDesktop />
       </div>
-    </>
+    </section>
   );
 }
-export default Order;
+
+export default OrderDesktop;

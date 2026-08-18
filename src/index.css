@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+/* body {
+  font-family: "Poppins", sans-serif;
+} */
+
 .poppins-thin {
   font-family: "Poppins", sans-serif;
   font-weight: 100;
@@ -106,4 +110,18 @@
   font-family: "Poppins", sans-serif;
   font-weight: 900;
   font-style: italic;
+}
+
+@theme {
+  --animate-offer-scroll: offer-scroll 35s linear infinite;
+
+  @keyframes offer-scroll {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(-50%);
+    }
+  }
 }
