@@ -33,11 +33,11 @@ const brands = [
 
 function BrandsCard() {
   return (
-    <div className="flex items-center gap-5 p-5">
+    <div className="flex items-center gap-5 p-5 overflow-x-auto">
       {brands.map((brand) => (
         <div
           key={brand.id}
-          className="w-59.5 h-66.5 border border-gray-200 rounded-tl-xl rounded-tr-xl bg-[#FC8A06] flex flex-col items-center text-center"
+          className="w-full lg:grid-cols-4 md:grid-cols-6 border border-gray-200 rounded-tl-xl rounded-tr-xl bg-[#FC8A06] flex flex-col items-center text-center"
         >
           <img
             className="w-59.5 h-50.75 bg-cover rounded-tl-xl rounded-tr-xl"

@@ -1,6 +1,6 @@
 import OrderCardDesktop from "./OrderCard";
 
-function OrderDesktop() {
+function Order() {
   return (
     <section className="mt-10 w-full">
       <div className="mx-auto w-full max-w-360 px-6 lg:px-8">
@@ -14,4 +14,4 @@ function OrderDesktop() {
   );
 }
 
-export default OrderDesktop;
+export default Order;

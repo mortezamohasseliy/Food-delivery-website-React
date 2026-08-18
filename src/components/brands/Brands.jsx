@@ -1,19 +1,14 @@
-import BrandsDesktop from "./Desktop/BrandsDesktop";
-import BrandsMobile from "./Mobile/BrandsMobile";
+import BrandsCard from "./BrandsCard";
 
 function Brands() {
   return (
-    <>
-      {/* Desktop */}
-      <div className="hidden lg:block">
-        <BrandsDesktop />
-      </div>
-
-      {/* Mobile */}
-      <div className="lg:hidden">
-        <BrandsMobile />
-      </div>
-    </>
+    <section className="h-91.25 rounded-tl-xl rounded-tr-xl p-3">
+      <h1 className="w-84.5 h-12 font-bold ml-5 text-[32px] leading-[100%] tracking-normal ">
+        Popular Restaurants
+      </h1>
+      {/* brand cards */}
+      <BrandsCard />
+    </section>
   );
 }
 export default Brands;
