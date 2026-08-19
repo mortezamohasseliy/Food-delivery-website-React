@@ -33,23 +33,46 @@ const brands = [
 
 function BrandsCard() {
   return (
-    <div className="flex items-center gap-5 p-5 overflow-x-auto">
-      {brands.map((brand) => (
-        <div
-          key={brand.id}
-          className="w-full lg:grid-cols-4 md:grid-cols-6 border border-gray-200 rounded-tl-xl rounded-tr-xl bg-[#FC8A06] flex flex-col items-center text-center"
-        >
-          <img
-            className="w-59.5 h-50.75 bg-cover rounded-tl-xl rounded-tr-xl"
-            src={brand.brandImage}
-            alt=""
-          />
-          <h2 className="w-45.5 h-6.75 font-bold text-[18px] text-[#FFFFFF] mt-2">
-            {brand.brandTitle}
-          </h2>
-        </div>
-      ))}
+    <div className="mt-10 w-full overflow-hidden">
+      <div className="flex w-max animate-offer-scroll gap-5 hover:[animation-play-state:paused]">
+        {/* Original cards */}
+        {brands.map((brand) => (
+          <div
+            key={brand.id}
+            className="lg:w-59.5 sm:w-30.5 shrink-0 overflow-hidden rounded-xl border border-gray-200 bg-[#FC8A06]"
+          >
+            <img
+              className="h-50.75 w-full object-cover"
+              src={brand.brandImage}
+              alt={brand.brandTitle}
+            />
+
+            <h2 className="px-2 py-3 text-center text-[18px] font-bold text-white">
+              {brand.brandTitle}
+            </h2>
+          </div>
+        ))}
+
+        {/* Duplicate cards */}
+        {brands.map((brand) => (
+          <div
+            key={`duplicate-${brand.id}`}
+            className="w-59.5 shrink-0 overflow-hidden rounded-xl border border-gray-200 bg-[#FC8A06]"
+          >
+            <img
+              className="h-50.75 w-full object-cover"
+              src={brand.brandImage}
+              alt={brand.brandTitle}
+            />
+
+            <h2 className="px-2 py-3 text-center text-[18px] font-bold text-white">
+              {brand.brandTitle}
+            </h2>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
+
 export default BrandsCard;

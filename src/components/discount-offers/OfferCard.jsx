@@ -12,7 +12,7 @@ function OfferCard({ image, restaurant, discount = "-17%" }) {
         <div className="absolute inset-0 bg-linear-to-r from-black/80 via-black/40 to-transparent" />
 
         {/* Discount */}
-        <span className="absolute right-0 top-0 flex h-9.5 w-11.5 items-center justify-center rounded-bl-xl rounded-br-xl bg-[#03081F] text-white">
+        <span className="absolute right-5 top-0 flex h-9.5 w-11.5 items-center justify-center rounded-bl-xl rounded-br-xl bg-[#03081F] text-white">
           <span className="text-[15px] font-bold">{discount}</span>
         </span>
       </div>

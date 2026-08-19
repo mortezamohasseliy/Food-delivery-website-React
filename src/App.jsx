@@ -27,35 +27,35 @@ function App() {
       <div className="order-3 lg:order-3">
         <Hero />
       </div>
-
+      {/* offers */}
       <div className="order-4">
         <DiscountOffer />
       </div>
-
+      {/* orders */}
       <div className="order-5">
         <Order />
       </div>
-
+      {/* brands */}
       <div className="order-6">
         <Brands />
       </div>
-
+      {/* download app */}
       <div className="order-7">
         <Download />
       </div>
-
+      {/* sign up */}
       <div className="order-8">
         <SignUp />
       </div>
-
+      {/* about page */}
       <div className="order-9">
         <About />
       </div>
-
+      {/* stats of app */}
       <div className="order-10">
         <Stats />
       </div>
-
+      {/* footer */}
       <div className="order-11">
         <Footer />
       </div>

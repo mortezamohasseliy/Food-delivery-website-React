@@ -1,6 +1,9 @@
 function Logo() {
   return (
-    <div className="w-53.75 h-13.25 top-28 left-25">
+    <div
+      className="md:w-53.75 md:h-13.25  md:top-28 md:left-25
+    sm:w-27.5 sm:h-6.75"
+    >
       <img src="../src/assets/images/logo.png" alt="" />
     </div>
   );
