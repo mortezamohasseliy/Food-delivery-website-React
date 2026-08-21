@@ -1,14 +1,14 @@
-import About from "./components/about/About";
-import Brands from "./components/brands/Brands";
-import DiscountOffer from "./components/discount-offers/DiscountOffer";
-import Download from "./components/download/Download";
-import Footer from "./components/footer/Footer";
-import Header from "./components/header/Header";
-import Hero from "./components/hero/Hero";
-import Navbar from "./components/navbar/Navbar";
-import Order from "./components/order/Order";
-import SignUp from "./components/Sign-Up/Signup";
-import Stats from "./components/stats/Stats";
+import Brands from "./components/Home/brands/Brands";
+import DiscountOffer from "./components/Home/discount-offers/DiscountOffer";
+import Download from "./components/Home/download/Download";
+import Footer from "./components/Home/footer/Footer";
+import Header from "./components/Home/header/Header";
+import Navbar from "./components/Home/navbar/Navbar";
+import Order from "./components/Home/order/Order";
+import SignUp from "./components/Home/Signup/SignUp";
+import About from "./components/Home/about/About";
+import Stats from "./components/Home/stats/Stats";
+import Landing from "./components/Home/landing/Landing";
 
 function App() {
   return (
@@ -25,7 +25,7 @@ function App() {
 
       {/* landing page */}
       <div className="order-3 lg:order-3">
-        <Hero />
+        <Landing />
       </div>
       {/* offers */}
       <div className="order-4">
