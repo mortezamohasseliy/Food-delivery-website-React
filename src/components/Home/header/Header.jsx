@@ -1,7 +1,7 @@
 function Header() {
   return (
     <header className="w-full">
-      {/* ================= MOBILE ================= */}
+      {/*  MOBILE  */}
       <div className="flex flex-col md:hidden">
         {/* Top orange / green section */}
         <div className="flex h-19.25 w-full">
@@ -40,7 +40,7 @@ function Header() {
         </div>
       </div>
 
-      {/* ================= DESKTOP ================= */}
+      {/*  DESKTOP */}
       <div className="mx-auto hidden h-17.5 w-[90%] items-start justify-between md:flex">
         {/* Promo */}
         <div className="flex h-full items-center">

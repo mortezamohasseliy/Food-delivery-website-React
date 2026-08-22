@@ -1,64 +1,67 @@
-import Brands from "./components/Home/brands/Brands";
-import DiscountOffer from "./components/Home/discount-offers/DiscountOffer";
-import Download from "./components/Home/download/Download";
-import Footer from "./components/Home/footer/Footer";
-import Header from "./components/Home/header/Header";
-import Navbar from "./components/Home/navbar/Navbar";
-import Order from "./components/Home/order/Order";
-import SignUp from "./components/Home/Signup/SignUp";
-import About from "./components/Home/about/About";
-import Stats from "./components/Home/stats/Stats";
-import Landing from "./components/Home/landing/Landing";
+// import Brands from "./components/Home/brands/Brands";
+// import DiscountOffer from "./components/Home/discount-offers/DiscountOffer";
+// import Download from "./components/Home/download/Download";
+// import Footer from "./components/Home/footer/Footer";
+// import Header from "./components/Home/header/Header";
+// import Navbar from "./components/Home/navbar/Navbar";
+// import Order from "./components/Home/order/Order";
+// import SignUp from "./components/Home/Signup/SignUp";
+// import About from "./components/Home/about/About";
+// import Stats from "./components/Home/stats/Stats";
+// import Landing from "./components/Home/landing/Landing";
+
+import Restaurants from "./components/Restuarants/Restuarants";
 
 function App() {
   return (
-    <div className="max-w-360 flex flex-col mx-auto">
+    <div className="lg:max-w-360 flex flex-col mx-auto">
+      <Restaurants />
       {/* Header */}
-      <div className="order-2 lg:order-1">
+      {/* <div className="order-2 lg:order-1">
         <Header />
-      </div>
+      </div> */}
 
       {/* Navbar */}
-      <div className="order-1 lg:order-2">
+      {/* <div className="order-1 lg:order-2">
         <Navbar />
-      </div>
+      </div> */}
 
       {/* landing page */}
-      <div className="order-3 lg:order-3">
+      {/* <div className="order-3 lg:order-3">
         <Landing />
-      </div>
+      </div> */}
       {/* offers */}
-      <div className="order-4">
+      {/* <div className="order-4">
         <DiscountOffer />
-      </div>
+      </div> */}
       {/* orders */}
-      <div className="order-5">
+      {/* <div className="order-5">
         <Order />
-      </div>
+      </div> */}
       {/* brands */}
-      <div className="order-6">
+      {/* <div className="order-6">
         <Brands />
-      </div>
+      </div> */}
       {/* download app */}
-      <div className="order-7">
+      {/* <div className="order-7">
         <Download />
-      </div>
+      </div> */}
       {/* sign up */}
-      <div className="order-8">
+      {/* <div className="order-8">
         <SignUp />
-      </div>
+      </div> */}
       {/* about page */}
-      <div className="order-9">
+      {/* <div className="order-9">
         <About />
-      </div>
+      </div> */}
       {/* stats of app */}
-      <div className="order-10">
+      {/* <div className="order-10">
         <Stats />
-      </div>
+      </div> */}
       {/* footer */}
-      <div className="order-11">
+      {/* <div className="order-11">
         <Footer />
-      </div>
+      </div> */}
     </div>
   );
 }

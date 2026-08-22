@@ -10,9 +10,7 @@ function Navbar() {
 
         {/* Navigation */}
         <ul className="flex items-center gap-8 font-medium text-[18px]">
-          <li className="px-8 py-3 rounded-full text-white bg-[#FC8A06]">
-            Home
-          </li>
+          <li>Home</li>
 
           <li>Browse Menu</li>
           <li>Special Offers</li>
