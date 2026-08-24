@@ -1,5 +1,7 @@
 import Header from "../Home/header/Header";
 import Navbar from "../Home/navbar/Navbar";
+import FilterCategories from "./FilterCategories";
+import RestaurantOfferCards from "./RestaurantOfferCards";
 
 function Restaurants() {
   return (
@@ -91,24 +93,9 @@ function Restaurants() {
         </section>
 
         {/* filter categories section */}
-
-        <section className="md:absolute md:w-full md:h-40 md:top-187.75 md:left-23.75 md:border">
-          <div className="md:flex md:justify-around">
-            <h1 className="md:font-bold md:text-[32px] md:leading-[100%] md:tracking-normal">
-              All Offers from McDonald’s East London
-            </h1>
-            <div className="md:relative">
-              <input
-                className="md:absolute md:w-86 md:h-15.75 md:rounded-[120px] md:placeholder:left-16 md:border md:border-[#03081F] md:outline-none"
-                type="text"
-                placeholder="Search from menu..."
-              />
-              <div>
-                <img src="../../src/assets/images/search.png" alt="" />
-              </div>
-            </div>
-          </div>
-        </section>
+        <FilterCategories />
+        {/* Restaurant offercards */}
+        <RestaurantOfferCards />
       </div>
     </div>
   );

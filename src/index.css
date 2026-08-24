@@ -4,6 +4,10 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 .poppins-thin {
   font-family: "Poppins", sans-serif;
   font-weight: 100;
