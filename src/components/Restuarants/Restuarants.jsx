@@ -1,5 +1,7 @@
+import { coldDrinks } from "../../data/offers";
 import Header from "../Home/header/Header";
 import Navbar from "../Home/navbar/Navbar";
+import ProductCard from "./ProductCard";
 import FilterCategories from "./FilterCategories";
 import RestaurantLandingPage from "./RestaurantLandingPage";
 import RestaurantOfferCards from "./RestaurantOfferCards";
@@ -29,38 +31,73 @@ function Restaurants() {
       </div>
       {/* burger cards */}
       <div className="order-6">
-        <div className="md:w-124 md:h-61.25  md:flex md:items-center border">
-          <div className="md:w-[50%] md:ml-5 md:space-y-5">
-            <h2 className="md:font-semibold md:text-[20px] md:leading-5.75 md:text-[#000000]">
-              Royal Cheese Burger with extra Fries
-            </h2>
-            <p className="md:font-normal md:text-[14px] md:leading-6.25">
-              1 McChicken™, 1 Big Mac™, 1 Royal Cheeseburger, 3 medium
-            </p>
-            <p className="md:font-bold md:text-[18px] md:leading-[100%]">
-              GBP 23.10
-            </p>
-          </div>
-          <div className="md:relative md:w-[50%]">
-            <img
-              className=" md:w-50.75 md:h-49.75 md:rounded-xl md:bg-cover md:object-cover"
-              src="../../src/assets/images/burger-1.png"
-              alt=""
-            />
-            <div
-              className="md:absolute md:bottom-0 md:right-8 md:w-22 md:h-20.25 md:rounded-tl-[45px] md:rounded-br-xl
-            md:bg-[#FFFFFF] md:flex md:items-center md:justify-center"
-            >
-              <button>
-                <img
-                  className="md:w-12.25 md:h-12.25"
-                  src="../../src/assets/images/plus.png"
-                  alt=""
+        <section className="md:w-full md:h-61.25 md:mt-10 mt-10 md:p-5 p-3">
+          <div>
+            <h1 className="md:font-bold font-bold md:text-[44px] text-[20px] md:leading-[100%] md:tracking-normal md:mb-10 mb-10">
+              Burgers
+            </h1>
+            {/* product card */}
+            <div className="md:grid md:grid-cols-3 gap-2 grid grid-cols-2">
+              {/* burger cards */}
+              {Array.from({ length: 6 }).map((_, index) => (
+                <ProductCard
+                  key={index}
+                  title="Royal Cheese Burger with extra Fries"
+                  details="1 McChicken™, 1 Big Mac™, 1 Royal Cheeseburger, 3 medium"
+                  price="GBP 23.10"
+                  image="../../src/assets/images/burger-1.png"
                 />
-              </button>
+              ))}
             </div>
           </div>
-        </div>
+          {/* fries cards */}
+          <div className="mt-10">
+            <h1 className="md:font-bold font-bold md:text-[44px] text-[20px] text-[#FC8A06] md:leading-[100%] md:tracking-normal md:mb-10 mb-10">
+              Fries
+            </h1>
+            {/* product card */}
+            <div className="md:grid md:grid-cols-3 gap-2 grid grid-cols-2">
+              {/* fries cards */}
+              {Array.from({ length: 3 }).map((_, index) => (
+                <ProductCard
+                  key={index}
+                  title="Royal Cheese Burger with extra Fries"
+                  details="1 McChicken™, 1 Big Mac™, 1 Royal Cheeseburger, 3 medium"
+                  price="GBP 23.10"
+                  image="../../src/assets/images/fries.png"
+                />
+              ))}
+              {Array.from({ length: 3 }).map((_, index) => (
+                <ProductCard
+                  key={index}
+                  title="Royal Cheese Burger with extra Fries"
+                  details="1 McChicken™, 1 Big Mac™, 1 Royal Cheeseburger, 3 medium"
+                  price="GBP 23.10"
+                  image="../../src/assets/images/fries-2.png"
+                />
+              ))}
+            </div>
+          </div>
+          {/* cold drinks */}
+          <div className="mt-10">
+            <h1 className="md:font-bold font-bold md:text-[44px] text-[20px] text-[#FC8A06] md:leading-[100%] md:tracking-normal md:mb-10 mb-10">
+              Cold Drinks
+            </h1>
+            {/* product card */}
+            <div className="md:grid md:grid-cols-3 gap-2 grid grid-cols-2">
+              {/* cold drinks cards */}
+              {coldDrinks.map((drink, index) => (
+                <ProductCard
+                  key={index}
+                  title={drink.title}
+                  details={drink.details}
+                  price={drink.price}
+                  image={drink.image}
+                />
+              ))}
+            </div>
+          </div>
+        </section>
       </div>
     </div>
   );

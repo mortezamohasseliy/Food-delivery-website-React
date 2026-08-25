@@ -39,3 +39,53 @@ export const restaurantOffers = [
     discount: "-100%",
   },
 ];
+
+// Cold Drinks (Restaurant Page):
+export const coldDrinks = [
+  {
+    title: "Royal Cheese Burger with extra Fries",
+    details: "1 McChicken™, 1 Big Mac™,  1 Royal Cheeseburger, 3 medium",
+    price: "GBP 23.10",
+    image: "../src/assets/images/drink-2.png",
+  },
+
+  {
+    title: "The classics for 3",
+    details:
+      "1 McChicken™, 1 Big Mac™,  1 Royal Cheeseburger, 3 medium sized French Fries , 3 cold drinks",
+    price: "GBP 23.10",
+    image: "../src/assets/images/drink-3.png",
+  },
+
+  {
+    title: "The classics for 3",
+    details:
+      "1 McChicken™, 1 Big Mac™,  1 Royal Cheeseburger, 3 medium sized French Fries , 3 cold drinks",
+    price: "GBP 23.10",
+    image: "../src/assets/images/drink-4.png",
+  },
+
+  {
+    title: "The classics for 3",
+    details:
+      "1 McChicken™, 1 Big Mac™,  1 Royal Cheeseburger, 3 medium sized French Fries , 3 cold drinks",
+    price: "GBP 23.10",
+    image: "../src/assets/images/drink-5.png",
+  },
+
+  {
+    title: "The classics for 3",
+    details:
+      "1 McChicken™, 1 Big Mac™,  1 Royal Cheeseburger, 3 medium sized French Fries , 3 cold drinks",
+    price: "GBP 23.10",
+    image: "../src/assets/images/drink-6.png",
+  },
+
+  {
+    title: "The classics for 3",
+    details:
+      "1 McChicken™, 1 Big Mac™,  1 Royal Cheeseburger, 3 medium sized French Fries , 3 cold drinks",
+    price: "GBP 23.10",
+    image: "../src/assets/images/drink-7.png",
+  },
+];
