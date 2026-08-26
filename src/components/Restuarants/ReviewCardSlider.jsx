@@ -4,7 +4,7 @@ import ReviewCard from "./ReviewCard";
 function ReviewCardSlider() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const totalCards = 6;
+  const totalCards = 5;
 
   function handleNext() {
     if (currentIndex < totalCards - 1) {
@@ -31,6 +31,7 @@ function ReviewCardSlider() {
         md:flex
         md:flex-col
         md:justify-center
+        md:relative
       "
     >
       {/* Header */}
@@ -38,7 +39,7 @@ function ReviewCardSlider() {
         <h1
           className="
             font-bold
-            text-[28px]
+            text-[20px]
 
             md:text-[44px]
             md:text-[#000000]
