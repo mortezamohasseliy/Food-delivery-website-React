@@ -5,6 +5,7 @@ import ProductCard from "./ProductCard";
 import FilterCategories from "./FilterCategories";
 import RestaurantLandingPage from "./RestaurantLandingPage";
 import RestaurantOfferCards from "./RestaurantOfferCards";
+import ReviewCardSlider from "./ReviewCardSlider";
 
 function Restaurants() {
   return (
@@ -168,7 +169,7 @@ function Restaurants() {
             </div>
 
             {/* Operational Times */}
-            <div className="bg-[#03081F] p-4 text-white md:p-0 md:flex md:flex-col md:items-center md:justify-center">
+            <div className="bg-[#03081F] p-4 text-white md:p-4">
               <h1 className="flex items-center gap-2 mb-5 text-[20px] font-bold md:mb-10 md:text-[32px]">
                 <span>
                   <img
@@ -199,6 +200,8 @@ function Restaurants() {
           </div>
         </section>
       </div>
+
+      {/* Restaurant Location */}
       <div className="order-8">
         <section
           className="
@@ -255,6 +258,12 @@ function Restaurants() {
             </p>
           </div>
         </section>
+      </div>
+
+      {/* Reviews */}
+      <div className="order-9">
+        {/* Review Card Slider */}
+        <ReviewCardSlider />
       </div>
     </div>
   );
