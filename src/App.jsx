@@ -10,12 +10,13 @@
 // import Stats from "./components/Home/stats/Stats";
 // import Landing from "./components/Home/landing/Landing";
 
+import Menu from "./components/Orders/Menu";
+import OrderPage from "./components/Orders/OrderPage";
 import Restaurants from "./components/Restuarants/Restuarants";
 
 function App() {
   return (
     <div className="lg:max-w-360 flex flex-col mx-auto">
-      <Restaurants />
       {/* Header */}
       {/* <div className="order-2 lg:order-1">
         <Header />
@@ -40,7 +41,7 @@ function App() {
       </div> */}
       {/* brands */}
       {/* <div className="order-6">
-        <Brands />
+        <Brands title=" Popular Restaurants" />
       </div> */}
       {/* download app */}
       {/* <div className="order-7">
@@ -62,6 +63,10 @@ function App() {
       {/* <div className="order-11">
         <Footer />
       </div> */}
+
+      {/* <Restaurants /> */}
+      {/* <OrderPage /> */}
+      <Menu />
     </div>
   );
 }

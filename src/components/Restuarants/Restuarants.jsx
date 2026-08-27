@@ -23,7 +23,11 @@ function Restaurants() {
       </div>
       {/* restaurant landing page */}
       <div className="order-3 lg:order-3">
-        <RestaurantLandingPage />
+        <RestaurantLandingPage
+          text={"I'm lovin' it!"}
+          title={"McDonald’s East London"}
+          cover={"../../src/assets/images/burger.png"}
+        />
       </div>
       {/* filter categories section */}
       <div className="order-4">
@@ -55,7 +59,7 @@ function Restaurants() {
 
       {/* Similar Restaurants */}
       <div className="order-10">
-        <Brands />
+        <Brands title="Similar Restaurants" />
       </div>
 
       {/* Footer */}

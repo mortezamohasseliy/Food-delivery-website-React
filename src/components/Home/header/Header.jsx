@@ -32,7 +32,7 @@ function Header() {
         <div className="flex h-20 w-full items-center justify-center gap-1">
           <img
             className="h-6.25 w-6.25"
-            src="../src/assets/images/map.png"
+            src="../src/assets/images/location.png"
             alt="Location"
           />
 
