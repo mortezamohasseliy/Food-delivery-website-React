@@ -1,4 +1,4 @@
-import { offers } from "../../../data/offers";
+import { offers } from "../../../data/data";
 import OfferCard from "./OfferCard";
 
 function DiscountOffer() {

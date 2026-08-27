@@ -89,3 +89,27 @@ export const coldDrinks = [
     image: "../src/assets/images/drink-7.png",
   },
 ];
+
+// order cards in order page categories for pizzas:
+
+export const pizzaSizes = [
+  {
+    size: "Small",
+    price: "£21.90",
+  },
+
+  {
+    size: "Medium",
+    price: "£25.90",
+  },
+
+  {
+    size: "Large",
+    price: "£27.90",
+  },
+
+  {
+    size: "XL Large with Sauces",
+    price: "£32.90",
+  },
+];
