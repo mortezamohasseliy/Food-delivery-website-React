@@ -1,157 +1,417 @@
+const basketItems = [
+  {
+    id: 1,
+    quantity: 1,
+    price: "£27.90",
+    name: "12” Vegetarian Pizza",
+    description: (
+      <>
+        No Mushrooms + green <br />
+        peppers
+      </>
+    ),
+    trash: "../src/assets/images/trash-2.png",
+  },
+  {
+    id: 2,
+    quantity: 1,
+    price: "£17.90",
+    name: "17” Tandoori Pizza",
+    description: (
+      <>
+        No Mushrooms + green <br />
+        peppers
+      </>
+    ),
+    trash: "../src/assets/images/trash-1.png",
+  },
+  {
+    id: 3,
+    quantity: 2,
+    price: "£4.90",
+    name: "Coke Coca Cola",
+    description: null,
+    trash: "../src/assets/images/trash-3.png",
+  },
+  {
+    id: 4,
+    quantity: 1,
+    price: "£27.90",
+    name: "12” Vegetarian Pizza",
+    description: (
+      <>
+        No Mushrooms + green <br />
+        peppers
+      </>
+    ),
+    trash: "../src/assets/images/trash-4.png",
+  },
+];
+
 function Basket() {
   return (
     <section
-      className="md:w-91.75 md:h-340.75 md:rounded-tl-lg md:rounded-tr-lg md:mx-auto
-    md:bg-[#F9F9F9]"
+      className="
+        md:w-91.75 md:h-auto md:rounded-tl-lg md:rounded-tr-lg md:mx-auto
+        md:bg-[#F9F9F9]
+
+        w-full
+        bg-[#F9F9F9]
+        rounded-t-lg
+        overflow-hidden
+      "
     >
-      {/* Cart Header */}
+      {/*  HEADER  */}
       <div
-        className="md:h-29.25 md:bg-[#028643] md:text-[#FFFFFF] md:flex md:justify-evenly md:items-center
-      md:rounded-tl-lg md:rounded-tr-lg"
+        className="
+          md:h-29.25 md:bg-[#028643] md:text-white
+          md:flex md:justify-evenly md:items-center
+          md:rounded-tl-lg md:rounded-tr-lg
+
+          h-20
+          bg-[#028643]
+          text-white
+          flex items-center justify-center gap-4
+        "
       >
         <img
-          className="md:w-14.5 md:h-14.5"
+          className="md:w-14.5 md:h-14.5 w-10 h-10"
           src="../src/assets/images/pucket.png"
           alt=""
         />
-        <h2 className="md:font-semibold md:text-[32px]">My Basket</h2>
+
+        <h2 className="font-semibold md:text-[32px] text-[24px]">My Basket</h2>
       </div>
 
-      {/* Cart Items in Box */}
-
-      <div>
-        {/* item 1 */}
-        <div className="md:h-30.25 md:border md:flex md:items-center md:justify-around md:mt-6">
-          <p
-            className="md:w-11.25 md:h-11.25 md:bg-[#FC8A06] md:rounded-full md:flex md:items-center md:justify-center
-        md:font-bold md:text-[24px] md:text-[#FFFFFF]"
+      {/* ITEMS  */}
+      <div className="px-3 md:px-0">
+        {basketItems.map((item) => (
+          <div
+            key={item.id}
+            className="
+              md:h-30.25 md:flex md:items-center
+              md:justify-around md:mt-6
+              min-h-27
+              border
+              rounded-lg
+              flex items-center
+              justify-between
+              gap-3
+              px-3
+              mt-3
+            "
           >
-            1x
-          </p>
-          <div className="md:space-y-2">
-            <p className="md:font-semibold md:text-[20px] md:leading-6.25 md:text-[#028643]">
-              £27.90
-            </p>
-            <h3 className="md:font-semibold md:text-[16px] md:text-[#03081F]">
-              12” Vegitarian Pizza
-            </h3>
-            <p className="md:font-normal md:text-[15px] md:leading-4.5">
-              No Mushrooms + green <br />
-              peppers
-            </p>
-          </div>
-          <p>
-            <img
-              className="md:w-8.75 md:h-8.75 md:accent-amber-300"
-              src="../src/assets/images/trash-2.png"
-              alt=""
-            />
-          </p>
-        </div>
+            {/* Quantity */}
+            <p
+              className="
+                md:w-11.25 md:h-11.25
+                md:bg-[#FC8A06]
+                md:rounded-full
+                md:flex md:items-center md:justify-center
+                md:font-bold md:text-[24px]
+                md:text-white
 
-        {/* item 2 */}
-        <div className="md:h-30.25 md:border md:flex md:items-center md:justify-around md:mt-6">
-          <p
-            className="md:w-11.25 md:h-11.25 md:bg-[#FC8A06] md:rounded-full md:flex md:items-center md:justify-center
-        md:font-bold md:text-[24px] md:text-[#FFFFFF]"
-          >
-            1x
-          </p>
-          <div className="md:space-y-2">
-            <p className="md:font-semibold md:text-[20px] md:leading-6.25 md:text-[#028643]">
-              £17.90
+                w-10 h-10
+                shrink-0
+                bg-[#FC8A06]
+                rounded-full
+                flex items-center justify-center
+                font-bold text-[18px] text-white
+              "
+            >
+              {item.quantity}x
             </p>
-            <h3 className="md:font-semibold md:text-[16px] md:text-[#03081F]">
-              17” Tandoori Pizza
-            </h3>
-            <p className="md:font-normal md:text-[15px] md:leading-4.5">
-              No Mushrooms + green <br />
-              peppers
-            </p>
-          </div>
-          <p>
-            <img
-              className="md:w-8.75 md:h-8.75 md:accent-amber-300"
-              src="../src/assets/images/trash-1.png"
-              alt=""
-            />
-          </p>
-        </div>
 
-        {/* item 3 */}
-        <div className="md:h-30.25 md:border md:flex md:items-center md:justify-around md:mt-6">
-          <p
-            className="md:w-11.25 md:h-11.25 md:bg-[#FC8A06] md:rounded-full md:flex md:items-center md:justify-center
-        md:font-bold md:text-[24px] md:text-[#FFFFFF]"
-          >
-            2x
-          </p>
-          <div className="md:space-y-2">
-            <p className="md:font-semibold md:text-[20px] md:leading-6.25 md:text-[#028643]">
-              £4.90
-            </p>
-            <h3 className="md:font-semibold md:text-[16px] md:text-[#03081F]">
-              Coke Coca Cola
-            </h3>
-          </div>
-          <p>
-            <img
-              className="md:w-8.75 md:h-8.75 md:accent-amber-300"
-              src="../src/assets/images/trash-3.png"
-              alt=""
-            />
-          </p>
-        </div>
+            {/* Information */}
+            <div className="flex-1 md:space-y-2 space-y-1">
+              <p
+                className="
+                  md:font-semibold md:text-[20px]
+                  md:leading-6.25 md:text-[#028643]
 
-        {/* item 1 */}
-        <div className="md:h-30.25 md:border md:flex md:items-center md:justify-around md:mt-6">
-          <p
-            className="md:w-11.25 md:h-11.25 md:bg-[#FC8A06] md:rounded-full md:flex md:items-center md:justify-center
-        md:font-bold md:text-[24px] md:text-[#FFFFFF]"
-          >
-            1x
-          </p>
-          <div className="md:space-y-2">
-            <p className="md:font-semibold md:text-[20px] md:leading-6.25 md:text-[#028643]">
-              £27.90
-            </p>
-            <h3 className="md:font-semibold md:text-[16px] md:text-[#03081F]">
-              12” Vegitarian Pizza
-            </h3>
-            <p className="md:font-normal md:text-[15px] md:leading-4.5">
-              No Mushrooms + green <br />
-              peppers
-            </p>
-          </div>
-          <p>
+                  font-semibold
+                  text-[17px]
+                  text-[#028643]
+                "
+              >
+                {item.price}
+              </p>
+
+              <h3
+                className="
+                  md:font-semibold md:text-[16px]
+                  md:text-[#03081F]
+
+                  font-semibold
+                  text-[14px]
+                  text-[#03081F]
+                "
+              >
+                {item.name}
+              </h3>
+
+              {item.description && (
+                <p
+                  className="
+                    md:font-normal md:text-[15px]
+                    md:leading-4.5
+
+                    font-normal
+                    text-[12px]
+                    leading-4
+                  "
+                >
+                  {item.description}
+                </p>
+              )}
+            </div>
+
+            {/* Delete */}
             <img
-              className="md:w-8.75 md:h-8.75 md:accent-amber-300"
-              src="../src/assets/images/trash-4.png"
-              alt=""
+              className="
+                md:w-8.75 md:h-8.75
+                w-7 h-7
+                shrink-0
+              "
+              src={item.trash}
+              alt="Remove item"
             />
-          </p>
-        </div>
+          </div>
+        ))}
       </div>
-      {/* amounts */}
-      <div className="md:grid md:grid-cols-2 md:place-items-center md:h-47.5 md:border-b md:border-b-gray-200 md:mt-5">
-        <p className="md:font-semibold md:text-[20px]">Sub Total: </p>
-        <p className="md:font-normal md:text-[24px] md:leading-6.25">£127.90</p>
-        <p className="md:font-semibold md:text-[20px]">Discounts:</p>
-        <p className="md:font-normal md:text-[24px] md:leading-6.25">-3.00</p>
-        <p className="md:font-semibold md:text-[20px]">Delivery Fee:</p>
-        <p className="md:font-normal md:text-[24px] md:leading-6.25">2.50</p>
-      </div>
-      {/* total amount */}
+
+      {/* AMOUNTS  */}
       <div
-        className="md:w-85.5 md:h-17.5 md:bg-[#FC8A06CC] md:mt-8.5 md:mx-auto md:rounded-lg
-      md:flex md:items-center md:justify-center md:gap-10 md:text-[#FFFFFF]"
+        className="
+          md:grid md:grid-cols-2 md:place-items-center
+          md:h-47.5 md:border-b md:border-b-gray-200
+          md:mt-5
+
+          grid grid-cols-2
+          items-center
+          gap-y-3
+          px-5 py-5
+          mt-4
+          border-b
+          border-gray-200
+        "
       >
-        <p className="md:font-semibold md:text-[20px]">Total to pay</p>
-        <p className="md:font-semibold md:text-[36px]">£127.90</p>
+        <p className="font-semibold md:text-[20px] text-[15px]">Sub Total:</p>
+
+        <p className="text-right md:text-[24px] text-[18px]">£127.90</p>
+
+        <p className="font-semibold md:text-[20px] text-[15px]">Discounts:</p>
+
+        <p className="text-right md:text-[24px] text-[18px]">-3.00</p>
+
+        <p className="font-semibold md:text-[20px] text-[15px]">
+          Delivery Fee:
+        </p>
+
+        <p className="text-right md:text-[24px] text-[18px]">2.50</p>
       </div>
 
-      {/* copon code & free items */}
+      {/*  TOTAL  */}
+      <div
+        className="
+          md:w-85.5 md:h-17.5
+          md:bg-[#FC8A06CC]
+          md:mt-5 md:mx-auto
+          md:rounded-lg
+          md:flex md:items-center
+          md:justify-center md:gap-10
+          md:text-white
+
+          w-[92%]
+          min-h-15
+          bg-[#FC8A06CC]
+          mt-4 mx-auto
+          rounded-lg
+          flex items-center justify-center
+          gap-5
+          text-white
+        "
+      >
+        <p className="font-semibold md:text-[20px] text-[16px]">Total to pay</p>
+
+        <p className="font-semibold md:text-[36px] text-[25px]">£127.90</p>
+      </div>
+
+      {/*  COUPON  */}
+      <div
+        className="
+          md:flex md:flex-col
+          md:items-center md:justify-center
+          md:gap-5 md:mt-2
+
+          flex flex-col
+          items-center
+          gap-3
+          mt-4
+          px-3
+        "
+      >
+        {/* Free Item */}
+        <div className="relative w-full md:w-86">
+          <img
+            className="
+              absolute right-5 top-1/2
+              h-5 w-5 md:h-6.5 md:w-6.5
+              -translate-y-1/2
+            "
+            src="../../src/assets/images/arrow-bottom.png"
+            alt=""
+          />
+
+          <input
+            className="
+              h-13 md:h-15.75
+              w-full
+              rounded-[120px]
+              border border-[#CFCFCF]
+              pl-5 pr-14
+              outline-none
+              placeholder:text-[14px]
+              placeholder:font-semibold
+              md:placeholder:text-[18px]
+            "
+            type="text"
+            placeholder="Choose your free item.."
+          />
+        </div>
+
+        {/* Coupon Code */}
+        <div className="relative w-full md:w-86">
+          <img
+            className="
+              absolute right-5 top-1/2
+              h-5 w-5 md:h-6.5 md:w-6.5
+              -translate-y-1/2
+            "
+            src="../../src/assets/images/arrow-right-2.png"
+            alt=""
+          />
+
+          <input
+            className="
+              h-13 md:h-15.75
+              w-full
+              rounded-[120px]
+              border border-[#CFCFCF]
+              pl-5 pr-14
+              outline-none
+              placeholder:text-[14px]
+              placeholder:font-semibold
+              md:placeholder:text-[18px]
+            "
+            type="text"
+            placeholder="Apply Coupon Code here"
+          />
+        </div>
+
+        <p className="w-full border border-[#CFCFCF]" />
+      </div>
+
+      {/*  DELIVERY / COLLECTION  */}
+      <div
+        className="
+          md:flex md:items-center
+          md:justify-around md:mt-2
+
+          flex items-center
+          justify-center
+          gap-3
+          mt-4
+          px-3
+        "
+      >
+        {/* Delivery */}
+        <div
+          className="
+            md:w-39.5 md:h-28.75
+
+            w-1/2 h-27
+            bg-[#EEEEEE]
+            rounded-xl
+            flex flex-col
+            items-center
+            justify-center
+            gap-1
+          "
+        >
+          <img
+            className="w-8.75 h-8.75"
+            src="../../src/assets/images/scooter.png"
+            alt=""
+          />
+
+          <h3 className="font-semibold text-[14px] md:text-[16px]">Delivery</h3>
+
+          <p className="font-normal text-[12px] md:text-[15px]">
+            Starts at 17:50
+          </p>
+        </div>
+
+        {/* Collection */}
+        <div
+          className="
+            md:w-39.5 md:h-28.75
+
+            w-1/2 h-27
+            bg-[#EEEEEE]
+            rounded-xl
+            flex flex-col
+            items-center
+            justify-center
+            gap-1
+          "
+        >
+          <img
+            className="w-8.75 h-8.75"
+            src="../../src/assets/images/collection.png"
+            alt=""
+          />
+
+          <h3 className="font-semibold text-[14px] md:text-[16px]">
+            Collection
+          </h3>
+
+          <p className="font-normal text-[12px] md:text-[15px]">
+            Starts at 16:50
+          </p>
+        </div>
+      </div>
+
+      {/*  CHECKOUT  */}
+      <div className="relative w-[92%] md:w-86 mx-auto mt-4 mb-4">
+        <img
+          className="
+            absolute left-5 top-1/2
+            h-7 w-7
+            md:h-8.75 md:w-8.75
+            -translate-y-1/2
+          "
+          src="../../src/assets/images/arrow.png"
+          alt=""
+        />
+
+        <button
+          className="
+            h-15 md:h-17.5
+            w-full
+            rounded-lg
+            bg-[#028643]
+            font-semibold
+            text-[20px]
+            md:text-[24px]
+            text-white
+          "
+        >
+          Checkout!
+        </button>
+      </div>
     </section>
   );
 }
+
 export default Basket;

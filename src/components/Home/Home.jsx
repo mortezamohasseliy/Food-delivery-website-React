@@ -13,16 +13,17 @@ import Footer from "./footer/Footer";
 function Home() {
   return (
     <>
-      {/* Header */}
-      <div className="order-2 lg:order-1">
-        <Header />
-      </div>
+      <div className="flex flex-col">
+        {/* Navbar */}
+        <div className="order-1 lg:order-2">
+          <Navbar />
+        </div>
 
-      {/* Navbar */}
-      <div className="order-1 lg:order-2">
-        <Navbar />
+        {/* Header */}
+        <div className="order-2 lg:order-1">
+          <Header />
+        </div>
       </div>
-
       {/* landing page */}
       <div className="order-3 lg:order-3">
         <Landing />

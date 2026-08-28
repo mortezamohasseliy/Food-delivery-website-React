@@ -16,39 +16,146 @@ const items = [
 
 function Menu() {
   const [active, setActive] = useState("Pizzas");
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <section
-      className="md:w-91.75 md:h-269.5 md:bg-[#FBFBFB]  md:rounded-xl
-      md:shadow-lg md:gap-3"
+      className="
+        md:w-91.75 md:h-269.5 md:bg-[#FBFBFB]
+        md:rounded-xl md:shadow-lg md:gap-3
+
+        w-full
+        bg-[#FBFBFB]
+        rounded-xl
+        shadow-lg mt-5
+      "
     >
-      {/* menu Header */}
-      <div className="md:flex md:items-center md:justify-start md:gap-5 md:p-5">
-        <p>
+      {/*  HEADER  */}
+      <div
+        className="
+          md:flex md:items-center md:justify-start
+          md:gap-5 md:p-5
+
+          flex
+          items-center
+          justify-between
+          px-4
+          py-4
+        "
+      >
+        {/* Logo + Menu */}
+        <div className="flex items-center gap-3">
           <img
-            className="md:w-13.75 md:h-13.75"
+            className="
+              w-9 h-9
+
+              md:w-13.75
+              md:h-13.75
+            "
             src="../../src/assets/images/res-logo.png"
             alt=""
           />
-        </p>
-        <h1 className="md:font-semibold md:text-[32px] md:text-[#000000]">
-          Menu
-        </h1>
+
+          <h1
+            className="
+              font-semibold
+              text-[22px]
+
+              md:text-[32px]
+              md:text-[#000000]
+            "
+          >
+            Menu
+          </h1>
+        </div>
+
+        {/* Mobile Arrow */}
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="
+            md:hidden
+            w-9
+            h-9
+            flex
+            items-center
+            justify-center
+            text-[24px]
+            font-bold
+          "
+        >
+          <span
+            className={`
+              transition-transform
+              duration-300
+              ${isOpen ? "rotate-180" : ""}
+            `}
+          >
+            <img
+              className="h-6.5 w-6.5 "
+              src="../../src/assets/images/arrow-bottom-2.png"
+              alt=""
+            />
+          </span>
+        </button>
       </div>
-      {/* Menu Lists */}
-      <div className="">
-        <ul className="">
+
+      {/*  MENU LIST */}
+      <div
+        className={`
+          md:mt-3
+          md:block
+
+          overflow-hidden
+          transition-all
+          duration-300
+
+          ${isOpen ? "max-h-200" : "max-h-0"}
+
+          md:max-h-none
+        `}
+      >
+        <ul className="md:space-y-5">
           {items.map((item, index) => (
-            <li
+            <button
               key={index}
-              className={`md:w-full md:h-16.75 md:text-[22px] md:leading-20.75 md:pl-2 md:font-bold
-          md:flex md:items-center md:justify-start ${active === item ? "md:bg-[#03081F] md:text-[#FFFFFF]" : ""}`}
+              onClick={() => {
+                setActive(item);
+                setIsOpen(false);
+              }}
+              className={`
+                md:w-full
+                md:h-16.75
+                md:text-[22px]
+                md:leading-20.75
+                md:pl-2
+                md:font-bold
+                md:flex
+                md:items-center
+                md:justify-start
+
+                w-full
+                h-12
+                px-5
+                text-left
+                font-semibold
+                text-[16px]
+                flex
+                items-center
+
+                ${
+                  active === item
+                    ? "md:bg-[#03081F] md:text-white bg-[#03081F] text-white"
+                    : "text-[#03081F]"
+                }
+              `}
             >
-              <button onClick={() => setActive(item)}>{item}</button>
-            </li>
+              <li>{item}</li>
+            </button>
           ))}
         </ul>
       </div>
     </section>
   );
 }
+
 export default Menu;
