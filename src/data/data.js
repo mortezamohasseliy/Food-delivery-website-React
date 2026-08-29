@@ -113,3 +113,17 @@ export const pizzaSizes = [
     price: "£32.90",
   },
 ];
+
+// Customize Pizzas checkboxes:
+
+export const boxes = [
+  "Cheese",
+  "Green peppers",
+  "Tomato",
+  "Mushrooms",
+  "Sweetcors",
+  "Jalapeneos",
+  "Olives",
+  "Pineapples",
+  "Onions",
+];
