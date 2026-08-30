@@ -2,8 +2,9 @@ import { Route, Routes } from "react-router";
 import Home from "./components/Home/Home";
 import OrderPage from "./components/Orders/OrderPage";
 import Restaurants from "./components/Restuarants/Restuarants";
-import MealDeals from "./components/Orders/MealDeals";
+import SpecialRequest from "./components/Orders/SpecialRequest";
 import CustomizePizza from "./components/Orders/CustomizePizza";
+import MealDeals from "./components/Orders/MealDeals";
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
     //   <Route path="/order" element={<OrderPage />} />
     // </Routes>
 
-    <CustomizePizza />
+    <MealDeals />
   );
 }
 

@@ -1,82 +1,671 @@
 import { boxes } from "../../data/data";
 
-function CustomizePizza() {
+const meatBoxes = [
+  "Chicken",
+  "Beef",
+  "Salami",
+  "Pepperoni",
+  "Chicken Tikka",
+  "Fish",
+];
+
+const seafoodBoxes = ["Tuna", "Anchovies", "Prawns"];
+
+// TOPPING BOX
+
+function ToppingBox({ title, icon, items }) {
   return (
-    <section
-      className="h-auto border md:pl-50.25 md:pr-50.25
-    md:pt-75 md:pb-75"
+    <div
+      className="
+        relative
+        w-full
+        border
+        border-gray-300
+        rounded-xl
+
+        mt-14
+        px-5
+        pt-10
+        pb-7
+
+        md:mt-9
+        md:px-3
+        md:pt-10
+        md:pb-5
+      "
     >
-      <div className="md:relative">
-        {/* Header  */}
-        <img
-          className="w-full h-70 object-cover"
-          src="../src/assets/images/pizza-5.png"
-          alt=""
-        />
-        {/* close pop-up */}
-        <button
-          className="absolute md:w-29 md:h-29 md:rounded-full md:-top-13 md:-right-10
-      md:bg-[#FC8A06] flex items-center justify-center"
+      {/*  TOPPING HEADER  */}
+
+      <div
+        className="
+          absolute
+          -top-5
+          left-0
+          z-20
+          flex
+          items-center
+
+          md:-top-5
+          md:left-10
+        "
+      >
+        {/* ICON */}
+
+        <div
+          className="
+            relative
+            z-20
+            w-12
+            h-12
+            shrink-0
+            rounded-full
+            bg-[#FC8A06]
+
+            flex
+            items-center
+            justify-center
+
+            md:w-9
+            md:h-9
+          "
         >
-          <img src="../src/assets/images/close.png" alt="" />
-        </button>
-        <div className="flex items-center gap-1 pl-20 mt-6">
-          <h4 className="md:font-bold md:text-[24px] md:leading-14.5 md:text-[#03081F]">
-            Special Offers
-          </h4>
           <img
-            className="w-7.5 h-7.5"
-            src="../src/assets/images/Forward.png"
+            src={icon}
             alt=""
+            className="
+              w-7
+              h-7
+              object-contain
+
+              md:w-5
+              md:h-5
+            "
           />
-          <h4 className="md:font-bold md:text-[24px] md:leading-14.5 md:text-[#03081F]">
-            Meal Deal 1
-          </h4>
-          <img
-            className="w-7.5 h-7.5"
-            src="../src/assets/images/Forward.png"
-            alt=""
-          />
-          <h4 className="md:font-bold md:text-[24px] md:leading-14.5 md:text-[#03081F]">
-            Customise Pizza 1
-          </h4>
         </div>
-        <div className="md:flex md:items-center md:justify-between">
-          <p className="font-normal text-[32px] leading-10 md:pl-30 md:mt-5 md:mb-13">
-            Customise your chicken Pizza
-          </p>
-          <p className="font-bold md:text-[24px] md:leading-14.5">
-            4/4 Selected
-          </p>
-        </div>
-        <div className="flex items-center gap-5">
-          <img
-            className="md:w-28.25 md:h-28.25 rounded-full bg-cover"
-            src="../src/assets/images/Polo.png"
-            alt=""
-          />
-          <p className="w-0.5 h-20 bg-gray-400"></p>
-          <p className="font-bold md:text-[44px] md:leading-10 text-[#FC8A06]">
-            Please select up to 4 options free!
+
+        {/* BLACK HEADER */}
+
+        <div
+          className="
+            relative
+            -ml-3
+            h-10
+            bg-[#03081F]
+            rounded-r-md
+
+            flex
+            items-center
+
+            pl-9
+            pr-6
+
+            md:h-8
+            md:pl-7
+            md:pr-5
+          "
+        >
+          <p
+            className="
+              font-bold
+              text-[14px]
+              text-white
+              whitespace-nowrap
+
+              md:text-[12px]
+            "
+          >
+            {title}
           </p>
         </div>
       </div>
-      {/* Vegitable Toppings checkboxes */}
-      <div className="md:h-95.25 md:rounded-xl shadow-sm md:mt-5 p-3">
-        <div className="md:grid md:grid-cols-3 md:place-items-center space-y-10">
-          {/* Cheese */}
-          {boxes.map((box, index) => (
-            <div className="flex items-center justify-center" key={index}>
-              <input
-                className="md:w-11.25 md:h-11.25 rounded-xl accent-[#028643]"
-                type="checkbox"
-              />
-              <label className="font-bold md:text-[32px]">{box}</label>
-            </div>
-          ))}
-        </div>
+
+      {/*  OPTIONS  */}
+
+      <div
+        className="
+          grid
+          grid-cols-2
+          gap-y-6
+          gap-x-4
+
+          md:grid-cols-3
+          md:gap-y-5
+          md:gap-x-0
+        "
+      >
+        {items.map((item, index) => (
+          <label
+            key={index}
+            className="
+              flex
+              items-center
+              gap-3
+              cursor-pointer
+              min-w-0
+
+              md:w-45
+              md:justify-start
+            "
+          >
+            <input
+              type="checkbox"
+              className="
+                w-5
+                h-5
+                shrink-0
+                accent-[#028643]
+              "
+            />
+
+            <span
+              className="
+                font-bold
+                text-[13px]
+                leading-5
+                whitespace-nowrap
+
+                md:text-[18px]
+              "
+            >
+              {item}
+            </span>
+          </label>
+        ))}
       </div>
-    </section>
+    </div>
   );
 }
+
+// CUSTOMIZE PIZZA MODAL
+
+function CustomizePizza() {
+  return (
+    <div
+      className="
+        fixed
+        inset-0
+        z-[9999]
+
+        bg-black/60
+
+        flex
+        items-center
+        justify-center
+
+        p-0
+
+        md:p-6
+      "
+    >
+      {/* MODAL                                             */}
+
+      <div
+        className="
+          relative
+
+          w-full
+          h-full
+
+          bg-white
+
+          overflow-hidden
+
+          md:w-[1100px]
+          md:max-w-[95vw]
+          md:h-[95vh]
+
+          md:rounded-2xl
+          md:shadow-2xl
+        "
+      >
+        {/* CLOSE BUTTON                                       */}
+
+        <button
+          type="button"
+          className="
+            absolute
+            top-3
+            right-3
+
+            z-[100]
+
+            w-10
+            h-10
+
+            rounded-full
+            bg-[#FC8A06]
+
+            flex
+            items-center
+            justify-center
+
+            cursor-pointer
+
+            md:w-12
+            md:h-12
+            md:top-5
+            md:right-5
+          "
+        >
+          <img
+            className="
+              w-5
+              h-5
+              object-contain
+            "
+            src="../src/assets/images/close.png"
+            alt="Close"
+          />
+        </button>
+
+        {/* SCROLLABLE MODAL CONTENT                           */}
+
+        <div
+          className="
+            w-full
+            h-full
+
+            overflow-y-auto
+            overflow-x-hidden
+          "
+        >
+          {/* CONTENT                                           */}
+
+          <section
+            className="
+              w-full
+              h-auto
+
+              px-4
+              pt-5
+              pb-8
+
+              md:px-12
+              md:pt-10
+              md:pb-10
+            "
+          >
+            {/* PIZZA IMAGE                                       */}
+
+            <div className="relative">
+              <img
+                className="
+                  w-full
+                  h-40
+
+                  object-cover
+                  rounded-xl
+
+                  md:h-70
+                  md:rounded-xl
+                "
+                src="../src/assets/images/pizza-5.png"
+                alt="Pizza"
+              />
+            </div>
+
+            {/* BREADCRUMB                                         */}
+
+            <div
+              className="
+                flex
+                items-center
+                gap-1
+
+                mt-4
+
+                whitespace-nowrap
+
+                md:pl-5
+                md:mt-6
+              "
+            >
+              <h4
+                className="
+                  font-bold
+                  text-[13px]
+                  text-[#03081F]
+
+                  md:text-[20px]
+                "
+              >
+                Special Offers
+              </h4>
+
+              <img
+                className="
+                  w-5
+                  h-5
+
+                  md:w-6
+                  md:h-6
+                "
+                src="../src/assets/images/Forward.png"
+                alt=""
+              />
+
+              <h4
+                className="
+                  hidden
+
+                  md:block
+                  md:font-bold
+                  md:text-[20px]
+                  md:text-[#03081F]
+                "
+              >
+                Meal Deal 1
+              </h4>
+
+              <img
+                className="
+                  hidden
+
+                  md:block
+                  md:w-6
+                  md:h-6
+                "
+                src="../src/assets/images/Forward.png"
+                alt=""
+              />
+
+              <h4
+                className="
+                  hidden
+
+                  md:block
+                  md:font-bold
+                  md:text-[20px]
+                  md:text-[#03081F]
+                "
+              >
+                Customise Pizza 1
+              </h4>
+            </div>
+
+            {/* TITLE                                               */}
+
+            <div
+              className="
+                mt-4
+
+                md:flex
+                md:items-center
+                md:justify-between
+              "
+            >
+              {/* MOBILE TITLE */}
+
+              <p
+                className="
+                  font-normal
+                  text-[24px]
+                  leading-8
+
+                  md:hidden
+                "
+              >
+                Customise Pizza
+              </p>
+
+              {/* DESKTOP TITLE */}
+
+              <p
+                className="
+                  hidden
+
+                  md:block
+                  md:font-normal
+                  md:text-[32px]
+                  md:leading-10
+                  md:pl-5
+                  md:mt-5
+                  md:mb-10
+                "
+              >
+                Customise your chicken Pizza
+              </p>
+
+              {/* SELECTED */}
+
+              <p
+                className="
+                  hidden
+
+                  md:block
+                  md:font-bold
+                  md:text-[20px]
+                "
+              >
+                4/4 Selected
+              </p>
+            </div>
+
+            {/* PIZZA + MESSAGE */}
+
+            <div
+              className="
+                flex
+                items-center
+                gap-4
+
+                mt-3
+
+                md:gap-5
+              "
+            >
+              <img
+                className="
+                  w-16
+                  h-16
+
+                  rounded-full
+                  object-cover
+                  shrink-0
+
+                  md:w-24
+                  md:h-24
+                "
+                src="../src/assets/images/Polo.png"
+                alt=""
+              />
+
+              {/* VERTICAL LINE */}
+
+              <div
+                className="
+                  w-0.5
+                  h-14
+
+                  bg-gray-300
+                  shrink-0
+
+                  md:h-20
+                "
+              />
+
+              {/* MESSAGE */}
+
+              <p
+                className="
+                  font-bold
+                  text-[16px]
+                  leading-5
+                  text-[#FC8A06]
+
+                  md:text-[32px]
+                  md:leading-10
+                "
+              >
+                Please select up to 4 options free!
+              </p>
+            </div>
+
+            {/* VEGETABLE TOPPINGS                                 */}
+
+            <ToppingBox
+              title="Vegitable Toppings"
+              icon="../src/assets/images/carrot.png"
+              items={boxes}
+            />
+
+            {/* MEAT TOPPINGS                                      */}
+
+            <ToppingBox
+              title="Meat Toppings"
+              icon="../src/assets/images/meat.png"
+              items={meatBoxes}
+            />
+
+            {/* SEAFOOD TOPPINGS                                   */}
+
+            <ToppingBox
+              title="Seafood Toppings"
+              icon="../src/assets/images/fish.png"
+              items={seafoodBoxes}
+            />
+
+            {/* FOOTER                                             */}
+
+            <div className="mt-5">
+              {/*  TOTAL  */}
+
+              <div
+                className="
+                  w-full
+                  h-12
+
+                  px-4
+                  rounded-md
+
+                  bg-[#FFA638]
+
+                  flex
+                  items-center
+                  justify-between
+
+                  text-white
+
+                  md:w-85.5
+                  md:h-12
+                "
+              >
+                <span
+                  className="
+                    font-bold
+                    text-[14px]
+                    whitespace-nowrap
+                  "
+                >
+                  Total to pay
+                </span>
+
+                <span
+                  className="
+                    font-bold
+                    text-[20px]
+                    whitespace-nowrap
+                  "
+                >
+                  £127.90
+                </span>
+              </div>
+
+              {/*  DELIVERY  */}
+
+              <p
+                className="
+                  text-center
+                  text-[11px]
+                  leading-4
+
+                  mt-3
+
+                  md:text-right
+                  md:text-[15px]
+                  md:mt-2
+                "
+              >
+                Delivery & Tax will be calculated in the next step
+              </p>
+
+              {/*  BUTTONS  */}
+
+              <div
+                className="
+                  flex
+                  items-center
+                  justify-between
+
+                  mt-4
+                "
+              >
+                {/* BACK */}
+
+                <button
+                  type="button"
+                  className="
+                    font-bold
+                    text-[13px]
+                    underline
+
+                    md:text-[16px]
+                  "
+                >
+                  Take me back
+                </button>
+
+                {/* NEXT */}
+
+                <button
+                  type="button"
+                  className="
+                    h-11
+                    px-6
+
+                    rounded-md
+
+                    bg-[#008C45]
+                    text-white
+
+                    font-bold
+                    text-[14px]
+
+                    flex
+                    items-center
+                    justify-center
+                    gap-3
+
+                    md:h-12
+                    md:px-8
+                  "
+                >
+                  <span
+                    className="
+                      w-6
+                      h-6
+
+                      rounded-full
+
+                      bg-white
+                      text-[#008C45]
+
+                      flex
+                      items-center
+                      justify-center
+                    "
+                  >
+                    →
+                  </span>
+                  Next Step
+                </button>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default CustomizePizza;
