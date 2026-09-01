@@ -5,6 +5,7 @@ import Restaurants from "./components/Restuarants/Restuarants";
 import SpecialRequest from "./components/Orders/SpecialRequest";
 import CustomizePizza from "./components/Orders/CustomizePizza";
 import MealDeals from "./components/Orders/MealDeals";
+import DeliveryPopUp from "./components/Orders/DeliveryPopUp";
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
     //   <Route path="/order" element={<OrderPage />} />
     // </Routes>
 
-    <MealDeals />
+    <DeliveryPopUp />
   );
 }
 
