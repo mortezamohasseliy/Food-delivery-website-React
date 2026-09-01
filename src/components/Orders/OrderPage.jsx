@@ -10,7 +10,7 @@ import Basket from "./Basket";
 import Menu from "./Menu";
 import OrderCard from "./OrderCard";
 
-function OrderPage() {
+function OrderPage({ cart, setCart }) {
   return (
     <section className="w-full flex flex-col mx-auto">
       {/* header */}
@@ -88,9 +88,18 @@ function OrderPage() {
                 </select>
               </div>
             </div>
-            <OrderCard image="../../src/assets/images/pizza-1.png" />
-            <OrderCard image="../../src/assets/images/pizza-2.png" />
-            <OrderCard image="../../src/assets/images/pizza-3.png" />
+            <OrderCard
+              image="../../src/assets/images/pizza-1.png"
+              setCart={setCart}
+            />
+            <OrderCard
+              image="../../src/assets/images/pizza-2.png"
+              setCart={setCart}
+            />
+            <OrderCard
+              image="../../src/assets/images/pizza-3.png"
+              setCart={setCart}
+            />
           </div>
           <div className="hidden md:block">
             {/* Open until */}
@@ -115,7 +124,7 @@ function OrderPage() {
                 Open until 3:00 AM
               </span>
             </button>
-            <Basket />
+            <Basket cart={cart} setCart={setCart}/>
           </div>
         </div>
       </div>

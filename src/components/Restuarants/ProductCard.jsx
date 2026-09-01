@@ -1,4 +1,4 @@
-function ProductCard({ title, details, price, image }) {
+function ProductCard({ title, details, price, image, onAdd }) {
   return (
     <div className="flex bg-[#FDFDFD] shadow-lg rounded-xl p-1.5 md:p-3">
       {/* Content */}
@@ -26,7 +26,7 @@ function ProductCard({ title, details, price, image }) {
 
         {/* Plus */}
         <div className="absolute bottom-0 right-0 md:right-0 w-9 h-8 md:w-22 md:h-20.25 rounded-tl-[20px] md:rounded-tl-[45px] rounded-br-lg md:rounded-br-xl bg-white/90 flex items-center justify-center">
-          <button>
+          <button onClick={onAdd}>
             <img
               className="w-5 h-5 md:w-12.25 md:h-12.25"
               src="../../src/assets/images/plus.png"

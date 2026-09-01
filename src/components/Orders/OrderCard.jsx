@@ -1,8 +1,40 @@
 import { useState } from "react";
 import { pizzaSizes } from "../../data/data";
 
-function OrderCard({ image }) {
+function OrderCard({ image, title, details, setCart }) {
   const [isSelected, setIsSelected] = useState("Small");
+
+  const selectedPizza = pizzaSizes.find((pizza) => pizza.size === isSelected);
+
+  function addToCart() {
+    const newItem = {
+      id: `${image}-${selectedPizza.size}`,
+      name: "Farm House Xtreme Pizza",
+      size: selectedPizza.size,
+      price: selectedPizza.price,
+      image: image,
+      quantity: 1,
+    };
+
+    setCart((currentCart) => {
+      const existingItem = currentCart.find(
+        (cartItem) => cartItem.id === newItem.id,
+      );
+
+      if (existingItem) {
+        return currentCart.map((cartItem) =>
+          cartItem.id === newItem.id
+            ? {
+                ...cartItem,
+                quantity: cartItem.quantity + 1,
+              }
+            : cartItem,
+        );
+      }
+
+      return [...currentCart, newItem];
+    });
+  }
 
   return (
     <div
@@ -41,7 +73,7 @@ function OrderCard({ image }) {
               md:mb-2
             "
           >
-            Farm House Xtreme Pizza
+            {title}
           </h1>
 
           {/* Chilli icons */}
@@ -199,6 +231,13 @@ function OrderCard({ image }) {
             </p>
           </button>
         ))}
+        <button
+          type="button"
+          onClick={addToCart}
+          className="bg-[#FC8A06] px-5 py-2 rounded-lg"
+        >
+          Add to Basket
+        </button>
       </div>
     </div>
   );

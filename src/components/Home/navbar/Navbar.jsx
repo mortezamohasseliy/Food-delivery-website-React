@@ -18,8 +18,6 @@ function Navbar() {
             <Link to="/">Home</Link>
           </li>
 
-          <li>Browse Menu</li>
-
           <li>Special Offers</li>
 
           <li>

@@ -4,6 +4,9 @@ function DeliveryPopUp() {
   const [postCode, setPostCode] = useState("");
   const [error, setError] = useState("");
   const [success, setSuccess] = useState(false);
+  const [isOpenModal, setIsOpenModal] = useState(true);
+
+  if (!isOpenModal) return null;
 
   function handleFind(e) {
     e.preventDefault();
@@ -69,6 +72,7 @@ function DeliveryPopUp() {
         {/* CLOSE BUTTON  */}
 
         <button
+          onClick={() => setIsOpenModal(false)}
           type="button"
           className="
             absolute

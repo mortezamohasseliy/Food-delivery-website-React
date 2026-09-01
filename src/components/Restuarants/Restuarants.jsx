@@ -10,7 +10,7 @@ import Brands from "../Home/brands/Brands";
 import Footer from "../Home/footer/Footer";
 import RestaurantProducts from "./RestaurantProducts";
 
-function Restaurants() {
+function Restaurants({ cart, setCart, selectedProduct, setSelectedProduct }) {
   return (
     <div className="w-full flex flex-col mx-auto">
       {/* header */}
@@ -39,7 +39,7 @@ function Restaurants() {
       </div>
       {/* Products card */}
       <div className="order-6">
-        <RestaurantProducts />
+        <RestaurantProducts setSelectedProduct={setSelectedProduct} />
       </div>
       {/* Info section */}
       <div className="order-7">

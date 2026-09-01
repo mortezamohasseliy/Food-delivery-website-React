@@ -48,7 +48,33 @@ const basketItems = [
   },
 ];
 
-function Basket() {
+import { useState } from "react";
+
+function getPrice(price) {
+  return Number(String(price).replace("£", ""));
+}
+
+function Basket({ cart, setCart }) {
+  const [deliveryMethod, setDeliveryMethod] = useState("delivery");
+  const [coupon, setCoupon] = useState("");
+  const [discount, setDiscount] = useState(0);
+
+  function applyCoupon() {
+    if (coupon.trim().toUpperCase() === "SAVE3") {
+      setDiscount(3);
+    } else {
+      setDiscount(0);
+    }
+  }
+
+  const subTotal = cart.reduce((total, item) => {
+    return total + getPrice(item.price) * item.quantity;
+  }, 0);
+
+  const deliveryFee = deliveryMethod === "delivery" ? 2.5 : 0;
+
+  const total = subTotal - discount + deliveryFee;
+
   return (
     <section
       className="
@@ -85,7 +111,7 @@ function Basket() {
 
       {/* ITEMS  */}
       <div className="px-3 md:px-0">
-        {basketItems.map((item) => (
+        {cart.map((item) => (
           <div
             key={item.id}
             className="
@@ -134,7 +160,7 @@ function Basket() {
                   text-[#028643]
                 "
               >
-                {item.price}
+                £{(getPrice(item.price) * item.quantity).toFixed(2)}
               </p>
 
               <h3
@@ -149,6 +175,12 @@ function Basket() {
               >
                 {item.name}
               </h3>
+
+              {item.size && (
+                <p className="text-[12px] md:text-[14px] text-gray-500">
+                  {item.size}
+                </p>
+              )}
 
               {item.description && (
                 <p
@@ -168,6 +200,11 @@ function Basket() {
 
             {/* Delete */}
             <img
+              onClick={() =>
+                setCart((currentCart) =>
+                  currentCart.filter((cartItem) => cartItem.id !== item.id),
+                )
+              }
               className="
                 md:w-8.75 md:h-8.75
                 w-7 h-7
@@ -198,17 +235,26 @@ function Basket() {
       >
         <p className="font-semibold md:text-[20px] text-[15px]">Sub Total:</p>
 
-        <p className="text-right md:text-[24px] text-[18px]">£127.90</p>
+        <p className="text-right md:text-[24px] text-[18px]">
+          {" "}
+          £{subTotal.toFixed(2)}
+        </p>
 
         <p className="font-semibold md:text-[20px] text-[15px]">Discounts:</p>
 
-        <p className="text-right md:text-[24px] text-[18px]">-3.00</p>
+        <p className="text-right md:text-[24px] text-[18px]">
+          {" "}
+          -£{discount.toFixed(2)}
+        </p>
 
         <p className="font-semibold md:text-[20px] text-[15px]">
           Delivery Fee:
         </p>
 
-        <p className="text-right md:text-[24px] text-[18px]">2.50</p>
+        <p className="text-right md:text-[24px] text-[18px]">
+          {" "}
+          £{deliveryFee.toFixed(2)}
+        </p>
       </div>
 
       {/*  TOTAL  */}
@@ -234,7 +280,9 @@ function Basket() {
       >
         <p className="font-semibold md:text-[20px] text-[16px]">Total to pay</p>
 
-        <p className="font-semibold md:text-[36px] text-[25px]">£127.90</p>
+        <p className="font-semibold md:text-[36px] text-[25px]">
+          £{total.toFixed(2)}
+        </p>
       </div>
 
       {/*  COUPON  */}
@@ -282,17 +330,22 @@ function Basket() {
 
         {/* Coupon Code */}
         <div className="relative w-full md:w-86">
-          <img
-            className="
+          <button onClick={applyCoupon}>
+            {" "}
+            <img
+              className="
               absolute right-5 top-1/2
               h-5 w-5 md:h-6.5 md:w-6.5
               -translate-y-1/2
             "
-            src="../../src/assets/images/arrow-right-2.png"
-            alt=""
-          />
+              src="../../src/assets/images/arrow-right-2.png"
+              alt=""
+            />
+          </button>
 
           <input
+            value={coupon}
+            onChange={(e) => setCoupon(e.target.value)}
             className="
               h-13 md:h-15.75
               w-full
@@ -327,9 +380,9 @@ function Basket() {
       >
         {/* Delivery */}
         <div
-          className="
-            md:w-39.5 md:h-28.75
-
+          onClick={() => setDeliveryMethod("delivery")}
+          className={` md:w-39.5 md:h-28.75
+            cursor-pointer
             w-1/2 h-27
             bg-[#EEEEEE]
             rounded-xl
@@ -337,7 +390,8 @@ function Basket() {
             items-center
             justify-center
             gap-1
-          "
+            
+            ${deliveryMethod === "delivery" ? "bg-[#FC8A06] text-white" : "bg-[#EEEEEE]"}`}
         >
           <img
             className="w-8.75 h-8.75"
@@ -354,9 +408,9 @@ function Basket() {
 
         {/* Collection */}
         <div
-          className="
-            md:w-39.5 md:h-28.75
-
+          onClick={() => setDeliveryMethod("collection")}
+          className={` md:w-39.5 md:h-28.75
+            cursor-pointer
             w-1/2 h-27
             bg-[#EEEEEE]
             rounded-xl
@@ -364,7 +418,12 @@ function Basket() {
             items-center
             justify-center
             gap-1
-          "
+            
+           ${
+             deliveryMethod === "collection"
+               ? "bg-[#FC8A06] text-white"
+               : "bg-[#EEEEEE]"
+           }`}
         >
           <img
             className="w-8.75 h-8.75"
