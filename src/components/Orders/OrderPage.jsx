@@ -1,3 +1,4 @@
+import { useLocation } from "react-router";
 import Brands from "../Home/brands/Brands";
 import Footer from "../Home/footer/Footer";
 import Header from "../Home/header/Header";
@@ -10,7 +11,7 @@ import Basket from "./Basket";
 import Menu from "./Menu";
 import OrderCard from "./OrderCard";
 
-function OrderPage({ cart, setCart }) {
+function OrderPage({ cart, setCart, onSpecialOffersClick }) {
   return (
     <section className="w-full flex flex-col mx-auto">
       {/* header */}
@@ -19,7 +20,7 @@ function OrderPage({ cart, setCart }) {
       </div>
       {/* navbar */}
       <div className="order-1 md:order-2">
-        <Navbar />
+        <Navbar onSpecialOffersClick={onSpecialOffersClick} />
       </div>
       {/* orderPage landing page */}
       <div className="order-3">
@@ -124,7 +125,7 @@ function OrderPage({ cart, setCart }) {
                 Open until 3:00 AM
               </span>
             </button>
-            <Basket cart={cart} setCart={setCart}/>
+            <Basket cart={cart} setCart={setCart} />
           </div>
         </div>
       </div>

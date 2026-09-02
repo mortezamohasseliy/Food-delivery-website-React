@@ -10,13 +10,13 @@ import About from "./about/About";
 import Stats from "./stats/Stats";
 import Footer from "./footer/Footer";
 
-function Home() {
+function Home({ onSpecialOffersClick }) {
   return (
     <>
       <div className="flex flex-col">
         {/* Navbar */}
         <div className="order-1 lg:order-2">
-          <Navbar />
+          <Navbar onSpecialOffersClick={onSpecialOffersClick} />
         </div>
 
         {/* Header */}

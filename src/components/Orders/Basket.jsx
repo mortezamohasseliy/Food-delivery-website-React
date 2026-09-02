@@ -1,57 +1,7 @@
-const basketItems = [
-  {
-    id: 1,
-    quantity: 1,
-    price: "£27.90",
-    name: "12” Vegetarian Pizza",
-    description: (
-      <>
-        No Mushrooms + green <br />
-        peppers
-      </>
-    ),
-    trash: "../src/assets/images/trash-2.png",
-  },
-  {
-    id: 2,
-    quantity: 1,
-    price: "£17.90",
-    name: "17” Tandoori Pizza",
-    description: (
-      <>
-        No Mushrooms + green <br />
-        peppers
-      </>
-    ),
-    trash: "../src/assets/images/trash-1.png",
-  },
-  {
-    id: 3,
-    quantity: 2,
-    price: "£4.90",
-    name: "Coke Coca Cola",
-    description: null,
-    trash: "../src/assets/images/trash-3.png",
-  },
-  {
-    id: 4,
-    quantity: 1,
-    price: "£27.90",
-    name: "12” Vegetarian Pizza",
-    description: (
-      <>
-        No Mushrooms + green <br />
-        peppers
-      </>
-    ),
-    trash: "../src/assets/images/trash-4.png",
-  },
-];
-
 import { useState } from "react";
 
 function getPrice(price) {
-  return Number(String(price).replace("£", ""));
+  return Number(String(price).replace(/[^\d.]/g, ""));
 }
 
 function Basket({ cart, setCart }) {
@@ -68,7 +18,7 @@ function Basket({ cart, setCart }) {
   }
 
   const subTotal = cart.reduce((total, item) => {
-    return total + getPrice(item.price) * item.quantity;
+    return total + getPrice(item.price) * (item.quantity || 1);
   }, 0);
 
   const deliveryFee = deliveryMethod === "delivery" ? 2.5 : 0;
@@ -78,7 +28,11 @@ function Basket({ cart, setCart }) {
   return (
     <section
       className="
-        md:w-91.75 md:h-auto md:rounded-tl-lg md:rounded-tr-lg md:mx-auto
+        md:w-91.75
+        md:h-auto
+        md:rounded-tl-lg
+        md:rounded-tr-lg
+        md:mx-auto
         md:bg-[#F9F9F9]
 
         w-full
@@ -87,17 +41,25 @@ function Basket({ cart, setCart }) {
         overflow-hidden
       "
     >
-      {/*  HEADER  */}
+      {/* HEADER */}
       <div
         className="
-          md:h-29.25 md:bg-[#028643] md:text-white
-          md:flex md:justify-evenly md:items-center
-          md:rounded-tl-lg md:rounded-tr-lg
+          md:h-29.25
+          md:bg-[#028643]
+          md:text-white
+          md:flex
+          md:justify-evenly
+          md:items-center
+          md:rounded-tl-lg
+          md:rounded-tr-lg
 
           h-20
           bg-[#028643]
           text-white
-          flex items-center justify-center gap-4
+          flex
+          items-center
+          justify-center
+          gap-4
         "
       >
         <img
@@ -109,125 +71,177 @@ function Basket({ cart, setCart }) {
         <h2 className="font-semibold md:text-[32px] text-[24px]">My Basket</h2>
       </div>
 
-      {/* ITEMS  */}
+      {/* ITEMS */}
       <div className="px-3 md:px-0">
-        {cart.map((item) => (
-          <div
-            key={item.id}
-            className="
-              md:h-30.25 md:flex md:items-center
-              md:justify-around md:mt-6
-              min-h-27
-              border
-              rounded-lg
-              flex items-center
-              justify-between
-              gap-3
-              px-3
-              mt-3
-            "
-          >
-            {/* Quantity */}
-            <p
+        {cart.length === 0 ? (
+          <p className="py-8 text-center text-gray-500 text-[16px]">
+            Your basket is empty
+          </p>
+        ) : (
+          cart.map((item) => (
+            <div
+              key={item.id}
               className="
-                md:w-11.25 md:h-11.25
-                md:bg-[#FC8A06]
-                md:rounded-full
-                md:flex md:items-center md:justify-center
-                md:font-bold md:text-[24px]
-                md:text-white
+                md:min-h-30.25
+                md:flex
+                md:items-center
+                md:justify-around
+                md:mt-6
 
-                w-10 h-10
-                shrink-0
-                bg-[#FC8A06]
-                rounded-full
-                flex items-center justify-center
-                font-bold text-[18px] text-white
+                min-h-27
+                border
+                rounded-lg
+                flex
+                items-center
+                justify-between
+                gap-3
+                px-3
+                py-3
+                mt-3
               "
             >
-              {item.quantity}x
-            </p>
-
-            {/* Information */}
-            <div className="flex-1 md:space-y-2 space-y-1">
+              {/* Quantity */}
               <p
                 className="
-                  md:font-semibold md:text-[20px]
-                  md:leading-6.25 md:text-[#028643]
+                  md:w-11.25
+                  md:h-11.25
+                  md:bg-[#FC8A06]
+                  md:rounded-full
+                  md:flex
+                  md:items-center
+                  md:justify-center
+                  md:font-bold
+                  md:text-[24px]
+                  md:text-white
 
-                  font-semibold
-                  text-[17px]
-                  text-[#028643]
+                  w-10
+                  h-10
+                  shrink-0
+                  bg-[#FC8A06]
+                  rounded-full
+                  flex
+                  items-center
+                  justify-center
+                  font-bold
+                  text-[18px]
+                  text-white
                 "
               >
-                £{(getPrice(item.price) * item.quantity).toFixed(2)}
+                {item.quantity || 1}x
               </p>
 
-              <h3
+              {/* Information */}
+              <div
                 className="
-                  md:font-semibold md:text-[16px]
-                  md:text-[#03081F]
-
-                  font-semibold
-                  text-[14px]
-                  text-[#03081F]
+                  min-w-0
+                  flex-1
+                  space-y-1
+                  md:space-y-2
                 "
               >
-                {item.name}
-              </h3>
-
-              {item.size && (
-                <p className="text-[12px] md:text-[14px] text-gray-500">
-                  {item.size}
-                </p>
-              )}
-
-              {item.description && (
+                {/* Price */}
                 <p
                   className="
-                    md:font-normal md:text-[15px]
-                    md:leading-4.5
-
-                    font-normal
-                    text-[12px]
-                    leading-4
+                    font-semibold
+                    text-[17px]
+                    md:text-[20px]
+                    text-[#028643]
                   "
                 >
-                  {item.description}
+                  £{(getPrice(item.price) * (item.quantity || 1)).toFixed(2)}
                 </p>
-              )}
-            </div>
 
-            {/* Delete */}
-            <img
-              onClick={() =>
-                setCart((currentCart) =>
-                  currentCart.filter((cartItem) => cartItem.id !== item.id),
-                )
-              }
-              className="
-                md:w-8.75 md:h-8.75
-                w-7 h-7
-                shrink-0
-              "
-              src={item.trash}
-              alt="Remove item"
-            />
-          </div>
-        ))}
+                {/* Product Title */}
+                <h3
+                  className="
+                    font-semibold
+                    text-[14px]
+                    md:text-[16px]
+                    text-[#03081F]
+                    leading-5
+                    md:leading-6
+
+                    break-words
+                    overflow-wrap-anywhere
+                  "
+                >
+                  {item.title || item.name}
+                </h3>
+
+                {/* Size */}
+                {item.size && (
+                  <p
+                    className="
+                      text-[12px]
+                      md:text-[14px]
+                      text-gray-500
+                      break-words
+                    "
+                  >
+                    {item.size}
+                  </p>
+                )}
+
+                {/* Details */}
+                {(item.details || item.description) && (
+                  <p
+                    className="
+                      font-normal
+                      text-[12px]
+                      md:text-[15px]
+                      leading-4
+                      md:leading-4.5
+                      text-gray-600
+
+                      break-words
+                      overflow-wrap-anywhere
+                    "
+                  >
+                    {item.details || item.description}
+                  </p>
+                )}
+              </div>
+
+              {/* Delete */}
+              <img
+                onClick={() =>
+                  setCart((currentCart) =>
+                    currentCart.filter((cartItem) => cartItem.id !== item.id),
+                  )
+                }
+                className="
+                  md:w-8.75
+                  md:h-8.75
+                  w-7
+                  h-7
+                  shrink-0
+                  cursor-pointer
+                "
+                src="../src/assets/images/trash-2.png"
+                alt="Remove item"
+              />
+            </div>
+          ))
+        )}
       </div>
 
-      {/* AMOUNTS  */}
+      {/* AMOUNTS */}
       <div
         className="
-          md:grid md:grid-cols-2 md:place-items-center
-          md:h-47.5 md:border-b md:border-b-gray-200
+          md:grid
+          md:grid-cols-2
+          md:place-items-center
+          md:h-47.5
+          md:border-b
+          md:border-b-gray-200
           md:mt-5
 
-          grid grid-cols-2
+          grid
+          grid-cols-2
           items-center
           gap-y-3
-          px-5 py-5
+          px-5
+          py-5
           mt-4
           border-b
           border-gray-200
@@ -236,14 +250,12 @@ function Basket({ cart, setCart }) {
         <p className="font-semibold md:text-[20px] text-[15px]">Sub Total:</p>
 
         <p className="text-right md:text-[24px] text-[18px]">
-          {" "}
           £{subTotal.toFixed(2)}
         </p>
 
         <p className="font-semibold md:text-[20px] text-[15px]">Discounts:</p>
 
         <p className="text-right md:text-[24px] text-[18px]">
-          {" "}
           -£{discount.toFixed(2)}
         </p>
 
@@ -252,28 +264,34 @@ function Basket({ cart, setCart }) {
         </p>
 
         <p className="text-right md:text-[24px] text-[18px]">
-          {" "}
           £{deliveryFee.toFixed(2)}
         </p>
       </div>
 
-      {/*  TOTAL  */}
+      {/* TOTAL */}
       <div
         className="
-          md:w-85.5 md:h-17.5
+          md:w-85.5
+          md:h-17.5
           md:bg-[#FC8A06CC]
-          md:mt-5 md:mx-auto
+          md:mt-5
+          md:mx-auto
           md:rounded-lg
-          md:flex md:items-center
-          md:justify-center md:gap-10
+          md:flex
+          md:items-center
+          md:justify-center
+          md:gap-10
           md:text-white
 
           w-[92%]
           min-h-15
           bg-[#FC8A06CC]
-          mt-4 mx-auto
+          mt-4
+          mx-auto
           rounded-lg
-          flex items-center justify-center
+          flex
+          items-center
+          justify-center
           gap-5
           text-white
         "
@@ -285,14 +303,18 @@ function Basket({ cart, setCart }) {
         </p>
       </div>
 
-      {/*  COUPON  */}
+      {/* COUPON */}
       <div
         className="
-          md:flex md:flex-col
-          md:items-center md:justify-center
-          md:gap-5 md:mt-2
+          md:flex
+          md:flex-col
+          md:items-center
+          md:justify-center
+          md:gap-5
+          md:mt-2
 
-          flex flex-col
+          flex
+          flex-col
           items-center
           gap-3
           mt-4
@@ -303,8 +325,13 @@ function Basket({ cart, setCart }) {
         <div className="relative w-full md:w-86">
           <img
             className="
-              absolute right-5 top-1/2
-              h-5 w-5 md:h-6.5 md:w-6.5
+              absolute
+              right-5
+              top-1/2
+              h-5
+              w-5
+              md:h-6.5
+              md:w-6.5
               -translate-y-1/2
             "
             src="../../src/assets/images/arrow-bottom.png"
@@ -313,11 +340,14 @@ function Basket({ cart, setCart }) {
 
           <input
             className="
-              h-13 md:h-15.75
+              h-13
+              md:h-15.75
               w-full
               rounded-[120px]
-              border border-[#CFCFCF]
-              pl-5 pr-14
+              border
+              border-[#CFCFCF]
+              pl-5
+              pr-14
               outline-none
               placeholder:text-[14px]
               placeholder:font-semibold
@@ -330,14 +360,18 @@ function Basket({ cart, setCart }) {
 
         {/* Coupon Code */}
         <div className="relative w-full md:w-86">
-          <button onClick={applyCoupon}>
-            {" "}
+          <button onClick={applyCoupon} type="button">
             <img
               className="
-              absolute right-5 top-1/2
-              h-5 w-5 md:h-6.5 md:w-6.5
-              -translate-y-1/2
-            "
+                absolute
+                right-5
+                top-1/2
+                h-5
+                w-5
+                md:h-6.5
+                md:w-6.5
+                -translate-y-1/2
+              "
               src="../../src/assets/images/arrow-right-2.png"
               alt=""
             />
@@ -347,11 +381,14 @@ function Basket({ cart, setCart }) {
             value={coupon}
             onChange={(e) => setCoupon(e.target.value)}
             className="
-              h-13 md:h-15.75
+              h-13
+              md:h-15.75
               w-full
               rounded-[120px]
-              border border-[#CFCFCF]
-              pl-5 pr-14
+              border
+              border-[#CFCFCF]
+              pl-5
+              pr-14
               outline-none
               placeholder:text-[14px]
               placeholder:font-semibold
@@ -365,13 +402,16 @@ function Basket({ cart, setCart }) {
         <p className="w-full border border-[#CFCFCF]" />
       </div>
 
-      {/*  DELIVERY / COLLECTION  */}
+      {/* DELIVERY / COLLECTION */}
       <div
         className="
-          md:flex md:items-center
-          md:justify-around md:mt-2
+          md:flex
+          md:items-center
+          md:justify-around
+          md:mt-2
 
-          flex items-center
+          flex
+          items-center
           justify-center
           gap-3
           mt-4
@@ -381,17 +421,26 @@ function Basket({ cart, setCart }) {
         {/* Delivery */}
         <div
           onClick={() => setDeliveryMethod("delivery")}
-          className={` md:w-39.5 md:h-28.75
+          className={`
+            md:w-39.5
+            md:h-28.75
+
             cursor-pointer
-            w-1/2 h-27
-            bg-[#EEEEEE]
+            w-1/2
+            h-27
             rounded-xl
-            flex flex-col
+            flex
+            flex-col
             items-center
             justify-center
             gap-1
-            
-            ${deliveryMethod === "delivery" ? "bg-[#FC8A06] text-white" : "bg-[#EEEEEE]"}`}
+
+            ${
+              deliveryMethod === "delivery"
+                ? "bg-[#FC8A06] text-white"
+                : "bg-[#EEEEEE]"
+            }
+          `}
         >
           <img
             className="w-8.75 h-8.75"
@@ -409,21 +458,26 @@ function Basket({ cart, setCart }) {
         {/* Collection */}
         <div
           onClick={() => setDeliveryMethod("collection")}
-          className={` md:w-39.5 md:h-28.75
+          className={`
+            md:w-39.5
+            md:h-28.75
+
             cursor-pointer
-            w-1/2 h-27
-            bg-[#EEEEEE]
+            w-1/2
+            h-27
             rounded-xl
-            flex flex-col
+            flex
+            flex-col
             items-center
             justify-center
             gap-1
-            
-           ${
-             deliveryMethod === "collection"
-               ? "bg-[#FC8A06] text-white"
-               : "bg-[#EEEEEE]"
-           }`}
+
+            ${
+              deliveryMethod === "collection"
+                ? "bg-[#FC8A06] text-white"
+                : "bg-[#EEEEEE]"
+            }
+          `}
         >
           <img
             className="w-8.75 h-8.75"
@@ -441,13 +495,17 @@ function Basket({ cart, setCart }) {
         </div>
       </div>
 
-      {/*  CHECKOUT  */}
+      {/* CHECKOUT */}
       <div className="relative w-[92%] md:w-86 mx-auto mt-4 mb-4">
         <img
           className="
-            absolute left-5 top-1/2
-            h-7 w-7
-            md:h-8.75 md:w-8.75
+            absolute
+            left-5
+            top-1/2
+            h-7
+            w-7
+            md:h-8.75
+            md:w-8.75
             -translate-y-1/2
           "
           src="../../src/assets/images/arrow.png"
@@ -456,7 +514,8 @@ function Basket({ cart, setCart }) {
 
         <button
           className="
-            h-15 md:h-17.5
+            h-15
+            md:h-17.5
             w-full
             rounded-lg
             bg-[#028643]

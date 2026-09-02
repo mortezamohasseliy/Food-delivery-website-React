@@ -2,8 +2,13 @@ import { useState } from "react";
 import { Link } from "react-router";
 import Logo from "../logo/Logo";
 
-function Navbar() {
+function Navbar({ onSpecialOffersClick }) {
   const [isOpen, setIsOpen] = useState(false);
+
+  function handleSpecialOffersClick() {
+    setIsOpen(false);
+    onSpecialOffersClick();
+  }
 
   return (
     <nav className="w-[95%] mx-auto mt-6 lg:mt-10">
@@ -18,7 +23,16 @@ function Navbar() {
             <Link to="/">Home</Link>
           </li>
 
-          <li>Special Offers</li>
+          {/* Special Offers */}
+          <li>
+            <button
+              type="button"
+              onClick={handleSpecialOffersClick}
+              className="cursor-pointer"
+            >
+              Special Offers
+            </button>
+          </li>
 
           <li>
             <Link to="/restaurants">Restaurants</Link>
@@ -93,7 +107,15 @@ function Navbar() {
               <li className="py-3 border-b border-white/10">Browse Menu</li>
 
               {/* Special Offers */}
-              <li className="py-3 border-b border-white/10">Special Offers</li>
+              <li className="border-b border-white/10">
+                <button
+                  type="button"
+                  onClick={handleSpecialOffersClick}
+                  className="w-full py-3 text-left cursor-pointer"
+                >
+                  Special Offers
+                </button>
+              </li>
 
               {/* Restaurants */}
               <li>

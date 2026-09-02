@@ -10,18 +10,20 @@ import Brands from "../Home/brands/Brands";
 import Footer from "../Home/footer/Footer";
 import RestaurantProducts from "./RestaurantProducts";
 
-function Restaurants({ cart, setCart, selectedProduct, setSelectedProduct }) {
+function Restaurants({ onOrder, onSpecialOffersClick }) {
   return (
     <div className="w-full flex flex-col mx-auto">
-      {/* header */}
+      {/* Header */}
       <div className="order-2 lg:order-1">
         <Header />
       </div>
-      {/* navbar */}
+
+      {/* Navbar */}
       <div className="order-1 lg:order-2">
-        <Navbar />
+        <Navbar onSpecialOffersClick={onSpecialOffersClick} />
       </div>
-      {/* restaurant landing page */}
+
+      {/* Restaurant landing page */}
       <div className="order-3 lg:order-3">
         <RestaurantLandingPage
           text={"I'm lovin' it!"}
@@ -29,18 +31,22 @@ function Restaurants({ cart, setCart, selectedProduct, setSelectedProduct }) {
           cover={"../../src/assets/images/burger.png"}
         />
       </div>
-      {/* filter categories section */}
+
+      {/* Filter categories section */}
       <div className="order-4">
         <FilterCategories />
       </div>
-      {/* Restaurant offercards */}
+
+      {/* Restaurant offer cards */}
       <div className="order-5">
         <RestaurantOfferCards />
       </div>
-      {/* Products card */}
+
+      {/* Products */}
       <div className="order-6">
-        <RestaurantProducts setSelectedProduct={setSelectedProduct} />
+        <RestaurantProducts onOrder={onOrder} />
       </div>
+
       {/* Info section */}
       <div className="order-7">
         <RestaurantInfo />
@@ -53,7 +59,6 @@ function Restaurants({ cart, setCart, selectedProduct, setSelectedProduct }) {
 
       {/* Reviews */}
       <div className="order-9">
-        {/* Review Card Slider */}
         <ReviewCardSlider />
       </div>
 
@@ -69,4 +74,5 @@ function Restaurants({ cart, setCart, selectedProduct, setSelectedProduct }) {
     </div>
   );
 }
+
 export default Restaurants;

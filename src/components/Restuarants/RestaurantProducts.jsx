@@ -1,29 +1,57 @@
 import { coldDrinks } from "../../data/data";
 import ProductCard from "./ProductCard";
 
-function RestaurantProducts({ setSelectedProduct }) {
+function RestaurantProducts({ onOrder }) {
+  const burger = {
+    id: "burger-1",
+    title: "Royal Cheese Burger with extra Fries",
+    details: "1 McChicken™, 1 Big Mac™, 1 Royal Cheeseburger, 3 medium",
+    price: "GBP 23.10",
+    image: "../../src/assets/images/burger-1.png",
+  };
+
+  const fries = {
+    id: "fries-1",
+    title: "Royal Cheese Burger with extra Fries",
+    details: "1 McChicken™, 1 Big Mac™, 1 Royal Cheeseburger, 3 medium",
+    price: "GBP 23.10",
+    image: "../../src/assets/images/fries.png",
+  };
+
+  const friesTwo = {
+    id: "fries-2",
+    title: "Royal Cheese Burger with extra Fries",
+    details: "1 McChicken™, 1 Big Mac™, 1 Royal Cheeseburger, 3 medium",
+    price: "GBP 23.10",
+    image: "../../src/assets/images/fries-2.png",
+  };
+
   return (
     <section className="md:w-full md:h-auto md:mt-10 mt-10 md:p-5 p-3">
+      {/* BURGERS */}
       <div>
-        <h1 className="md:font-bold font-bold md:text-[44px] text-[20px] md:leading-[100%] md:tracking-normal md:mb-10 mb-10">
+        <h1
+          className="
+            font-bold
+            text-[20px]
+            md:text-[44px]
+            leading-[100%]
+            mb-10
+          "
+        >
           Burgers
         </h1>
 
-        <div className="md:grid md:grid-cols-3 md:gap-5 gap-2 grid grid-cols-2">
+        <div className="grid grid-cols-2 gap-2 md:grid-cols-3 md:gap-5">
           {Array.from({ length: 6 }).map((_, index) => (
             <ProductCard
-              key={index}
-              title="Royal Cheese Burger with extra Fries"
-              details="1 McChicken™, 1 Big Mac™, 1 Royal Cheeseburger, 3 medium"
-              price="GBP 23.10"
-              image="../../src/assets/images/burger-1.png"
+              key={`burger-${index}`}
+              {...burger}
+              id={`burger-${index}`}
               onAdd={() =>
-                setSelectedProduct({
-                  title: "Royal Cheese Burger with extra Fries",
-                  details:
-                    "1 McChicken™, 1 Big Mac™, 1 Royal Cheeseburger, 3 medium",
-                  price: "GBP 23.10",
-                  image: "../../src/assets/images/burger-1.png",
+                onOrder({
+                  ...burger,
+                  id: `burger-${index}`,
                 })
               }
             />
@@ -31,26 +59,31 @@ function RestaurantProducts({ setSelectedProduct }) {
         </div>
       </div>
 
+      {/* FRIES */}
       <div className="mt-10">
-        <h1 className="md:font-bold font-bold md:text-[44px] text-[20px] text-[#FC8A06] md:leading-[100%] md:tracking-normal md:mb-10 mb-10">
+        <h1
+          className="
+            font-bold
+            text-[20px]
+            md:text-[44px]
+            text-[#FC8A06]
+            leading-[100%]
+            mb-10
+          "
+        >
           Fries
         </h1>
 
-        <div className="md:grid md:grid-cols-3 md:gap-5 gap-2 grid grid-cols-2">
+        <div className="grid grid-cols-2 gap-2 md:grid-cols-3 md:gap-5">
           {Array.from({ length: 3 }).map((_, index) => (
             <ProductCard
-              key={index}
-              title="Royal Cheese Burger with extra Fries"
-              details="1 McChicken™, 1 Big Mac™, 1 Royal Cheeseburger, 3 medium"
-              price="GBP 23.10"
-              image="../../src/assets/images/fries.png"
+              key={`fries-${index}`}
+              {...fries}
+              id={`fries-${index}`}
               onAdd={() =>
-                setSelectedProduct({
-                  title: "Royal Cheese Burger with extra Fries",
-                  details:
-                    "1 McChicken™, 1 Big Mac™, 1 Royal Cheeseburger, 3 medium",
-                  price: "GBP 23.10",
-                  image: "../../src/assets/images/fries.png",
+                onOrder({
+                  ...fries,
+                  id: `fries-${index}`,
                 })
               }
             />
@@ -58,18 +91,13 @@ function RestaurantProducts({ setSelectedProduct }) {
 
           {Array.from({ length: 3 }).map((_, index) => (
             <ProductCard
-              key={index}
-              title="Royal Cheese Burger with extra Fries"
-              details="1 McChicken™, 1 Big Mac™, 1 Royal Cheeseburger, 3 medium"
-              price="GBP 23.10"
-              image="../../src/assets/images/fries-2.png"
+              key={`fries-two-${index}`}
+              {...friesTwo}
+              id={`fries-two-${index}`}
               onAdd={() =>
-                setSelectedProduct({
-                  title: "Royal Cheese Burger with extra Fries",
-                  details:
-                    "1 McChicken™, 1 Big Mac™, 1 Royal Cheeseburger, 3 medium",
-                  price: "GBP 23.10",
-                  image: "../../src/assets/images/fries-2.png",
+                onOrder({
+                  ...friesTwo,
+                  id: `fries-two-${index}`,
                 })
               }
             />
@@ -77,25 +105,31 @@ function RestaurantProducts({ setSelectedProduct }) {
         </div>
       </div>
 
+      {/* COLD DRINKS */}
       <div className="mt-10">
-        <h1 className="md:font-bold font-bold md:text-[44px] text-[20px] text-[#FC8A06] md:leading-[100%] md:tracking-normal md:mb-10 mb-10">
+        <h1
+          className="
+            font-bold
+            text-[20px]
+            md:text-[44px]
+            text-[#FC8A06]
+            leading-[100%]
+            mb-10
+          "
+        >
           Cold Drinks
         </h1>
 
-        <div className="md:grid md:grid-cols-3 md:gap-5 gap-2 grid grid-cols-2">
+        <div className="grid grid-cols-2 gap-2 md:grid-cols-3 md:gap-5">
           {coldDrinks.map((drink, index) => (
             <ProductCard
-              key={index}
-              title={drink.title}
-              details={drink.details}
-              price={drink.price}
-              image={drink.image}
+              key={drink.id || `drink-${index}`}
+              {...drink}
+              id={drink.id || `drink-${index}`}
               onAdd={() =>
-                setSelectedProduct({
-                  title: drink.title,
-                  details: drink.details,
-                  price: drink.price,
-                  image: drink.image,
+                onOrder({
+                  ...drink,
+                  id: drink.id || `drink-${index}`,
                 })
               }
             />

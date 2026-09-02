@@ -178,7 +178,7 @@ function ToppingBox({ title, icon, items }) {
 
 // CUSTOMIZE PIZZA MODAL
 
-function CustomizePizza() {
+function CustomizePizza({ onClose, onBack }) {
   return (
     <div
       className="
@@ -197,7 +197,7 @@ function CustomizePizza() {
         md:p-6
       "
     >
-      {/* MODAL                                             */}
+      {/* MODAL  */}
 
       <div
         className="
@@ -218,9 +218,10 @@ function CustomizePizza() {
           md:shadow-2xl
         "
       >
-        {/* CLOSE BUTTON                                       */}
+        {/* CLOSE BUTTON */}
 
         <button
+          onClick={onClose}
           type="button"
           className="
             absolute
@@ -258,7 +259,7 @@ function CustomizePizza() {
           />
         </button>
 
-        {/* SCROLLABLE MODAL CONTENT                           */}
+        {/* SCROLLABLE MODAL CONTENT */}
 
         <div
           className="
@@ -269,7 +270,7 @@ function CustomizePizza() {
             overflow-x-hidden
           "
         >
-          {/* CONTENT                                           */}
+          {/* CONTENT */}
 
           <section
             className="
@@ -285,7 +286,7 @@ function CustomizePizza() {
               md:pb-10
             "
           >
-            {/* PIZZA IMAGE                                       */}
+            {/* PIZZA IMAGE */}
 
             <div className="relative">
               <img
@@ -304,7 +305,7 @@ function CustomizePizza() {
               />
             </div>
 
-            {/* BREADCRUMB                                         */}
+            {/* BREADCRUMB  */}
 
             <div
               className="
@@ -383,7 +384,7 @@ function CustomizePizza() {
               </h4>
             </div>
 
-            {/* TITLE                                               */}
+            {/* TITLE */}
 
             <div
               className="
@@ -501,7 +502,7 @@ function CustomizePizza() {
               </p>
             </div>
 
-            {/* VEGETABLE TOPPINGS                                 */}
+            {/* VEGETABLE TOPPINGS  */}
 
             <ToppingBox
               title="Vegitable Toppings"
@@ -509,7 +510,7 @@ function CustomizePizza() {
               items={boxes}
             />
 
-            {/* MEAT TOPPINGS                                      */}
+            {/* MEAT TOPPINGS */}
 
             <ToppingBox
               title="Meat Toppings"
@@ -517,7 +518,7 @@ function CustomizePizza() {
               items={meatBoxes}
             />
 
-            {/* SEAFOOD TOPPINGS                                   */}
+            {/* SEAFOOD TOPPINGS */}
 
             <ToppingBox
               title="Seafood Toppings"
@@ -525,7 +526,7 @@ function CustomizePizza() {
               items={seafoodBoxes}
             />
 
-            {/* FOOTER                                             */}
+            {/* FOOTER */}
 
             <div className="mt-5">
               {/*  TOTAL  */}
@@ -603,6 +604,7 @@ function CustomizePizza() {
                 {/* BACK */}
 
                 <button
+                  onClick={onBack}
                   type="button"
                   className="
                     font-bold
