@@ -234,7 +234,7 @@ function OrderCard({ image, title, details, setCart }) {
         <button
           type="button"
           onClick={addToCart}
-          className="bg-[#FC8A06] px-5 py-2 rounded-lg"
+          className="bg-[#FC8A06] px-5 py-2 rounded-lg text-white font-semibold"
         >
           Add to Basket
         </button>

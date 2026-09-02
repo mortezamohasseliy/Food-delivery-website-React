@@ -1,3 +1,5 @@
+import { NavLink } from "react-router";
+
 function Header() {
   return (
     <header className="w-full">
@@ -18,11 +20,14 @@ function Header() {
 
           {/* Cart */}
           <div className="flex h-full w-1/2 items-center justify-center gap-3 bg-[#028643]">
-            <img
-              className="h-11.25 w-11.25 object-cover"
-              src="../src/assets/images/cart.png"
-              alt="Cart"
-            />
+            <NavLink to={"/cart"}>
+              {" "}
+              <img
+                className="h-11.25 w-11.25 object-cover"
+                src="../src/assets/images/cart.png"
+                alt="Cart"
+              />
+            </NavLink>
 
             <p className="text-[16px] font-semibold text-white">GBP 79.89</p>
           </div>
@@ -63,15 +68,18 @@ function Header() {
 
         {/* Cart */}
         <div className="flex h-17.5 w-94.5 items-center justify-evenly rounded-b-2xl bg-[#028643] text-white">
-          <img
-            className="h-10.75 w-10.75"
-            src="../src/assets/images/pucket.png"
-            alt="Cart"
-          />
+          <NavLink to={"/cart"}>
+            {" "}
+            <img
+              className="h-10.75 w-10.75"
+              src="../src/assets/images/pucket.png"
+              alt="Cart"
+            />
+          </NavLink>
 
-          <span className="text-[14px]">23 Items</span>
+          <span className="text-[14px]">0 Items</span>
 
-          <span className="text-[14px]">GBP 79.89</span>
+          <span className="text-[14px]">GBP 0</span>
 
           <img
             className="h-9.5 w-9.5 rotate-90"

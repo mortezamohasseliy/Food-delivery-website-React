@@ -5,6 +5,8 @@ import Home from "./components/Home/Home";
 import OrderPage from "./components/Orders/OrderPage";
 import Restaurants from "./components/Restuarants/Restuarants";
 import MealDeals from "./components/Orders/MealDeals";
+import Login from "./components/Home/login/Login";
+import Basket from "./components/Orders/Basket";
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -73,11 +75,15 @@ function App() {
             />
           }
         />
+
+        <Route path="/login" element={<Login />} />
+        <Route
+          path="/cart"
+          element={<Basket cart={cart} setCart={setCart} />}
+        />
       </Routes>
 
-      {isMealDealsOpen && (
-        <MealDeals onClose={closeMealDeals} onNext={() => {}} />
-      )}
+      {isMealDealsOpen && <MealDeals onClose={closeMealDeals} />}
     </>
   );
 }

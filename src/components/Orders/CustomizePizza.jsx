@@ -1,4 +1,6 @@
+import { useState } from "react";
 import { boxes } from "../../data/data";
+import SpecialRequest from "./SpecialRequest";
 
 const meatBoxes = [
   "Chicken",
@@ -13,7 +15,7 @@ const seafoodBoxes = ["Tuna", "Anchovies", "Prawns"];
 
 // TOPPING BOX
 
-function ToppingBox({ title, icon, items }) {
+function ToppingBox({ title, icon, items, selectedToppings, onToppingChange }) {
   return (
     <div
       className="
@@ -34,7 +36,7 @@ function ToppingBox({ title, icon, items }) {
         md:pb-5
       "
     >
-      {/*  TOPPING HEADER  */}
+      {/* TOPPING HEADER */}
 
       <div
         className="
@@ -119,7 +121,7 @@ function ToppingBox({ title, icon, items }) {
         </div>
       </div>
 
-      {/*  OPTIONS  */}
+      {/* OPTIONS */}
 
       <div
         className="
@@ -133,44 +135,58 @@ function ToppingBox({ title, icon, items }) {
           md:gap-x-0
         "
       >
-        {items.map((item, index) => (
-          <label
-            key={index}
-            className="
-              flex
-              items-center
-              gap-3
-              cursor-pointer
-              min-w-0
+        {items.map((item, index) => {
+          const isChecked = selectedToppings.includes(item);
 
-              md:w-45
-              md:justify-start
-            "
-          >
-            <input
-              type="checkbox"
-              className="
-                w-5
-                h-5
-                shrink-0
-                accent-[#028643]
-              "
-            />
+          const isDisabled = selectedToppings.length >= 4 && !isChecked;
 
-            <span
-              className="
-                font-bold
-                text-[13px]
-                leading-5
-                whitespace-nowrap
+          return (
+            <label
+              key={index}
+              className={`
+                flex
+                items-center
+                gap-3
+                min-w-0
 
-                md:text-[18px]
-              "
+                md:w-45
+                md:justify-start
+
+                ${
+                  isDisabled
+                    ? "cursor-not-allowed opacity-40"
+                    : "cursor-pointer"
+                }
+              `}
             >
-              {item}
-            </span>
-          </label>
-        ))}
+              <input
+                type="checkbox"
+                checked={isChecked}
+                disabled={isDisabled}
+                onChange={() => onToppingChange(item)}
+                className="
+                  w-5
+                  h-5
+                  shrink-0
+                  accent-[#028643]
+                "
+              />
+
+              <span
+                className="
+                  font-bold
+                  text-[13px]
+                  leading-5
+                  whitespace-nowrap
+
+                  md:text-[18px]
+                "
+              >
+                {item}
+              </span>
+            </label>
+          );
+        })}
       </div>
     </div>
   );
@@ -179,6 +195,50 @@ function ToppingBox({ title, icon, items }) {
 // CUSTOMIZE PIZZA MODAL
 
 function CustomizePizza({ onClose, onBack }) {
+  const [selectedToppings, setSelectedToppings] = useState([]);
+  const [isSpecialRequestOpen, setIsSpecialRequestOpen] = useState(false);
+
+  const MAX_TOPPINGS = 4;
+
+  const selectedCount = selectedToppings.length;
+
+  const remainingItems = MAX_TOPPINGS - selectedCount;
+
+  function handleToppingChange(item) {
+    setSelectedToppings((currentToppings) => {
+      if (currentToppings.includes(item)) {
+        return currentToppings.filter((topping) => topping !== item);
+      }
+
+      if (currentToppings.length >= MAX_TOPPINGS) {
+        return currentToppings;
+      }
+
+      return [...currentToppings, item];
+    });
+  }
+
+  function handleNext() {
+    setIsSpecialRequestOpen(true);
+  }
+
+  function handleBackFromRequest() {
+    setIsSpecialRequestOpen(false);
+  }
+
+  if (isSpecialRequestOpen) {
+    return (
+      <SpecialRequest
+        onClose={onClose}
+        onBack={handleBackFromRequest}
+        onAdd={(request) => {
+          console.log("Selected toppings:", selectedToppings);
+          console.log("Special request:", request);
+        }}
+      />
+    );
+  }
+
   return (
     <div
       className="
@@ -197,7 +257,7 @@ function CustomizePizza({ onClose, onBack }) {
         md:p-6
       "
     >
-      {/* MODAL  */}
+      {/* MODAL */}
 
       <div
         className="
@@ -305,7 +365,7 @@ function CustomizePizza({ onClose, onBack }) {
               />
             </div>
 
-            {/* BREADCRUMB  */}
+            {/* BREADCRUMB */}
 
             <div
               className="
@@ -438,7 +498,7 @@ function CustomizePizza({ onClose, onBack }) {
                   md:text-[20px]
                 "
               >
-                4/4 Selected
+                {selectedCount}/{MAX_TOPPINGS} Selected
               </p>
             </div>
 
@@ -487,27 +547,51 @@ function CustomizePizza({ onClose, onBack }) {
 
               {/* MESSAGE */}
 
-              <p
-                className="
-                  font-bold
-                  text-[16px]
-                  leading-5
-                  text-[#FC8A06]
+              <div>
+                <p
+                  className="
+                    font-bold
+                    text-[16px]
+                    leading-5
+                    text-[#FC8A06]
 
-                  md:text-[32px]
-                  md:leading-10
-                "
-              >
-                Please select up to 4 options free!
-              </p>
+                    md:text-[32px]
+                    md:leading-10
+                  "
+                >
+                  Please select up to 4 options free!
+                </p>
+
+                {/* REMAINING ITEMS MESSAGE */}
+
+                {remainingItems > 0 && (
+                  <p
+                    className="
+                      mt-2
+                      font-semibold
+                      text-[13px]
+                      leading-5
+                      text-[#008C45]
+
+                      md:text-[17px]
+                      md:leading-6
+                    "
+                  >
+                    You can still add {remainingItems}{" "}
+                    {remainingItems === 1 ? "more item" : "more items"}
+                  </p>
+                )}
+              </div>
             </div>
 
-            {/* VEGETABLE TOPPINGS  */}
+            {/* VEGETABLE TOPPINGS */}
 
             <ToppingBox
               title="Vegitable Toppings"
               icon="../src/assets/images/carrot.png"
               items={boxes}
+              selectedToppings={selectedToppings}
+              onToppingChange={handleToppingChange}
             />
 
             {/* MEAT TOPPINGS */}
@@ -516,6 +600,8 @@ function CustomizePizza({ onClose, onBack }) {
               title="Meat Toppings"
               icon="../src/assets/images/meat.png"
               items={meatBoxes}
+              selectedToppings={selectedToppings}
+              onToppingChange={handleToppingChange}
             />
 
             {/* SEAFOOD TOPPINGS */}
@@ -524,12 +610,14 @@ function CustomizePizza({ onClose, onBack }) {
               title="Seafood Toppings"
               icon="../src/assets/images/fish.png"
               items={seafoodBoxes}
+              selectedToppings={selectedToppings}
+              onToppingChange={handleToppingChange}
             />
 
             {/* FOOTER */}
 
             <div className="mt-5">
-              {/*  TOTAL  */}
+              {/* TOTAL */}
 
               <div
                 className="
@@ -572,7 +660,7 @@ function CustomizePizza({ onClose, onBack }) {
                 </span>
               </div>
 
-              {/*  DELIVERY  */}
+              {/* DELIVERY */}
 
               <p
                 className="
@@ -590,7 +678,7 @@ function CustomizePizza({ onClose, onBack }) {
                 Delivery & Tax will be calculated in the next step
               </p>
 
-              {/*  BUTTONS  */}
+              {/* BUTTONS */}
 
               <div
                 className="
@@ -621,6 +709,7 @@ function CustomizePizza({ onClose, onBack }) {
 
                 <button
                   type="button"
+                  onClick={handleNext}
                   className="
                     h-11
                     px-6
