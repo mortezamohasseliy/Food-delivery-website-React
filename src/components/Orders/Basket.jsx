@@ -193,7 +193,7 @@ function Basket({ cart, setCart }) {
                       md:leading-4.5
                       text-gray-600
 
-                      break-words
+                      wrap-break-word
                       overflow-wrap-anywhere
                     "
                   >

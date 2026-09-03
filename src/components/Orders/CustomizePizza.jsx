@@ -250,7 +250,7 @@ function CustomizePizza({ onClose, onBack, selectedPizza, total }) {
       className="
         fixed
         inset-0
-        z-[9999]
+        `z-9999`
 
         bg-black/60
 
@@ -276,7 +276,7 @@ function CustomizePizza({ onClose, onBack, selectedPizza, total }) {
 
           overflow-hidden
 
-          md:w-[1100px]
+          md:w-275
           md:max-w-[95vw]
           md:h-[95vh]
 
@@ -294,7 +294,7 @@ function CustomizePizza({ onClose, onBack, selectedPizza, total }) {
             top-3
             right-3
 
-            z-[100]
+            `z-100`
 
             w-10
             h-10
