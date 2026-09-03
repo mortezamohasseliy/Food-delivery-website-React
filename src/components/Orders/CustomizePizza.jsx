@@ -194,9 +194,14 @@ function ToppingBox({ title, icon, items, selectedToppings, onToppingChange }) {
 
 // CUSTOMIZE PIZZA MODAL
 
-function CustomizePizza({ onClose, onBack }) {
+function CustomizePizza({ onClose, onBack, selectedPizza, total }) {
   const [selectedToppings, setSelectedToppings] = useState([]);
   const [isSpecialRequestOpen, setIsSpecialRequestOpen] = useState(false);
+
+  const pizzaWithToppings = {
+    ...selectedPizza,
+    toppings: selectedToppings,
+  };
 
   const MAX_TOPPINGS = 4;
 
@@ -231,9 +236,10 @@ function CustomizePizza({ onClose, onBack }) {
       <SpecialRequest
         onClose={onClose}
         onBack={handleBackFromRequest}
-        onAdd={(request) => {
-          console.log("Selected toppings:", selectedToppings);
-          console.log("Special request:", request);
+        total={total}
+        selectedPizza={{
+          ...selectedPizza,
+          toppings: selectedToppings,
         }}
       />
     );
@@ -656,7 +662,7 @@ function CustomizePizza({ onClose, onBack }) {
                     whitespace-nowrap
                   "
                 >
-                  £127.90
+                  £{total.toFixed(2)}
                 </span>
               </div>
 

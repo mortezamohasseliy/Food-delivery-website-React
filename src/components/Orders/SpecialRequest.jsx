@@ -1,16 +1,17 @@
 import { useState } from "react";
 import DeliveryPopUp from "./DeliveryPopUp";
 
-function SpecialRequest({ onClose, onBack, onAdd }) {
+function SpecialRequest({ onClose, onBack, selectedPizza, total }) {
   const [specialRequest, setSpecialRequest] = useState("");
   const [isDeliveryOpen, setIsDeliveryOpen] = useState(false);
 
   function handleAdd() {
-    if (onAdd) {
-      onAdd(specialRequest);
-    }
-
     setIsDeliveryOpen(true);
+
+    const finalOrder = {
+      ...selectedPizza,
+      specialRequest,
+    };
   }
 
   if (isDeliveryOpen) {
@@ -340,7 +341,7 @@ function SpecialRequest({ onClose, onBack, onAdd }) {
                     md:text-[20px]
                   "
                 >
-                  £127.90
+                  £{total.toFixed(2)}
                 </span>
               </div>
 

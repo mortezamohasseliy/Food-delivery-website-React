@@ -161,7 +161,7 @@ function Basket({ cart, setCart }) {
                     leading-5
                     md:leading-6
 
-                    break-words
+                    wrap-break-word
                     overflow-wrap-anywhere
                   "
                 >
@@ -175,7 +175,7 @@ function Basket({ cart, setCart }) {
                       text-[12px]
                       md:text-[14px]
                       text-gray-500
-                      break-words
+                      wrap-break-word
                     "
                   >
                     {item.size}

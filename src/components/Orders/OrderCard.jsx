@@ -9,7 +9,7 @@ function OrderCard({ image, title, details, setCart }) {
   function addToCart() {
     const newItem = {
       id: `${image}-${selectedPizza.size}`,
-      name: "Farm House Xtreme Pizza",
+      name: title,
       size: selectedPizza.size,
       price: selectedPizza.price,
       image: image,

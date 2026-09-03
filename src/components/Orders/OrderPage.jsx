@@ -1,4 +1,3 @@
-import { useLocation } from "react-router";
 import Brands from "../Home/brands/Brands";
 import Footer from "../Home/footer/Footer";
 import Header from "../Home/header/Header";
@@ -16,7 +15,7 @@ function OrderPage({ cart, setCart, onSpecialOffersClick }) {
     <section className="w-full flex flex-col mx-auto">
       {/* header */}
       <div className="order-2 md:order-1">
-        <Header />
+        <Header cart={cart} />
       </div>
       {/* navbar */}
       <div className="order-1 md:order-2">
@@ -92,14 +91,23 @@ function OrderPage({ cart, setCart, onSpecialOffersClick }) {
             <OrderCard
               image="../../src/assets/images/pizza-1.png"
               setCart={setCart}
+              title="Farm House Xtreme Pizza"
+              details="1 McChicken™, 1 Big Mac™, 1 Royal Cheeseburger, 3 medium sized
+            French Fries, 3 cold drinks"
             />
             <OrderCard
               image="../../src/assets/images/pizza-2.png"
               setCart={setCart}
+              title="Deluxe Pizza"
+              details=" 1 McChicken™, 1 Big Mac™, 1 Royal Cheeseburger, 3 medium sized
+            French Fries, 3 cold drinks"
             />
             <OrderCard
               image="../../src/assets/images/pizza-3.png"
               setCart={setCart}
+              title="Tandoori Pizza"
+              details=" 1 McChicken™, 1 Big Mac™, 1 Royal Cheeseburger, 3 medium sized
+            French Fries, 3 cold drinks"
             />
           </div>
           <div className="hidden md:block">

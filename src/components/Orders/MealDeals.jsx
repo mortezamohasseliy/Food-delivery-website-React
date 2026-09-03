@@ -1,11 +1,19 @@
 import { useState } from "react";
 import DealItems from "./DealItems";
 import CustomizePizza from "./CustomizePizza";
+import { pizzaPrices } from "../../data/data";
 
 function MealDeals({ onClose }) {
   const [currentStep, setCurrentStep] = useState("meal-deals");
+  const [selectedPizza, setSelectedPizza] = useState(null);
+
+  const total = selectedPizza ? selectedPizza.price * selectedPizza.count : 0;
 
   function handleNext() {
+    if (!selectedPizza) {
+      return;
+    }
+
     setCurrentStep("customize-pizza");
   }
 
@@ -14,7 +22,14 @@ function MealDeals({ onClose }) {
   }
 
   if (currentStep === "customize-pizza") {
-    return <CustomizePizza onClose={onClose} onBack={handleBack} />;
+    return (
+      <CustomizePizza
+        onClose={onClose}
+        onBack={handleBack}
+        selectedPizza={selectedPizza}
+        total={total}
+      />
+    );
   }
 
   return (
@@ -215,31 +230,41 @@ function MealDeals({ onClose }) {
               <DealItems
                 pizzaImage="../src/assets/images/Margherita.png"
                 pizzaName="Margherita"
+                price={pizzaPrices.Margherita}
+                isSelected={selectedPizza?.name === "Margherita"}
+                onSelect={setSelectedPizza}
               />
 
               <DealItems
                 pizzaImage="../src/assets/images/Polo.png"
                 pizzaName="Polo"
+                price={pizzaPrices.Polo}
+                isSelected={selectedPizza?.name === "Polo"}
+                onSelect={setSelectedPizza}
               />
 
               <DealItems
                 pizzaImage="../src/assets/images/Meat Fiest.png"
-                pizzaName="Meat Fiest"
+                pizzaName="MeatFiest"
+                price={pizzaPrices["MeatFiest"]}
+                isSelected={selectedPizza?.name === "MeatFiest"}
+                onSelect={setSelectedPizza}
               />
 
               <DealItems
                 pizzaImage="../src/assets/images/Hawaiian.png"
                 pizzaName="Hawaiian"
+                price={pizzaPrices.Hawaiian}
+                isSelected={selectedPizza?.name === "Hawaiian"}
+                onSelect={setSelectedPizza}
               />
 
               <DealItems
                 pizzaImage="../src/assets/images/Margherita.png"
                 pizzaName="Toscana"
-              />
-
-              <DealItems
-                pizzaImage="../src/assets/images/Margherita.png"
-                pizzaName="Toscana"
+                price={pizzaPrices.Toscana}
+                isSelected={selectedPizza?.name === "Toscana"}
+                onSelect={setSelectedPizza}
               />
             </div>
 
@@ -299,7 +324,7 @@ function MealDeals({ onClose }) {
                     md:text-[36px]
                   "
                 >
-                  £127.90
+                  £{total.toFixed(2)}
                 </p>
               </div>
 

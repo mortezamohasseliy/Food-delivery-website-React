@@ -9,13 +9,15 @@ import RestaurantMap from "./RestaurantMap";
 import Brands from "../Home/brands/Brands";
 import Footer from "../Home/footer/Footer";
 import RestaurantProducts from "./RestaurantProducts";
+import { useState } from "react";
 
-function Restaurants({ onOrder, onSpecialOffersClick }) {
+function Restaurants({ onOrder, onSpecialOffersClick, cart }) {
+  const [selectedCategory, setSelectedCategory] = useState("Offers");
   return (
     <div className="w-full flex flex-col mx-auto">
       {/* Header */}
       <div className="order-2 lg:order-1">
-        <Header />
+        <Header cart={cart} />
       </div>
 
       {/* Navbar */}
@@ -34,7 +36,10 @@ function Restaurants({ onOrder, onSpecialOffersClick }) {
 
       {/* Filter categories section */}
       <div className="order-4">
-        <FilterCategories />
+        <FilterCategories
+          selectedCategory={selectedCategory}
+          setSelectedCategory={setSelectedCategory}
+        />
       </div>
 
       {/* Restaurant offer cards */}
@@ -44,7 +49,10 @@ function Restaurants({ onOrder, onSpecialOffersClick }) {
 
       {/* Products */}
       <div className="order-6">
-        <RestaurantProducts onOrder={onOrder} />
+        <RestaurantProducts
+          onOrder={onOrder}
+          selectedCategory={selectedCategory}
+        />
       </div>
 
       {/* Info section */}

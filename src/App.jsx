@@ -52,7 +52,7 @@ function App() {
       <Routes>
         <Route
           path="/"
-          element={<Home onSpecialOffersClick={openMealDeals} />}
+          element={<Home cart={cart} onSpecialOffersClick={openMealDeals} />}
         />
 
         <Route
@@ -61,6 +61,7 @@ function App() {
             <Restaurants
               onOrder={handleOrder}
               onSpecialOffersClick={openMealDeals}
+              cart={cart}
             />
           }
         />

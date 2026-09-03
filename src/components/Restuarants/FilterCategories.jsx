@@ -1,4 +1,18 @@
-function FilterCategories() {
+function FilterCategories({ selectedCategory, setSelectedCategory }) {
+  const categories = [
+    "Offers",
+    "Burgers",
+    "Fries",
+    "Snacks",
+    "Salads",
+    "Cold drinks",
+    "Happy Meal®",
+    "Desserts",
+    "Hot drinks",
+    "Sauces",
+    "Orbit®",
+  ];
+
   return (
     <section className="w-full mt-8 md:mt-16">
       {/* Header */}
@@ -16,9 +30,7 @@ function FilterCategories() {
           />
 
           <input
-            className="h-15.75 w-full rounded-[120px] border border-[#03081F] pl-15 pr-5 outline-none
-        placeholder:text-[16px] placeholder:font-semibold
-        md:placeholder:text-[18px]"
+            className="h-15.75 w-full rounded-[120px] border border-[#03081F] pl-15 pr-5 outline-none"
             type="text"
             placeholder="Search from menu..."
           />
@@ -29,74 +41,39 @@ function FilterCategories() {
       <div className="mt-5 flex h-20 w-full items-center bg-[#F3F3F3] px-4 md:mt-2.5 md:h-24 md:px-5">
         {/* Mobile */}
         <div className="w-full md:hidden">
-          <select className="h-12 w-full rounded-lg border border-gray-300 bg-white px-4 text-[16px] font-semibold outline-none">
-            <option>Offers</option>
-            <option>Burgers</option>
-            <option>Fries</option>
-            <option>Snacks</option>
-            <option>Salads</option>
-            <option>Cold drinks</option>
-            <option>Happy Meal®</option>
-            <option>Desserts</option>
-            <option>Hot drinks</option>
-            <option>Sauces</option>
-            <option>Orbit®</option>
+          <select
+            value={selectedCategory}
+            onChange={(e) => setSelectedCategory(e.target.value)}
+            className="h-12 w-full rounded-lg border border-gray-300 bg-white px-4 text-[16px] font-semibold outline-none"
+          >
+            {categories.map((category) => (
+              <option key={category}>{category}</option>
+            ))}
           </select>
         </div>
 
         {/* Desktop */}
         <div className="hidden w-full md:block">
-          <ul
-            className="flex items-center justify-around
-      text-[21px] font-bold text-[#252525]"
-          >
-            <li>
-              <button>Offers</button>
-            </li>
-
-            <li>
-              <button>Burgers</button>
-            </li>
-
-            <li>
-              <button>Fries</button>
-            </li>
-
-            <li>
-              <button>Snacks</button>
-            </li>
-
-            <li>
-              <button>Salads</button>
-            </li>
-
-            <li>
-              <button>Cold drinks</button>
-            </li>
-
-            <li>
-              <button>Happy Meal®</button>
-            </li>
-
-            <li>
-              <button>Desserts</button>
-            </li>
-
-            <li>
-              <button>Hot drinks</button>
-            </li>
-
-            <li>
-              <button>Sauces</button>
-            </li>
-
-            <li>
-              <button>Orbit®</button>
-            </li>
+          <ul className="flex items-center justify-around text-[21px] font-bold text-[#252525]">
+            {categories.map((category) => (
+              <li key={category}>
+                <button
+                  onClick={() => setSelectedCategory(category)}
+                  className={
+                    selectedCategory === category
+                      ? "min-w-31 h-9.75 px-5 rounded-[120px] bg-[#03081F] text-white flex items-center justify-center"
+                      : ""
+                  }
+                >
+                  {category}
+                </button>
+              </li>
+            ))}
           </ul>
         </div>
       </div>
     </section>
   );
 }
+
 export default FilterCategories;

@@ -10,7 +10,7 @@ import About from "./about/About";
 import Stats from "./stats/Stats";
 import Footer from "./footer/Footer";
 
-function Home({ onSpecialOffersClick }) {
+function Home({ onSpecialOffersClick, cart }) {
   return (
     <>
       <div className="flex flex-col">
@@ -21,7 +21,7 @@ function Home({ onSpecialOffersClick }) {
 
         {/* Header */}
         <div className="order-2 lg:order-1">
-          <Header />
+          <Header cart={cart} />
         </div>
       </div>
       {/* landing page */}

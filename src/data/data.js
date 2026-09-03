@@ -127,3 +127,12 @@ export const boxes = [
   "Pineapples",
   "Onions",
 ];
+
+// pizza Prices:
+export const pizzaPrices = {
+  Margherita: 10,
+  Polo: 12,
+  MeatFiest: 14,
+  Hawaiian: 13,
+  Toscana: 15,
+};

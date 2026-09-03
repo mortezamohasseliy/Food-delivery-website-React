@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function DealItems({ pizzaImage, pizzaName }) {
+function DealItems({ pizzaImage, pizzaName, price, onSelect, isSelected }) {
   const [count, setCount] = useState(1);
 
   function increaseBtn() {
@@ -24,10 +24,17 @@ function DealItems({ pizzaImage, pizzaName }) {
 
   return (
     <div
+      onClick={() =>
+        onSelect({
+          name: pizzaName,
+          price: price,
+          count: count,
+        })
+      }
       className="
         w-full
         min-h-25
-
+        cursor-pointer
         bg-[#D9D9D999]
 
         rounded-xl
@@ -54,9 +61,7 @@ function DealItems({ pizzaImage, pizzaName }) {
         md:gap-5
       "
     >
-      {/* ================================================== */}
-      {/* LEFT SIDE                                          */}
-      {/* ================================================== */}
+      {/* LEFT SIDE  */}
 
       <div
         className="
@@ -72,7 +77,7 @@ function DealItems({ pizzaImage, pizzaName }) {
           md:gap-5
         "
       >
-        {/* ================= PIZZA IMAGE ================= */}
+        {/*  PIZZA IMAGE */}
 
         <img
           className="
@@ -95,7 +100,7 @@ function DealItems({ pizzaImage, pizzaName }) {
           alt={pizzaName}
         />
 
-        {/* ================= VERTICAL LINE ================= */}
+        {/*  VERTICAL LINE  */}
 
         <div
           className="
@@ -112,7 +117,7 @@ function DealItems({ pizzaImage, pizzaName }) {
           "
         />
 
-        {/* ================= PIZZA NAME ================= */}
+        {/*  PIZZA NAME  */}
 
         <p
           className="
@@ -138,9 +143,7 @@ function DealItems({ pizzaImage, pizzaName }) {
         </p>
       </div>
 
-      {/* ================================================== */}
-      {/* RIGHT SIDE                                         */}
-      {/* ================================================== */}
+      {/* RIGHT SIDE */}
 
       <div
         className="
@@ -156,7 +159,7 @@ function DealItems({ pizzaImage, pizzaName }) {
           md:gap-5
         "
       >
-        {/* ================= MINUS ================= */}
+        {/*  MINUS  */}
 
         <button
           type="button"
@@ -192,7 +195,7 @@ function DealItems({ pizzaImage, pizzaName }) {
           />
         </button>
 
-        {/* ================= COUNT ================= */}
+        {/*  COUNT */}
 
         <input
           type="number"
@@ -229,7 +232,7 @@ function DealItems({ pizzaImage, pizzaName }) {
           "
         />
 
-        {/* ================= PLUS ================= */}
+        {/* PLUS  */}
 
         <button
           type="button"
