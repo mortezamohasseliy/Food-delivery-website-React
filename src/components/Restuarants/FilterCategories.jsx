@@ -25,7 +25,7 @@ function FilterCategories({ selectedCategory, setSelectedCategory }) {
         <div className="relative w-full md:w-86">
           <img
             className="absolute left-5 top-1/2 h-6.5 w-6.5 -translate-y-1/2"
-            src="../../src/assets/images/search.png"
+            src="../../assets/images/search.png"
             alt=""
           />
 

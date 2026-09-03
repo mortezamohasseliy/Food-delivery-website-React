@@ -29,7 +29,7 @@ function ProductCard({ title, details, price, image, onAdd }) {
           <button onClick={onAdd}>
             <img
               className="w-5 h-5 md:w-12.25 md:h-12.25"
-              src="../../src/assets/images/plus.png"
+              src="../../assets/images/plus.png"
               alt="Add"
             />
           </button>

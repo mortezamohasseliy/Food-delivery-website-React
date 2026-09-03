@@ -334,7 +334,7 @@ function Basket({ cart, setCart }) {
               md:w-6.5
               -translate-y-1/2
             "
-            src="../../src/assets/images/arrow-bottom.png"
+            src="../../assets/images/arrow-bottom.png"
             alt=""
           />
 
@@ -372,7 +372,7 @@ function Basket({ cart, setCart }) {
                 md:w-6.5
                 -translate-y-1/2
               "
-              src="../../src/assets/images/arrow-right-2.png"
+              src="../../assets/images/arrow-right-2.png"
               alt=""
             />
           </button>
@@ -444,7 +444,7 @@ function Basket({ cart, setCart }) {
         >
           <img
             className="w-8.75 h-8.75"
-            src="../../src/assets/images/scooter.png"
+            src="../../assets/images/scooter.png"
             alt=""
           />
 
@@ -481,7 +481,7 @@ function Basket({ cart, setCart }) {
         >
           <img
             className="w-8.75 h-8.75"
-            src="../../src/assets/images/collection.png"
+            src="../../assets/images/collection.png"
             alt=""
           />
 
@@ -508,7 +508,7 @@ function Basket({ cart, setCart }) {
             md:w-8.75
             -translate-y-1/2
           "
-          src="../../src/assets/images/arrow.png"
+          src="../../assets/images/arrow.png"
           alt=""
         />
 
