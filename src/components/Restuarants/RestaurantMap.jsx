@@ -3,7 +3,7 @@ function RestaurantMap() {
     <section
       className="
     relative w-full h-105 mt-5
-    bg-[url('../src/assets/images/map.png')] bg-cover bg-center
+    bg-[url('/images/map.png')] bg-cover bg-center
     md:relative md:w-full md:h-164.75 md:mt-10
   "
     >

@@ -80,31 +80,31 @@ function OrderCard({ image, title, details, setCart }) {
           <div className="flex">
             <img
               className="w-4 h-4 md:w-[20.64px] md:h-[20.64px]"
-              src="../../src/assets/images/chilli.png"
+              src="/images/chilli.png"
               alt=""
             />
 
             <img
               className="w-4 h-4 md:w-[20.64px] md:h-[20.64px]"
-              src="../../src/assets/images/chilli.png"
+              src="/images/chilli.png"
               alt=""
             />
 
             <img
               className="w-4 h-4 md:w-[20.64px] md:h-[20.64px]"
-              src="../../src/assets/images/chilli.png"
+              src="/images/chilli.png"
               alt=""
             />
 
             <img
               className="w-4 h-4 md:w-[20.64px] md:h-[20.64px]"
-              src="../../src/assets/images/chilli.png"
+              src="/images/chilli.png"
               alt=""
             />
 
             <img
               className="w-4 h-4 md:w-[20.64px] md:h-[20.64px]"
-              src="../../src/assets/images/chilli.png"
+              src="/images/chilli.png"
               alt=""
             />
           </div>

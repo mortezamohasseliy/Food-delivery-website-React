@@ -8,7 +8,7 @@ function RestaurantInfo() {
             <span>
               <img
                 className="w-8 h-8 md:w-11.25 md:h-11.25"
-                src="../src/assets/images/location.png"
+                src="/images/location.png"
                 alt=""
               />
             </span>
@@ -42,7 +42,7 @@ function RestaurantInfo() {
             <span>
               <img
                 className="w-8 h-8 md:w-11.25 md:h-11.25"
-                src="../src/assets/images/contact.png"
+                src="/images/contact.png"
                 alt=""
               />
             </span>
@@ -70,7 +70,7 @@ function RestaurantInfo() {
             <span>
               <img
                 className="w-8 h-8 md:w-11.25 md:h-11.25"
-                src="../src/assets/images/clock - 2.png"
+                src="/images/clock - 2.png"
                 alt=""
               />
             </span>

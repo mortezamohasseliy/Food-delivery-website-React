@@ -26,7 +26,7 @@ function OrderPage({ cart, setCart, onSpecialOffersClick }) {
         <RestaurantLandingPage
           text={"Desi Flavours with a blend of Italian aesthetics!"}
           title={"Tandoori Pizza London"}
-          cover={"../../assets/images/order-cover.png"}
+          cover={"../images/order-cover.png"}
         />
       </div>
 
@@ -40,7 +40,7 @@ function OrderPage({ cart, setCart, onSpecialOffersClick }) {
           <div className="relative w-full md:w-86">
             <img
               className="absolute left-5 top-1/2 h-6.5 w-6.5 -translate-y-1/2"
-              src="../../assets/images/search.png"
+              src="../images/search.png"
               alt=""
             />
 
@@ -73,7 +73,7 @@ function OrderPage({ cart, setCart, onSpecialOffersClick }) {
               <div className="relative w-51.75 md:w-86">
                 <img
                   className="absolute right-5 top-1/2 h-6.5 w-6.5 -translate-y-1/2"
-                  src="../../assets/images/arrow-bottom-2.png"
+                  src="../images/arrow-bottom-2.png"
                   alt=""
                 />
 
@@ -89,21 +89,21 @@ function OrderPage({ cart, setCart, onSpecialOffersClick }) {
               </div>
             </div>
             <OrderCard
-              image="../../assets/images/pizza-1.png"
+              image="../images/pizza-1.png"
               setCart={setCart}
               title="Farm House Xtreme Pizza"
               details="1 McChicken™, 1 Big Mac™, 1 Royal Cheeseburger, 3 medium sized
             French Fries, 3 cold drinks"
             />
             <OrderCard
-              image="../../assets/images/pizza-2.png"
+              image="../images/pizza-2.png"
               setCart={setCart}
               title="Deluxe Pizza"
               details=" 1 McChicken™, 1 Big Mac™, 1 Royal Cheeseburger, 3 medium sized
             French Fries, 3 cold drinks"
             />
             <OrderCard
-              image="../../assets/images/pizza-3.png"
+              image="../images/pizza-3.png"
               setCart={setCart}
               title="Tandoori Pizza"
               details=" 1 McChicken™, 1 Big Mac™, 1 Royal Cheeseburger, 3 medium sized
@@ -124,7 +124,7 @@ function OrderPage({ cart, setCart, onSpecialOffersClick }) {
               <span>
                 <img
                   className="md:w-14.5 md:h-14.5"
-                  src="../../assets/images/clock.png"
+                  src="../images/clock.png"
                   alt=""
                 />
               </span>

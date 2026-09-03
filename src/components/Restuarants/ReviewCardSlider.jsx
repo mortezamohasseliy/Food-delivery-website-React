@@ -69,7 +69,7 @@ function ReviewCardSlider() {
           >
             <img
               className="w-5 h-5 md:w-9 md:h-9"
-              src="../src/assets/images/arrow-left.png"
+              src="/images/arrow-left.png"
               alt="Previous"
             />
           </button>
@@ -94,7 +94,7 @@ function ReviewCardSlider() {
           >
             <img
               className="w-5 h-5 md:w-9 md:h-9 rotate-180"
-              src="../src/assets/images/arrow-left.png"
+              src="/images/arrow-left.png"
               alt="Next"
             />
           </button>

@@ -7,7 +7,7 @@ function RestaurantProducts({ onOrder, selectedCategory }) {
     title: "Royal Cheese Burger with extra Fries",
     details: "1 McChicken™, 1 Big Mac™, 1 Royal Cheeseburger, 3 medium",
     price: "GBP 23.10",
-    image: "../../assets/images/burger-1.png",
+    image: "../images/burger-1.png",
   };
 
   const fries = {
@@ -15,7 +15,7 @@ function RestaurantProducts({ onOrder, selectedCategory }) {
     title: "Royal Cheese Burger with extra Fries",
     details: "1 McChicken™, 1 Big Mac™, 1 Royal Cheeseburger, 3 medium",
     price: "GBP 23.10",
-    image: "../../assets/images/fries.png",
+    image: "../images/fries.png",
   };
 
   const friesTwo = {
@@ -23,7 +23,7 @@ function RestaurantProducts({ onOrder, selectedCategory }) {
     title: "Royal Cheese Burger with extra Fries",
     details: "1 McChicken™, 1 Big Mac™, 1 Royal Cheeseburger, 3 medium",
     price: "GBP 23.10",
-    image: "../../assets/images/fries-2.png",
+    image: "../images/fries-2.png",
   };
 
   return (

@@ -22,7 +22,7 @@ function SignUp() {
               object-cover
               rounded-xl
             "
-            src="../src/assets/images/chef.png"
+            src="/images/chef.png"
             alt=""
           />
 
@@ -144,7 +144,7 @@ function SignUp() {
               rounded-xl
               object-cover
             "
-            src="../src/assets/images/chef-1.png"
+            src="/images/chef-1.png"
             alt=""
           />
 

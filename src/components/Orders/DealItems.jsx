@@ -190,7 +190,7 @@ function DealItems({ pizzaImage, pizzaName, price, onSelect, isSelected }) {
 
               object-contain
             "
-            src="../src/assets/images/minus.png"
+            src="/images/Minus.png"
             alt="Decrease"
           />
         </button>
@@ -263,7 +263,7 @@ function DealItems({ pizzaImage, pizzaName, price, onSelect, isSelected }) {
 
               object-contain
             "
-            src="../src/assets/images/plus.png"
+            src="/images/plus.png"
             alt="Increase"
           />
         </button>

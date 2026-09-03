@@ -55,7 +55,7 @@ function DiscountOffer() {
             <div className="flex h-9.5 items-center gap-2 rounded-[120px] border border-[#03081F] px-3 text-[10px] font-semibold text-[#03081F]">
               <span className="h-4.5 w-4.5 rotate-90">
                 <img
-                  src="../src/assets/images/arrow-right.png"
+                  src="/images/arrow-right.png"
                   alt=""
                   className="h-full w-full"
                 />

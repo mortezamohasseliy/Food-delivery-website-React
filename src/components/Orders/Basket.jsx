@@ -64,7 +64,7 @@ function Basket({ cart, setCart }) {
       >
         <img
           className="md:w-14.5 md:h-14.5 w-10 h-10"
-          src="../src/assets/images/pucket.png"
+          src="/images/pucket.png"
           alt=""
         />
 
@@ -217,7 +217,7 @@ function Basket({ cart, setCart }) {
                   shrink-0
                   cursor-pointer
                 "
-                src="../src/assets/images/trash-2.png"
+                src="/images/trash-2.png"
                 alt="Remove item"
               />
             </div>
@@ -334,7 +334,7 @@ function Basket({ cart, setCart }) {
               md:w-6.5
               -translate-y-1/2
             "
-            src="../../assets/images/arrow-bottom.png"
+            src="../images/arrow-bottom.png"
             alt=""
           />
 
@@ -372,7 +372,7 @@ function Basket({ cart, setCart }) {
                 md:w-6.5
                 -translate-y-1/2
               "
-              src="../../assets/images/arrow-right-2.png"
+              src="../images/arrow-right-2.png"
               alt=""
             />
           </button>
@@ -442,11 +442,7 @@ function Basket({ cart, setCart }) {
             }
           `}
         >
-          <img
-            className="w-8.75 h-8.75"
-            src="../../assets/images/scooter.png"
-            alt=""
-          />
+          <img className="w-8.75 h-8.75" src="../images/scooter.png" alt="" />
 
           <h3 className="font-semibold text-[14px] md:text-[16px]">Delivery</h3>
 
@@ -481,7 +477,7 @@ function Basket({ cart, setCart }) {
         >
           <img
             className="w-8.75 h-8.75"
-            src="../../assets/images/collection.png"
+            src="../images/collection.png"
             alt=""
           />
 
@@ -508,7 +504,7 @@ function Basket({ cart, setCart }) {
             md:w-8.75
             -translate-y-1/2
           "
-          src="../../assets/images/arrow.png"
+          src="../images/arrow.png"
           alt=""
         />
 

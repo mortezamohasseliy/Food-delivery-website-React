@@ -30,7 +30,7 @@ function Restaurants({ onOrder, onSpecialOffersClick, cart }) {
         <RestaurantLandingPage
           text={"I'm lovin' it!"}
           title={"McDonald’s East London"}
-          cover={"../../assets/images/burger.png"}
+          cover={"../images/burger.png"}
         />
       </div>
 

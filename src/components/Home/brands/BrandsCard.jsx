@@ -1,32 +1,32 @@
 const brands = [
   {
     id: 0,
-    brandImage: "../src/assets/images/brand-1.png",
+    brandImage: "/images/brand-1.png",
     brandTitle: "McDonald’s London",
   },
   {
     id: 1,
-    brandImage: "../src/assets/images/brand-2.png",
+    brandImage: "/images/brand-2.png",
     brandTitle: "Papa Johns",
   },
   {
     id: 2,
-    brandImage: "../src/assets/images/brand-3.png",
+    brandImage: "/images/brand-3.png",
     brandTitle: "KFC West London",
   },
   {
     id: 3,
-    brandImage: "../src/assets/images/brand-4.png",
+    brandImage: "/images/brand-4.png",
     brandTitle: "Texas Chicken",
   },
   {
     id: 4,
-    brandImage: "../src/assets/images/brand-5.png",
+    brandImage: "/images/brand-5.png",
     brandTitle: "Burger King",
   },
   {
     id: 5,
-    brandImage: "../src/assets/images/brand-6.png",
+    brandImage: "/images/brand-6.png",
     brandTitle: "Shaurma 1",
   },
 ];

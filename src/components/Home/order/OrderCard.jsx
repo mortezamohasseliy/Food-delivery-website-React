@@ -1,37 +1,37 @@
 const cards = [
   {
     id: 0,
-    cardImage: "../src/assets/images/food-3.png",
+    cardImage: "/images/food-3.png",
     cardTitle: "Burgers & Fast food",
     numRestaurants: "21 Restaurants",
   },
   {
     id: 1,
-    cardImage: "../src/assets/images/food-4.png",
+    cardImage: "/images/food-4.png",
     cardTitle: "Salads",
     numRestaurants: "32 Restaurants",
   },
   {
     id: 2,
-    cardImage: "../src/assets/images/food-5.png",
+    cardImage: "/images/food-5.png",
     cardTitle: "Pasta & Casuals",
     numRestaurants: "4 Restaurants",
   },
   {
     id: 3,
-    cardImage: "../src/assets/images/food-6.png",
+    cardImage: "/images/food-6.png",
     cardTitle: "Pizza",
     numRestaurants: "32 Restaurants",
   },
   {
     id: 4,
-    cardImage: "../src/assets/images/food-7.png",
+    cardImage: "/images/food-7.png",
     cardTitle: "Breakfast",
     numRestaurants: "4 Restaurants",
   },
   {
     id: 5,
-    cardImage: "../src/assets/images/food-8.png",
+    cardImage: "/images/food-8.png",
     cardTitle: "Soups",
     numRestaurants: "32 Restaurants",
   },

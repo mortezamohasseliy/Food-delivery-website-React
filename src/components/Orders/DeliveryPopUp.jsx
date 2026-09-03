@@ -120,7 +120,7 @@ function DeliveryPopUp() {
 
               object-contain
             "
-            src="../src/assets/images/close.png"
+            src="/images/Close.png"
             alt="Close"
           />
         </button>
@@ -145,7 +145,7 @@ function DeliveryPopUp() {
   "
         >
           <img
-            src={`${error ? "../src/assets/images/delivery-2.png" : `${success ? "../src/assets/images/delivery-3.png" : "../src/assets/images/delivery-1.png"}`}`}
+            src={`${error ? "/images/delivery-2.png" : `${success ? "/images/delivery-3.png" : "/images/delivery-1.png"}`}`}
             alt="Delivery"
             className="
       block
@@ -468,7 +468,7 @@ function DeliveryPopUp() {
               "
             >
               <img
-                src="../src/assets/images/map-2.png"
+                src="/images/map-2.png"
                 alt=""
                 className="
                   w-32
