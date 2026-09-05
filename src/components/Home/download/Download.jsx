@@ -139,7 +139,7 @@ function Download() {
 
             md:w-[203.15px]
           "
-          src="/images/store.png"
+          src="/images/store.webp"
           alt="Download on the App Store"
         />
       </div>
@@ -165,7 +165,7 @@ function Download() {
     md:w-208
     md:max-w-none
   "
-        src="/images/use-mobile.png"
+        src="/images/use-mobile.webp"
         alt=""
       />
     </section>

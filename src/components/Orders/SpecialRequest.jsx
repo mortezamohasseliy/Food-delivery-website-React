@@ -84,7 +84,7 @@ function SpecialRequest({ onClose, onBack, selectedPizza, total }) {
           "
         >
           <img
-            src="/images/Close.png"
+            src="/images/Close.webp"
             alt="Close"
             className="
               w-5
@@ -115,7 +115,7 @@ function SpecialRequest({ onClose, onBack, selectedPizza, total }) {
             "
           >
             <img
-              src="/images/pizza-5.png"
+              src="/images/pizza-5.webp"
               alt=""
               className="
                 w-full
@@ -208,7 +208,7 @@ function SpecialRequest({ onClose, onBack, selectedPizza, total }) {
               "
             >
               <img
-                src="/images/Polo.png"
+                src="/images/Polo.webp"
                 alt=""
                 className="
                   w-14.5

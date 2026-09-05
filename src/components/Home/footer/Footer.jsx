@@ -23,13 +23,13 @@ function Footer() {
         <div className="w-full md:w-auto flex flex-col items-center">
           <img
             className="w-50 md:w-67 h-auto"
-            src="/images/logo-2.png"
+            src="/images/logo-2.webp"
             alt="Order.uk"
           />
 
           <img
             className="mt-5 w-65 md:w-90.25 h-auto"
-            src="/images/store-logoes.png"
+            src="/images/store-logoes.webp"
             alt="App stores"
           />
 
@@ -95,25 +95,25 @@ function Footer() {
           <div className="mt-5 flex items-center gap-3 md:gap-5 justify-center md:justify-start">
             <img
               className="h-9 w-9 md:h-11.25 md:w-11.25"
-              src="/images/facebook.png"
+              src="/images/facebook.webp"
               alt="Facebook"
             />
 
             <img
               className="h-9 w-9 md:h-11.25 md:w-11.25"
-              src="/images/instagram.png"
+              src="/images/instagram.webp"
               alt="Instagram"
             />
 
             <img
               className="h-9 w-9 md:h-11.25 md:w-11.25"
-              src="/images/tiktok.png"
+              src="/images/tiktok.webp"
               alt="TikTok"
             />
 
             <img
               className="h-9 w-9 md:h-11.25 md:w-11.25"
-              src="/images/snapchat.png"
+              src="/images/snapchat.webp"
               alt="Snapchat"
             />
           </div>

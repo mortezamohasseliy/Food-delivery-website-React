@@ -98,7 +98,7 @@ function MealDeals({ onClose }) {
               sm:h-5.5
               object-contain
             "
-            src="/images/Close.png"
+            src="/images/Close.webp"
             alt="Close"
           />
         </button>
@@ -135,7 +135,7 @@ function MealDeals({ onClose }) {
                   object-cover
                   rounded-xl
                 "
-                src="/images/pizza-4.png"
+                src="/images/pizza-4.webp"
                 alt="Meal Deal"
               />
             </div>
@@ -179,7 +179,7 @@ function MealDeals({ onClose }) {
                   md:w-6
                   md:h-6
                 "
-                src="/images/Forward.png"
+                src="/images/Forward.webp"
                 alt=""
               />
 
@@ -228,7 +228,7 @@ function MealDeals({ onClose }) {
               "
             >
               <DealItems
-                pizzaImage="/images/Margherita.png"
+                pizzaImage="/images/Margherita.webp"
                 pizzaName="Margherita"
                 price={pizzaPrices.Margherita}
                 isSelected={selectedPizza?.name === "Margherita"}
@@ -236,7 +236,7 @@ function MealDeals({ onClose }) {
               />
 
               <DealItems
-                pizzaImage="/images/Polo.png"
+                pizzaImage="/images/Polo.webp"
                 pizzaName="Polo"
                 price={pizzaPrices.Polo}
                 isSelected={selectedPizza?.name === "Polo"}
@@ -244,7 +244,7 @@ function MealDeals({ onClose }) {
               />
 
               <DealItems
-                pizzaImage="/images/Meat Fiest.png"
+                pizzaImage="/images/Meat Fiest.webp"
                 pizzaName="MeatFiest"
                 price={pizzaPrices["MeatFiest"]}
                 isSelected={selectedPizza?.name === "MeatFiest"}
@@ -252,7 +252,7 @@ function MealDeals({ onClose }) {
               />
 
               <DealItems
-                pizzaImage="/images/Hawaiian.png"
+                pizzaImage="/images/Hawaiian.webp"
                 pizzaName="Hawaiian"
                 price={pizzaPrices.Hawaiian}
                 isSelected={selectedPizza?.name === "Hawaiian"}
@@ -260,7 +260,7 @@ function MealDeals({ onClose }) {
               />
 
               <DealItems
-                pizzaImage="/images/Margherita.png"
+                pizzaImage="/images/Margherita.webp"
                 pizzaName="Toscana"
                 price={pizzaPrices.Toscana}
                 isSelected={selectedPizza?.name === "Toscana"}
@@ -404,7 +404,7 @@ function MealDeals({ onClose }) {
                     z-10
                     object-contain
                   "
-                  src="/images/arrow.png"
+                  src="/images/arrow.webp"
                   alt=""
                 />
 

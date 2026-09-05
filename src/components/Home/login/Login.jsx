@@ -54,7 +54,7 @@ function Login() {
         <div className="flex justify-center mb-6">
           <Link to="/">
             <img
-              src="/images/logo.png"
+              src="/images/logo.webp"
               alt="Logo"
               className="
                 w-38.5

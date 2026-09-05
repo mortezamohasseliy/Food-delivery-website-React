@@ -83,7 +83,7 @@ function Navbar({ onSpecialOffersClick }) {
         <NavLink to={"/login"}>
           {" "}
           <button className="w-58.5 h-15.25 rounded-full bg-[#03081F] text-white flex items-center justify-center gap-3">
-            <img className="w-7.75 h-6.75" src="/images/user.png" alt="" />
+            <img className="w-7.75 h-6.75" src="/images/user.webp" alt="" />
 
             <span>Login/Signup</span>
           </button>
@@ -98,7 +98,7 @@ function Navbar({ onSpecialOffersClick }) {
           <NavLink to="/">
             <img
               className="w-38.5 h-9.5 object-contain"
-              src="/images/logo.png"
+              src="/images/logo.webp"
               alt="Logo"
             />
           </NavLink>
@@ -108,7 +108,7 @@ function Navbar({ onSpecialOffersClick }) {
             onClick={() => setIsOpen(!isOpen)}
             className="w-12 h-12 flex items-center justify-center"
           >
-            <img className="w-10 h-10" src="/images/menu.png" alt="Menu" />
+            <img className="w-10 h-10" src="/images/menu.webp" alt="Menu" />
           </button>
         </div>
 
@@ -191,7 +191,7 @@ function Navbar({ onSpecialOffersClick }) {
             <NavLink to={"/login"}>
               {" "}
               <button className="w-full h-12 mt-4 rounded-full bg-[#FC8A06] text-white flex items-center justify-center gap-3 font-semibold">
-                <img className="w-6 h-6" src="/images/user.png" alt="" />
+                <img className="w-6 h-6" src="/images/user.webp" alt="" />
 
                 <span>Login/Signup</span>
               </button>

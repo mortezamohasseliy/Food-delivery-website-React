@@ -2,19 +2,19 @@ const cards = [
   {
     id: 0,
     title: "Place an Order!",
-    image: "/images/order-food.png",
+    image: "/images/order-food.webp",
     text: "Place order through our website or Mobile app",
   },
   {
     id: 1,
     title: "Track Progress!",
-    image: "/images/drink.png",
+    image: "/images/drink.webp",
     text: "Your can track your order status with delivery time",
   },
   {
     id: 2,
     title: "Get your Order!",
-    image: "/images/order.png",
+    image: "/images/order.webp",
     text: "Receive your order at a lighting fast speed!",
   },
 ];

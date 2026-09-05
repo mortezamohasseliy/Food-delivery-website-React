@@ -61,7 +61,7 @@ function OrderTypeModal({ onClose, onDelivery, onCollection }) {
           "
         >
           <img
-            src="/images/close.png"
+            src="/images/close.webp"
             alt="Close"
             className="
               w-7

@@ -27,7 +27,7 @@ function ReviewCard() {
               md:w-13.5
               md:h-13.5
             "
-            src="/images/customer.png"
+            src="/images/customer.webp"
             alt=""
           />
 
@@ -48,31 +48,31 @@ function ReviewCard() {
           <div className="flex gap-0.5 justify-end">
             <img
               className="w-3.5 h-3.5 md:w-[16.98px] md:h-[16.98px]"
-              src="/images/star.png"
+              src="/images/star.webp"
               alt=""
             />
 
             <img
               className="w-3.5 h-3.5 md:w-[16.98px] md:h-[16.98px]"
-              src="/images/star.png"
+              src="/images/star.webp"
               alt=""
             />
 
             <img
               className="w-3.5 h-3.5 md:w-[16.98px] md:h-[16.98px]"
-              src="/images/star.png"
+              src="/images/star.webp"
               alt=""
             />
 
             <img
               className="w-3.5 h-3.5 md:w-[16.98px] md:h-[16.98px]"
-              src="/images/star.png"
+              src="/images/star.webp"
               alt=""
             />
 
             <img
               className="w-3.5 h-3.5 md:w-[16.98px] md:h-[16.98px]"
-              src="/images/star.png"
+              src="/images/star.webp"
               alt=""
             />
           </div>
@@ -81,7 +81,7 @@ function ReviewCard() {
           <div className="flex items-center gap-2 md:gap-3">
             <img
               className="w-5 h-5 md:w-5.75 md:h-5.75"
-              src="/images/clock-3.png"
+              src="/images/clock-3.webp"
               alt=""
             />
 

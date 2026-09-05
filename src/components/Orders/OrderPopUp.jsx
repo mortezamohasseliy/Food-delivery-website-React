@@ -89,7 +89,7 @@ function OrderPopUp() {
           "
         >
           <img
-            src="/images/close.png"
+            src="/images/close.webp"
             alt="Close"
             className="
               w-5
@@ -219,7 +219,7 @@ function OrderPopUp() {
                 "
               >
                 <img
-                  src="/images/scooter.png"
+                  src="/images/scooter.webp"
                   alt=""
                   className="
                     w-7
@@ -303,7 +303,7 @@ function OrderPopUp() {
                 "
               >
                 <img
-                  src="/images/store-2.png"
+                  src="/images/store-2.webp"
                   alt=""
                   className="
                     w-7

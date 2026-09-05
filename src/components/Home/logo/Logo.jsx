@@ -4,7 +4,7 @@ function Logo() {
       className="md:w-53.75 md:h-13.25
     w-27.5 h-6.75"
     >
-      <img src="/images/logo.png" alt="" />
+      <img src="/images/logo.webp" alt="" />
     </div>
   );
 }

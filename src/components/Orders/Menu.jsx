@@ -52,7 +52,7 @@ function Menu() {
               md:w-13.75
               md:h-13.75
             "
-            src="../images/res-logo.png"
+            src="../images/res-logo.webp"
             alt=""
           />
 
@@ -92,7 +92,7 @@ function Menu() {
           >
             <img
               className="h-6.5 w-6.5 "
-              src="../images/arrow-bottom-2.png"
+              src="../images/arrow-bottom-2.webp"
               alt=""
             />
           </span>

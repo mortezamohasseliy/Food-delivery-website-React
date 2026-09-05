@@ -120,7 +120,7 @@ function DeliveryPopUp() {
 
               object-contain
             "
-            src="/images/Close.png"
+            src="/images/Close.webp"
             alt="Close"
           />
         </button>
@@ -145,7 +145,7 @@ function DeliveryPopUp() {
   "
         >
           <img
-            src={`${error ? "/images/delivery-2.png" : `${success ? "/images/delivery-3.png" : "/images/delivery-1.png"}`}`}
+            src={`${error ? "/images/delivery-2.webp" : `${success ? "/images/delivery-3.webp" : "/images/delivery-1.webp"}`}`}
             alt="Delivery"
             className="
       block
@@ -468,7 +468,7 @@ function DeliveryPopUp() {
               "
             >
               <img
-                src="/images/map-2.png"
+                src="/images/map-2.webp"
                 alt=""
                 className="
                   w-32

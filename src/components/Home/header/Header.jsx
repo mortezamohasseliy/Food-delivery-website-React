@@ -21,7 +21,7 @@ function Header({ cart }) {
           <div className="flex h-full w-1/2 items-center justify-center gap-3 bg-[#FC8A06]">
             <img
               className="h-11 w-11 rounded-full object-cover"
-              src="/images/account.png"
+              src="/images/account.webp"
               alt="Account"
             />
 
@@ -33,7 +33,7 @@ function Header({ cart }) {
             <NavLink to="/cart">
               <img
                 className="h-11.25 w-11.25 object-cover"
-                src="/images/cart.png"
+                src="/images/cart.webp"
                 alt="Cart"
               />
             </NavLink>
@@ -48,7 +48,7 @@ function Header({ cart }) {
         <div className="flex h-20 w-full items-center justify-center gap-1">
           <img
             className="h-6.25 w-6.25"
-            src="/images/location.png"
+            src="/images/location.webp"
             alt="Location"
           />
 
@@ -82,7 +82,7 @@ function Header({ cart }) {
           <NavLink to="/cart">
             <img
               className="h-10.75 w-10.75"
-              src="/images/pucket.png"
+              src="/images/pucket.webp"
               alt="Cart"
             />
           </NavLink>
@@ -93,7 +93,7 @@ function Header({ cart }) {
 
           <img
             className="h-9.5 w-9.5 rotate-90"
-            src="/images/arrow.png"
+            src="/images/arrow.webp"
             alt=""
           />
         </div>

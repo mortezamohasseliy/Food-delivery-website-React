@@ -1,18 +1,18 @@
 export const offers = [
   {
-    image: "/images/food-1.png",
+    image: "/images/food-1.webp",
     restaurant: "Chef Burgers London",
     text: "Restaurant",
     discount: "-40%",
   },
   {
-    image: "/images/food-2.png",
+    image: "/images/food-2.webp",
     restaurant: "Grand Ai Cafe London",
     text: "Restaurant",
     discount: "-20%",
   },
   {
-    image: "/images/food-1.png",
+    image: "/images/food-1.webp",
     restaurant: "Butterbrot Caf’e London",
     text: "Restaurant",
     discount: "-17%",
@@ -21,19 +21,19 @@ export const offers = [
 
 export const restaurantOffers = [
   {
-    image: "/images/offer-1.png",
+    image: "/images/offer-1.webp",
     restaurant: "First Order Discount",
     text: "McDonald’s East London",
     discount: "-20%",
   },
   {
-    image: "/images/offer-2.png",
+    image: "/images/offer-2.webp",
     restaurant: "Vegan Discount",
     text: "McDonald’s East London",
     discount: "-20%",
   },
   {
-    image: "/images/offer-3.png",
+    image: "/images/offer-3.webp",
     restaurant: "Free ice Cream Offer",
     text: "McDonald’s East London",
     discount: "-100%",
@@ -46,7 +46,7 @@ export const coldDrinks = [
     title: "Royal Cheese Burger with extra Fries",
     details: "1 McChicken™, 1 Big Mac™,  1 Royal Cheeseburger, 3 medium",
     price: "GBP 23.10",
-    image: "/images/drink-2.png",
+    image: "/images/drink-2.webp",
   },
 
   {
@@ -54,7 +54,7 @@ export const coldDrinks = [
     details:
       "1 McChicken™, 1 Big Mac™,  1 Royal Cheeseburger, 3 medium sized French Fries , 3 cold drinks",
     price: "GBP 23.10",
-    image: "/images/drink-3.png",
+    image: "/images/drink-3.webp",
   },
 
   {
@@ -62,7 +62,7 @@ export const coldDrinks = [
     details:
       "1 McChicken™, 1 Big Mac™,  1 Royal Cheeseburger, 3 medium sized French Fries , 3 cold drinks",
     price: "GBP 23.10",
-    image: "/images/drink-4.png",
+    image: "/images/drink-4.webp",
   },
 
   {
@@ -70,7 +70,7 @@ export const coldDrinks = [
     details:
       "1 McChicken™, 1 Big Mac™,  1 Royal Cheeseburger, 3 medium sized French Fries , 3 cold drinks",
     price: "GBP 23.10",
-    image: "/images/drink-5.png",
+    image: "/images/drink-5.webp",
   },
 
   {
@@ -78,7 +78,7 @@ export const coldDrinks = [
     details:
       "1 McChicken™, 1 Big Mac™,  1 Royal Cheeseburger, 3 medium sized French Fries , 3 cold drinks",
     price: "GBP 23.10",
-    image: "/images/drink-6.png",
+    image: "/images/drink-6.webp",
   },
 
   {
@@ -86,7 +86,7 @@ export const coldDrinks = [
     details:
       "1 McChicken™, 1 Big Mac™,  1 Royal Cheeseburger, 3 medium sized French Fries , 3 cold drinks",
     price: "GBP 23.10",
-    image: "/images/drink-7.png",
+    image: "/images/drink-7.webp",
   },
 ];
 

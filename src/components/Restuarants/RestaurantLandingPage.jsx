@@ -4,12 +4,12 @@ function RestaurantLandingPage({ text, title, cover }) {
       className="
         md:relative md:w-382 md:h-119.25
         md:mt-10.25 md:rounded-xl
-        md:bg-[url('../images/burger.png')]
+        md:bg-[url('../images/burger.webp')]
         md:bg-cover
 
         relative w-[90%] min-h-90
         mt-5 rounded-xl
-        bg-[url('../images/burger.png')]
+        bg-[url('../images/burger.webp')]
         bg-cover
         flex flex-col items-center
         justify-center
@@ -79,7 +79,7 @@ function RestaurantLandingPage({ text, title, cover }) {
         <span>
           <img
             className="md:w-8.5 md:h-8.5 w-5 h-5"
-            src="../images/list.png"
+            src="../images/list.webp"
             alt=""
           />
         </span>
@@ -116,7 +116,7 @@ function RestaurantLandingPage({ text, title, cover }) {
         <span>
           <img
             className="md:w-8.5 md:h-8.5 w-5 h-5"
-            src="../images/bike.png"
+            src="../images/bike.webp"
             alt=""
           />
         </span>
@@ -149,7 +149,7 @@ function RestaurantLandingPage({ text, title, cover }) {
         <span>
           <img
             className="md:w-7.25 md:h-7.25"
-            src="../images/clock.png"
+            src="../images/clock.webp"
             alt=""
           />
         </span>
@@ -182,7 +182,7 @@ function RestaurantLandingPage({ text, title, cover }) {
           md:bottom-12.75
           hidden md:block
         "
-        src="../images/rate.png"
+        src="../images/rate.webp"
         alt=""
       />
     </section>

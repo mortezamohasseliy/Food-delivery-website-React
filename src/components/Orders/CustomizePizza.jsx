@@ -320,7 +320,7 @@ function CustomizePizza({ onClose, onBack, selectedPizza, total }) {
               h-5
               object-contain
             "
-            src="/images/Close.png"
+            src="/images/Close.webp"
             alt="Close"
           />
         </button>
@@ -366,7 +366,7 @@ function CustomizePizza({ onClose, onBack, selectedPizza, total }) {
                   md:h-70
                   md:rounded-xl
                 "
-                src="/images/pizza-5.png"
+                src="/images/pizza-5.webp"
                 alt="Pizza"
               />
             </div>
@@ -407,7 +407,7 @@ function CustomizePizza({ onClose, onBack, selectedPizza, total }) {
                   md:w-6
                   md:h-6
                 "
-                src="/images/Forward.png"
+                src="/images/Forward.webp"
                 alt=""
               />
 
@@ -432,7 +432,7 @@ function CustomizePizza({ onClose, onBack, selectedPizza, total }) {
                   md:w-6
                   md:h-6
                 "
-                src="/images/Forward.png"
+                src="/images/Forward.webp"
                 alt=""
               />
 
@@ -533,7 +533,7 @@ function CustomizePizza({ onClose, onBack, selectedPizza, total }) {
                   md:w-24
                   md:h-24
                 "
-                src="/images/Polo.png"
+                src="/images/Polo.webp"
                 alt=""
               />
 
@@ -594,7 +594,7 @@ function CustomizePizza({ onClose, onBack, selectedPizza, total }) {
 
             <ToppingBox
               title="Vegitable Toppings"
-              icon="/images/carrot.png"
+              icon="/images/carrot.webp"
               items={boxes}
               selectedToppings={selectedToppings}
               onToppingChange={handleToppingChange}
@@ -604,7 +604,7 @@ function CustomizePizza({ onClose, onBack, selectedPizza, total }) {
 
             <ToppingBox
               title="Meat Toppings"
-              icon="/images/meat.png"
+              icon="/images/meat.webp"
               items={meatBoxes}
               selectedToppings={selectedToppings}
               onToppingChange={handleToppingChange}
@@ -614,7 +614,7 @@ function CustomizePizza({ onClose, onBack, selectedPizza, total }) {
 
             <ToppingBox
               title="Seafood Toppings"
-              icon="/images/fish.png"
+              icon="/images/fish.webp"
               items={seafoodBoxes}
               selectedToppings={selectedToppings}
               onToppingChange={handleToppingChange}

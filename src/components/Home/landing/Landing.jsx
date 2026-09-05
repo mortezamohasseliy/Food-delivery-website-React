@@ -28,7 +28,7 @@ function Landing() {
             <button className="absolute right-0 top-0 flex h-14.25 w-14.25 items-center justify-center rounded-[120px] bg-[#FC8A06]">
               <img
                 className="h-8.5 w-8.5"
-                src="/images/arrow-right.png"
+                src="/images/arrow-right.webp"
                 alt=""
               />
             </button>
@@ -122,7 +122,7 @@ function Landing() {
             h-113.75 w-94.25
             object-contain
           "
-          src="/images/hero-2.png"
+          src="/images/hero-2.webp"
           alt=""
         />
 
@@ -141,7 +141,7 @@ function Landing() {
         >
           <div className="flex flex-col gap-3">
             <div className="flex items-center justify-between">
-              <img className="h-3.75 w-14.5" src="/images/logo.png" alt="" />
+              <img className="h-3.75 w-14.5" src="/images/logo.webp" alt="" />
 
               <p className="text-gray-400">now</p>
             </div>
@@ -169,14 +169,14 @@ function Landing() {
         >
           <div className="flex flex-col gap-3">
             <div className="flex items-center justify-between">
-              <img className="h-3.75 w-14.5" src="/images/logo.png" alt="" />
+              <img className="h-3.75 w-14.5" src="/images/logo.webp" alt="" />
 
               <p className="text-gray-400">now</p>
             </div>
 
             <h2 className="flex items-center gap-2 text-[12px] font-semibold">
               Order Accepted!
-              <img className="h-4.25 w-4.25" src="/images/tick.png" alt="" />
+              <img className="h-4.25 w-4.25" src="/images/tick.webp" alt="" />
             </h2>
 
             <p className="text-[12px] text-black/60">
@@ -198,7 +198,7 @@ function Landing() {
         >
           <div className="flex flex-col gap-3">
             <div className="flex items-center justify-between">
-              <img className="h-3.75 w-14.5" src="/images/logo.png" alt="" />
+              <img className="h-3.75 w-14.5" src="/images/logo.webp" alt="" />
 
               <p className="text-gray-400">now</p>
             </div>
