@@ -111,7 +111,7 @@ function Landing() {
             h-134.25 w-201.25
             object-contain
           "
-          src="/images/hero-1.png"
+          src="/images/hero-1.webp"
           alt=""
         />
 
