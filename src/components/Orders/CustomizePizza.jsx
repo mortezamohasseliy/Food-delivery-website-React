@@ -44,6 +44,7 @@ function ToppingBox({ title, icon, items, selectedToppings, onToppingChange }) {
           -top-5
           left-0
           z-20
+
           flex
           items-center
 
@@ -57,9 +58,11 @@ function ToppingBox({ title, icon, items, selectedToppings, onToppingChange }) {
           className="
             relative
             z-20
+
             w-12
             h-12
             shrink-0
+
             rounded-full
             bg-[#FC8A06]
 
@@ -91,6 +94,7 @@ function ToppingBox({ title, icon, items, selectedToppings, onToppingChange }) {
           className="
             relative
             -ml-3
+
             h-10
             bg-[#03081F]
             rounded-r-md
@@ -250,7 +254,7 @@ function CustomizePizza({ onClose, onBack, selectedPizza, total }) {
       className="
         fixed
         inset-0
-        `z-9999`
+        z-[9999]
 
         bg-black/60
 
@@ -293,8 +297,7 @@ function CustomizePizza({ onClose, onBack, selectedPizza, total }) {
             absolute
             top-3
             right-3
-
-            `z-100`
+            z-[100]
 
             w-10
             h-10

@@ -12,6 +12,8 @@ function SpecialRequest({ onClose, onBack, selectedPizza, total }) {
       ...selectedPizza,
       specialRequest,
     };
+
+    console.log(finalOrder);
   }
 
   if (isDeliveryOpen) {
@@ -23,7 +25,8 @@ function SpecialRequest({ onClose, onBack, selectedPizza, total }) {
       className="
         fixed
         inset-0
-       ` z-9999`
+        z-[9999]
+
         bg-black/60
 
         flex
@@ -35,6 +38,7 @@ function SpecialRequest({ onClose, onBack, selectedPizza, total }) {
       "
     >
       {/* MODAL */}
+
       <section
         className="
           relative
@@ -54,6 +58,7 @@ function SpecialRequest({ onClose, onBack, selectedPizza, total }) {
         "
       >
         {/* CLOSE BUTTON */}
+
         <button
           type="button"
           onClick={onClose}
@@ -61,8 +66,7 @@ function SpecialRequest({ onClose, onBack, selectedPizza, total }) {
             absolute
             top-3
             right-3
-
-            `z-100`
+            z-[100]
 
             w-10
             h-10
@@ -95,6 +99,7 @@ function SpecialRequest({ onClose, onBack, selectedPizza, total }) {
         </button>
 
         {/* SCROLLABLE CONTENT */}
+
         <div
           className="
             w-full
@@ -105,6 +110,7 @@ function SpecialRequest({ onClose, onBack, selectedPizza, total }) {
           "
         >
           {/* HERO IMAGE */}
+
           <div
             className="
               relative
@@ -126,6 +132,7 @@ function SpecialRequest({ onClose, onBack, selectedPizza, total }) {
           </div>
 
           {/* CONTENT */}
+
           <div
             className="
               px-4
@@ -136,6 +143,7 @@ function SpecialRequest({ onClose, onBack, selectedPizza, total }) {
             "
           >
             {/* BREADCRUMB */}
+
             <div
               className="
                 flex
@@ -179,6 +187,7 @@ function SpecialRequest({ onClose, onBack, selectedPizza, total }) {
             </div>
 
             {/* TITLE */}
+
             <div className="mt-4 md:mt-5 md:pl-5">
               <h1
                 className="
@@ -194,6 +203,7 @@ function SpecialRequest({ onClose, onBack, selectedPizza, total }) {
             </div>
 
             {/* PIZZA + REQUEST */}
+
             <div
               className="
                 flex
@@ -250,6 +260,7 @@ function SpecialRequest({ onClose, onBack, selectedPizza, total }) {
             </div>
 
             {/* TEXTAREA */}
+
             <div
               className="
                 mt-4
@@ -291,6 +302,7 @@ function SpecialRequest({ onClose, onBack, selectedPizza, total }) {
             </div>
 
             {/* TOTAL */}
+
             <div
               className="
                 flex
@@ -358,6 +370,7 @@ function SpecialRequest({ onClose, onBack, selectedPizza, total }) {
             </div>
 
             {/* BOTTOM */}
+
             <div
               className="
                 flex
@@ -370,6 +383,8 @@ function SpecialRequest({ onClose, onBack, selectedPizza, total }) {
                 md:px-5
               "
             >
+              {/* BACK */}
+
               <button
                 type="button"
                 onClick={onBack}
@@ -383,6 +398,8 @@ function SpecialRequest({ onClose, onBack, selectedPizza, total }) {
               >
                 Take me back
               </button>
+
+              {/* ADD */}
 
               <button
                 type="button"
