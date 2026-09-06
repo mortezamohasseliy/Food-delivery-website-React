@@ -65,7 +65,7 @@ function Download() {
           mt-8 flex w-full justify-center
 
           md:absolute
-          md:right-0
+          md:right-10
           md:top-58
           md:mt-0
           md:h-22.5
@@ -82,7 +82,7 @@ function Download() {
             leading-tight tracking-[-6%]
 
             md:absolute
-            md:right-0
+            md:right-10
             md:w-135
             md:text-left
             md:text-[54px]
