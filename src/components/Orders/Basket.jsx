@@ -30,31 +30,33 @@ function Basket({ cart, setCart }) {
       className="
         md:w-91.75
         md:h-auto
-        md:rounded-tl-lg
-        md:rounded-tr-lg
+        md:rounded-tl-xl
+        md:rounded-tr-xl
         md:mx-auto
-        md:bg-[#F9F9F9]
+        md:bg-[#F7F8FA]
+        md:shadow-xl
 
         w-full
-        bg-[#F9F9F9]
-        rounded-t-lg
+        bg-[#F7F8FA]
+        rounded-t-xl
         overflow-hidden
+        shadow-lg
       "
     >
       {/* HEADER */}
       <div
         className="
           md:h-29.25
-          md:bg-[#028643]
+          md:bg-[#03081F]
           md:text-white
           md:flex
           md:justify-evenly
           md:items-center
-          md:rounded-tl-lg
-          md:rounded-tr-lg
+          md:rounded-tl-xl
+          md:rounded-tr-xl
 
           h-20
-          bg-[#028643]
+          bg-[#03081F]
           text-white
           flex
           items-center
@@ -62,11 +64,30 @@ function Basket({ cart, setCart }) {
           gap-4
         "
       >
-        <img
-          className="md:w-14.5 md:h-14.5 w-10 h-10"
-          src="/images/pucket.webp"
-          alt=""
-        />
+        <div
+          className="
+            md:w-14.5
+            md:h-14.5
+
+            w-10
+            h-10
+
+            rounded-full
+            bg-[#FC8A06]
+
+            flex
+            items-center
+            justify-center
+
+            shadow-lg
+          "
+        >
+          <img
+            className="md:w-10 md:h-10 w-7 h-7 object-contain"
+            src="/images/pucket.webp"
+            alt=""
+          />
+        </div>
 
         <h2 className="font-semibold md:text-[32px] text-[24px]">My Basket</h2>
       </div>
@@ -74,9 +95,43 @@ function Basket({ cart, setCart }) {
       {/* ITEMS */}
       <div className="px-3 md:px-0">
         {cart.length === 0 ? (
-          <p className="py-8 text-center text-gray-500 text-[16px]">
-            Your basket is empty
-          </p>
+          <div
+            className="
+              py-10
+              flex
+              flex-col
+              items-center
+              justify-center
+              text-center
+            "
+          >
+            <div
+              className="
+                w-16
+                h-16
+                rounded-full
+                bg-[#FFF1DF]
+                flex
+                items-center
+                justify-center
+                mb-3
+              "
+            >
+              <img
+                src="/images/pucket.webp"
+                alt=""
+                className="w-9 h-9 object-contain"
+              />
+            </div>
+
+            <p className="font-semibold text-[16px] text-[#03081F]">
+              Your basket is empty
+            </p>
+
+            <p className="text-[13px] text-gray-500 mt-1">
+              Add something delicious!
+            </p>
+          </div>
         ) : (
           cart.map((item) => (
             <div
@@ -90,7 +145,9 @@ function Basket({ cart, setCart }) {
 
                 min-h-27
                 border
-                rounded-lg
+                border-[#E5E7EB]
+                bg-white
+                rounded-xl
                 flex
                 items-center
                 justify-between
@@ -98,6 +155,13 @@ function Basket({ cart, setCart }) {
                 px-3
                 py-3
                 mt-3
+
+                shadow-sm
+                transition-all
+                duration-200
+
+                hover:border-[#FC8A06]
+                hover:shadow-md
               "
             >
               {/* Quantity */}
@@ -125,6 +189,8 @@ function Basket({ cart, setCart }) {
                   font-bold
                   text-[18px]
                   text-white
+
+                  shadow-md
                 "
               >
                 {item.quantity || 1}x
@@ -142,7 +208,7 @@ function Basket({ cart, setCart }) {
                 {/* Price */}
                 <p
                   className="
-                    font-semibold
+                    font-bold
                     text-[17px]
                     md:text-[20px]
                     text-[#028643]
@@ -174,7 +240,7 @@ function Basket({ cart, setCart }) {
                     className="
                       text-[12px]
                       md:text-[14px]
-                      text-gray-500
+                      text-[#6B7280]
                       wrap-break-word
                     "
                   >
@@ -191,7 +257,7 @@ function Basket({ cart, setCart }) {
                       md:text-[15px]
                       leading-4
                       md:leading-4.5
-                      text-gray-600
+                      text-[#6B7280]
 
                       wrap-break-word
                       overflow-wrap-anywhere
@@ -203,23 +269,53 @@ function Basket({ cart, setCart }) {
               </div>
 
               {/* Delete */}
-              <img
+              <button
+                type="button"
                 onClick={() =>
                   setCart((currentCart) =>
                     currentCart.filter((cartItem) => cartItem.id !== item.id),
                   )
                 }
                 className="
-                  md:w-8.75
-                  md:h-8.75
-                  w-7
-                  h-7
+                  md:w-10
+                  md:h-10
+
+                  w-8
+                  h-8
+
                   shrink-0
+
+                  rounded-full
+
+                  bg-[#FFF1F0]
+
+                  flex
+                  items-center
+                  justify-center
+
                   cursor-pointer
+
+                  transition-all
+                  duration-200
+
+                  hover:bg-[#FFE0DD]
+                  hover:scale-105
                 "
-                src="/images/trash-2.webp"
-                alt="Remove item"
-              />
+              >
+                <img
+                  className="
+                    md:w-6
+                    md:h-6
+
+                    w-5
+                    h-5
+
+                    object-contain
+                  "
+                  src="/images/trash-2.webp"
+                  alt="Remove item"
+                />
+              </button>
             </div>
           ))
         )}
@@ -233,7 +329,7 @@ function Basket({ cart, setCart }) {
           md:place-items-center
           md:h-47.5
           md:border-b
-          md:border-b-gray-200
+          md:border-b-[#E5E7EB]
           md:mt-5
 
           grid
@@ -244,26 +340,38 @@ function Basket({ cart, setCart }) {
           py-5
           mt-4
           border-b
-          border-gray-200
+          border-[#E5E7EB]
         "
       >
-        <p className="font-semibold md:text-[20px] text-[15px]">Sub Total:</p>
+        <p className="font-semibold md:text-[20px] text-[15px] text-[#03081F]">
+          Sub Total:
+        </p>
 
-        <p className="text-right md:text-[24px] text-[18px]">
+        <p className="text-right md:text-[24px] text-[18px] font-semibold text-[#03081F]">
           £{subTotal.toFixed(2)}
         </p>
 
-        <p className="font-semibold md:text-[20px] text-[15px]">Discounts:</p>
+        <p className="font-semibold md:text-[20px] text-[15px] text-[#03081F]">
+          Discounts:
+        </p>
 
-        <p className="text-right md:text-[24px] text-[18px]">
+        <p
+          className={`
+            text-right
+            md:text-[24px]
+            text-[18px]
+            font-semibold
+            ${discount > 0 ? "text-[#028643]" : "text-[#03081F]"}
+          `}
+        >
           -£{discount.toFixed(2)}
         </p>
 
-        <p className="font-semibold md:text-[20px] text-[15px]">
+        <p className="font-semibold md:text-[20px] text-[15px] text-[#03081F]">
           Delivery Fee:
         </p>
 
-        <p className="text-right md:text-[24px] text-[18px]">
+        <p className="text-right md:text-[24px] text-[18px] font-semibold text-[#03081F]">
           £{deliveryFee.toFixed(2)}
         </p>
       </div>
@@ -273,32 +381,35 @@ function Basket({ cart, setCart }) {
         className="
           md:w-85.5
           md:h-17.5
-          md:bg-[#FC8A06CC]
+          md:bg-[#FC8A06]
           md:mt-5
           md:mx-auto
-          md:rounded-lg
+          md:rounded-xl
           md:flex
           md:items-center
           md:justify-center
           md:gap-10
           md:text-white
+          md:shadow-lg
 
           w-[92%]
           min-h-15
-          bg-[#FC8A06CC]
+          bg-[#FC8A06]
           mt-4
           mx-auto
-          rounded-lg
+          rounded-xl
           flex
           items-center
           justify-center
           gap-5
           text-white
+
+          shadow-md
         "
       >
         <p className="font-semibold md:text-[20px] text-[16px]">Total to pay</p>
 
-        <p className="font-semibold md:text-[36px] text-[25px]">
+        <p className="font-bold md:text-[36px] text-[25px]">
           £{total.toFixed(2)}
         </p>
       </div>
@@ -334,7 +445,7 @@ function Basket({ cart, setCart }) {
               md:w-6.5
               -translate-y-1/2
             "
-            src="../images/arrow-bottom.webp"
+            src="/images/arrow-bottom.webp"
             alt=""
           />
 
@@ -344,14 +455,30 @@ function Basket({ cart, setCart }) {
               md:h-15.75
               w-full
               rounded-[120px]
+
               border
-              border-[#CFCFCF]
+              border-[#D9DCE1]
+
+              bg-white
+
               pl-5
               pr-14
+
               outline-none
+
+              text-[#03081F]
+
               placeholder:text-[14px]
               placeholder:font-semibold
+              placeholder:text-[#8A8F98]
+
               md:placeholder:text-[18px]
+
+              focus:border-[#FC8A06]
+              focus:ring-2
+              focus:ring-[#FC8A06]/20
+
+              transition-all
             "
             type="text"
             placeholder="Choose your free item.."
@@ -360,19 +487,33 @@ function Basket({ cart, setCart }) {
 
         {/* Coupon Code */}
         <div className="relative w-full md:w-86">
-          <button onClick={applyCoupon} type="button">
+          <button
+            onClick={applyCoupon}
+            type="button"
+            className="
+              absolute
+              right-0
+              top-0
+
+              w-14
+              h-full
+
+              flex
+              items-center
+              justify-center
+
+              cursor-pointer
+              z-10
+            "
+          >
             <img
               className="
-                absolute
-                right-5
-                top-1/2
                 h-5
                 w-5
                 md:h-6.5
                 md:w-6.5
-                -translate-y-1/2
               "
-              src="../images/arrow-right-2.webp"
+              src="/images/arrow-right-2.webp"
               alt=""
             />
           </button>
@@ -385,21 +526,43 @@ function Basket({ cart, setCart }) {
               md:h-15.75
               w-full
               rounded-[120px]
+
               border
-              border-[#CFCFCF]
+              border-[#D9DCE1]
+
+              bg-white
+
               pl-5
               pr-14
+
               outline-none
+
+              text-[#03081F]
+
               placeholder:text-[14px]
               placeholder:font-semibold
+              placeholder:text-[#8A8F98]
+
               md:placeholder:text-[18px]
+
+              focus:border-[#028643]
+              focus:ring-2
+              focus:ring-[#028643]/20
+
+              transition-all
             "
             type="text"
             placeholder="Apply Coupon Code here"
           />
         </div>
 
-        <p className="w-full border border-[#CFCFCF]" />
+        <p
+          className="
+            w-full
+            border
+            border-[#E5E7EB]
+          "
+        />
       </div>
 
       {/* DELIVERY / COLLECTION */}
@@ -435,18 +598,39 @@ function Basket({ cart, setCart }) {
             justify-center
             gap-1
 
+            border
+
+            transition-all
+            duration-200
+
             ${
               deliveryMethod === "delivery"
-                ? "bg-[#FC8A06] text-white"
-                : "bg-[#EEEEEE]"
+                ? "bg-[#FC8A06] border-[#FC8A06] text-white shadow-lg scale-[1.02]"
+                : "bg-white border-[#E5E7EB] text-[#03081F] hover:border-[#FC8A06]"
             }
           `}
         >
-          <img className="w-8.75 h-8.75" src="../images/scooter.webp" alt="" />
+          <img
+            className="w-8.75 h-8.75 object-contain"
+            src="/images/scooter.webp"
+            alt=""
+          />
 
           <h3 className="font-semibold text-[14px] md:text-[16px]">Delivery</h3>
 
-          <p className="font-normal text-[12px] md:text-[15px]">
+          <p
+            className={`
+              font-normal
+              text-[12px]
+              md:text-[15px]
+
+              ${
+                deliveryMethod === "delivery"
+                  ? "text-white/90"
+                  : "text-gray-500"
+              }
+            `}
+          >
             Starts at 17:50
           </p>
         </div>
@@ -468,16 +652,21 @@ function Basket({ cart, setCart }) {
             justify-center
             gap-1
 
+            border
+
+            transition-all
+            duration-200
+
             ${
               deliveryMethod === "collection"
-                ? "bg-[#FC8A06] text-white"
-                : "bg-[#EEEEEE]"
+                ? "bg-[#FC8A06] border-[#FC8A06] text-white shadow-lg scale-[1.02]"
+                : "bg-white border-[#E5E7EB] text-[#03081F] hover:border-[#FC8A06]"
             }
           `}
         >
           <img
-            className="w-8.75 h-8.75"
-            src="../images/collection.webp"
+            className="w-8.75 h-8.75 object-contain"
+            src="/images/collection.webp"
             alt=""
           />
 
@@ -485,7 +674,19 @@ function Basket({ cart, setCart }) {
             Collection
           </h3>
 
-          <p className="font-normal text-[12px] md:text-[15px]">
+          <p
+            className={`
+              font-normal
+              text-[12px]
+              md:text-[15px]
+
+              ${
+                deliveryMethod === "collection"
+                  ? "text-white/90"
+                  : "text-gray-500"
+              }
+            `}
+          >
             Starts at 16:50
           </p>
         </div>
@@ -503,8 +704,10 @@ function Basket({ cart, setCart }) {
             md:h-8.75
             md:w-8.75
             -translate-y-1/2
+
+            z-10
           "
-          src="../images/arrow.webp"
+          src="/images/arrow.webp"
           alt=""
         />
 
@@ -513,12 +716,27 @@ function Basket({ cart, setCart }) {
             h-15
             md:h-17.5
             w-full
-            rounded-lg
+
+            rounded-xl
+
             bg-[#028643]
+
             font-semibold
             text-[20px]
             md:text-[24px]
+
             text-white
+
+            shadow-lg
+
+            transition-all
+            duration-200
+
+            hover:bg-[#02753A]
+            hover:shadow-xl
+            hover:scale-[1.01]
+
+            cursor-pointer
           "
         >
           Checkout!
