@@ -18,7 +18,6 @@ function Download() {
         md:w-full
         md:px-0
         md:py-0
-       
       "
     >
       {/* Logo + Text */}
@@ -29,10 +28,11 @@ function Download() {
           text-center
 
           md:absolute
-          md:right-10
-          md:top-35
-          md:w-auto
+          md:right-12
+          md:top-24
+          md:w-150
           md:justify-start
+          md:text-left
         "
       >
         <Logo />
@@ -61,33 +61,36 @@ function Download() {
       {/* Personalised & Instant */}
       <div
         className="
-          relative z-10
-          mt-8 flex w-full justify-center
+    relative z-10
+    mt-8 flex w-full justify-center
 
-          md:absolute
-          md:right-10
-          md:top-58
-          md:mt-0
-          md:h-22.5
-          md:w-219.5
-          md:items-center
-          md:rounded-[120px]
-          md:bg-[#03081F]
-        "
+    md:absolute
+    md:right-10
+    md:top-54
+    md:mt-0
+    md:h-22.5
+    md:w-219.5
+    md:items-center
+    md:justify-center
+    md:rounded-[120px]
+    md:bg-[#03081F]
+  "
       >
         <h2
           className="
-            w-full text-center
-            font-medium text-[24px]
-            leading-tight tracking-[-6%]
-
-            md:absolute
-            md:right-10
-            md:w-135
-            md:text-left
-            md:text-[54px]
-            md:text-white
-          "
+          md:absolute
+      w-full
+      text-center
+      font-medium
+      text-[24px]
+      leading-tight
+      tracking-[-6%]
+      md:right-13
+      md:w-auto
+      md:text-[54px]
+      md:text-white
+      md:whitespace-nowrap
+    "
         >
           <span className="text-[#FC8A06] underline">Personalised</span> &
           Instant
@@ -104,10 +107,10 @@ function Download() {
           leading-6 tracking-[-3%]
 
           md:absolute
-          md:right-10
-          md:bottom-50
+          md:right-12
+          md:top-85
           md:mt-0
-          md:w-122
+          md:w-130
           md:text-left
           md:text-[24px]
           md:tracking-[-6%]
@@ -123,10 +126,11 @@ function Download() {
           mt-6 flex w-full justify-center
 
           md:absolute
-          md:right-25
-          md:bottom-10
+          md:right-12
+          md:top-105
           md:mt-0
-          md:w-103
+          md:w-150
+          md:justify-center
         "
       >
         <img
@@ -147,24 +151,24 @@ function Download() {
       {/* Phone Image */}
       <img
         className="
-    absolute
-    bottom-0
-    left-1/2
-    z-10
-    -translate-x-1/2
+          absolute
+          bottom-0
+          left-1/2
+          z-10
+          -translate-x-1/2
 
-    w-[75%]
-    max-w-75
-    object-contain
+          w-[75%]
+          max-w-75
+          object-contain
 
-    sm:w-[65%]
-    sm:max-w-82.5
+          sm:w-[65%]
+          sm:max-w-82.5
 
-    md:left-0
-    md:translate-x-0
-    md:w-208
-    md:max-w-none
-  "
+          md:left-0
+          md:translate-x-0
+          md:w-208
+          md:max-w-none
+        "
         src="/images/use-mobile.webp"
         alt=""
       />

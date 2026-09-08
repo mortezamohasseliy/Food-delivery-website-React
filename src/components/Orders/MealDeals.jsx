@@ -74,7 +74,7 @@ function MealDeals({ onClose }) {
             sm:right-4
             md:top-5
             md:right-5
-            `z-100`
+            z-100
             w-10
             h-10
             sm:w-11
